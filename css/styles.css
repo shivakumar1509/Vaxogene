@@ -1,4 +1,4 @@
-/* === VAXONYX — Global Styles (CLEAN, Unified Nav Font) === */
+/* === VAXOGENE — Global Styles (CLEAN, Unified Nav Font) === */
 
 /* ---------- Design tokens ---------- */
 :root{
@@ -160,7 +160,7 @@ img{ max-width:100%; height:auto; display:block; }
 .dropdown-menu li + li,
 .submenu li + li{ margin-top:6px; }
 
-/* ---------- “Ask Vaxonyx AI” button ---------- */
+/* ---------- “Ask Vaxogene AI” button ---------- */
 .vx-fab{
   border:0; border-radius:999px; padding:10px 14px;
   background:var(--vx-orange); color:#fff; font-weight:800;

@@ -1,5 +1,5 @@
 # _config.yml  — Default (GitHub Pages)
-title: Vaxonyx
+title: Vaxogene
 markdown: kramdown
 theme: null
 plugins: []
@@ -7,7 +7,7 @@ permalink: pretty
 
 # GitHub Pages project URL
 url: "https://shivakumar1509.github.io"
-baseurl: "/VaxonyxAI"
+baseurl: "/Vaxogene"
 
 # Bump this whenever you change CSS/JS to clear browser cache
 assets_version: "31"

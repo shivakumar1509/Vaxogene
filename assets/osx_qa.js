@@ -1,14 +1,14 @@
 js
 // /assets/osx_qa.js
-// 100+ preloaded Q&A for the Vaxonyx AI widget.
+// 100+ preloaded Q&A for the Vaxogene AI widget.
 // You can safely edit text, add/remove items, or change order.
 
 window.OSX_QA = [
   /* =========================
    * GENERAL (15)
    * ========================= */
-  {id:'gen-01', q:'What is Vaxonyx?', a:'Vaxonyx provides AI-powered multi-omics software and services for immunotherapy, vaccine development, and translational research.', tags:['general'], keywords:['vaxonyx','company','what is']},
-  {id:'gen-02', q:'Who uses Vaxonyx?', a:'Biotech and pharma R&D teams, academic labs, and hospital translational groups working on immuno-oncology, vaccines, and diagnostics.', tags:['general'], keywords:['customers','who uses','audience']},
+  {id:'gen-01', q:'What is Vaxogene?', a:'Vaxogene provides AI-powered multi-omics software and services for immunotherapy, vaccine development, and translational research.', tags:['general'], keywords:['vaxogene','company','what is']},
+  {id:'gen-02', q:'Who uses Vaxogene?', a:'Biotech and pharma R&D teams, academic labs, and hospital translational groups working on immuno-oncology, vaccines, and diagnostics.', tags:['general'], keywords:['customers','who uses','audience']},
   {id:'gen-03', q:'Do you support academic labs?', a:'Yes—academic pricing and lightweight onboarding are available for PIs, cores, and student teams.', tags:['general','pricing'], keywords:['academic','university','discount']},
   {id:'gen-04', q:'Can you handle clinical samples?', a:'Yes—our pipelines support clinical-grade QC, de-identification workflows, and exportable audit trails.', tags:['general','clinical'], keywords:['clinical','samples','audit']},
   {id:'gen-05', q:'Do you offer custom development?', a:'We offer custom pipelines, integrations, dashboards, and annotation logic on a statement-of-work basis.', tags:['general','services'], keywords:['custom','development','integration']},

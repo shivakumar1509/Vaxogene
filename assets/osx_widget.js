@@ -1,11 +1,11 @@
-// /assets/osx_widget.js — Vaxonyx widget (collision-proof: vxw-* classes)
+// /assets/osx_widget.js — Vaxogene widget (collision-proof: vxw-* classes)
 (function () {
   const PANEL_W = 420, PANEL_H = 520, LOG_MAX = 300, TYPE_MS = 15;
 
   function getQA() {
     return (typeof window !== 'undefined' && (window.VX_QA || window.OSX_QA)) || [
-      {id:'hello',  q:'What does Vaxonyx AI do?', a:'We build bioinformatics platforms for neoantigen discovery, vaccine design, and translational immunology.'},
-      {id:'contact',q:'How do I contact you?', a:'info@vaxonyxai.com (general) • investorrelations@vaxonyxai.com (IR) • bd@vaxonyxai.com (BD).'}
+      {id:'hello',  q:'What does Vaxogene AI do?', a:'We build bioinformatics platforms for neoantigen discovery, vaccine design, and translational immunology.'},
+      {id:'contact',q:'How do I contact you?', a:'info@vaxogeneai.com (general) • investorrelations@vaxogeneai.com (IR) • bd@vaxogeneai.com (BD).'}
     ];
   }
 
@@ -147,11 +147,11 @@
     panel = document.createElement('div');
     panel.className = 'vxw-panel';
     panel.setAttribute('role', 'dialog');
-    panel.setAttribute('aria-label', 'Vaxonyx AI');
+    panel.setAttribute('aria-label', 'Vaxogene AI');
 
     panel.innerHTML = `
       <div class="vxw-head">
-        <strong>Vaxonyx AI</strong>
+        <strong>Vaxogene AI</strong>
         <button class="vxw-close" aria-label="Close">×</button>
       </div>
 

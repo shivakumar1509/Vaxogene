@@ -1,5 +1,5 @@
 # _config_aws.yml  — for AWS / Amplify
-url: "https://vaxonyx.com"   # your AWS or CloudFront domain
+url: "https://vaxogene.com"   # your AWS or CloudFront domain
 baseurl: ""                  # IMPORTANT — root hosting
 
 # Optional: bump assets version to force refresh on prod

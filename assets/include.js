@@ -3,7 +3,7 @@
   function resolvePath(path, siteBase) {
     // If path starts with http(s), return as-is
     if (/^https?:\/\//i.test(path)) return path;
-    // If path starts with '/', prefix siteBase (e.g., /VaxonyxAI)
+    // If path starts with '/', prefix siteBase (e.g., /Vaxogene)
     if (path.startsWith('/')) {
       return (siteBase || '') + path;
     }
