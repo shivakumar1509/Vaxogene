@@ -1,66 +1,1012 @@
 ---
 layout: default
 title: Home
-description: Vaxogene advances biotechnology research and connects researchers with AI-powered platforms for genomics, vaccine design, and translational science.
+description: Vaxogene advances biotechnology research, genomics, bioinformatics, molecular biology, and translational innovation from India.
 ---
 
 <style>
-  :root{--vx-blue-light:#2196f3;--vx-blue-dark:#001c39;--vx-orange:#ff6a3d;--vx-heading:#1B427A}
-  .vx-hero{background:linear-gradient(to bottom,var(--vx-blue-light),var(--vx-blue-dark));color:#fff;text-align:center;padding:90px 20px 68px;display:flex;align-items:center}
-  .vx-hero .vx-inner{width:min(1120px,92%);margin-inline:auto}
-  .vx-hero h1{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-  .vx-hero .vx-line{margin:0;font-weight:800;line-height:1.12;color:#fff;font-size:clamp(22px,3.2vw,40px);white-space:nowrap}
-  .vx-hero .vx-line+.vx-line{margin-top:48px}
-  .vx-platform-promo{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;max-width:1040px;margin:44px auto 0;padding:24px 28px;text-align:left;border:1px solid rgba(255,255,255,.38);border-radius:24px;background:linear-gradient(135deg,rgba(255,255,255,.22),rgba(255,255,255,.10));box-shadow:0 18px 45px rgba(0,18,40,.24);backdrop-filter:blur(12px)}
-  .vx-platform-label{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px;color:#fff;font:800 11px/1.3 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
-  .vx-status-dot{width:9px;height:9px;border-radius:50%;background:#55e6a5;box-shadow:0 0 0 5px rgba(85,230,165,.14)}
-  .vx-platform-promo h2{margin:0 0 8px;color:#fff;font:800 clamp(25px,3vw,34px)/1.15 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-  .vx-platform-promo h2 span{color:#b9dcff}
-  .vx-platform-description{max-width:720px;margin:0;color:rgba(255,255,255,.94);font:500 15px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-  .vx-platform-provider{margin:10px 0 0;color:rgba(255,255,255,.78);font:600 12px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-  .vx-platform-provider strong{color:#fff}
-  .vx-platform-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:205px;padding:16px 22px;color:#fff;text-decoration:none;white-space:nowrap;border:1px solid rgba(255,255,255,.30);border-radius:16px;background:linear-gradient(180deg,var(--vx-orange),#ed5127);box-shadow:0 12px 26px rgba(255,92,47,.30);font:800 15px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;transition:transform .2s ease,box-shadow .2s ease}
-  .vx-platform-button:hover{color:#fff;transform:translateY(-2px);box-shadow:0 16px 32px rgba(255,92,47,.42)}
-  section.vx-intro,section.vx-cta{text-align:center;padding:64px 0}
-  .vx-wrap{width:min(1120px,92%);margin-inline:auto}
-  .vx-title{font-weight:800;color:var(--vx-heading);margin:0 0 16px}
-  .vx-intro-text,.vx-cta-text{max-width:780px;margin:0 auto;color:#334155;line-height:1.7}
-  .vx-cta{background:#f3f7fd}.vx-cta-text{margin-bottom:32px;font-size:17px}
-  .vx-btn{background:linear-gradient(180deg,#3FA9F5,#167fd8);color:#fff;border:none;border-radius:14px;text-decoration:none;font:700 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding:.9rem 1.4rem;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 8px 22px -10px rgba(63,169,245,.45);transition:transform .2s ease,box-shadow .2s ease}
-  .vx-btn:hover{color:#fff;transform:translateY(-2px);box-shadow:0 10px 30px -10px rgba(63,169,245,.6)}
-  @media(max-width:860px){.vx-platform-promo{grid-template-columns:1fr}.vx-platform-button{width:100%;box-sizing:border-box}}
-  @media(max-width:720px){.vx-hero{padding:72px 16px 56px}.vx-hero .vx-line{white-space:normal;line-height:1.24;font-size:clamp(20px,5vw,28px)}.vx-hero .vx-line+.vx-line{margin-top:26px}.vx-platform-promo{margin-top:36px;padding:22px 20px}section.vx-intro,section.vx-cta{padding:52px 0}}
+  :root{
+    --vx-blue:#1b427a;
+    --vx-sky:#3fa9f5;
+    --vx-teal:#007c91;
+    --vx-orange:#ff633c;
+    --vx-dark:#001c39;
+    --vx-ink:#0b172a;
+    --vx-muted:#526078;
+    --vx-line:rgba(27,66,122,.16);
+  }
+
+  *{
+    box-sizing:border-box;
+  }
+
+  .vx-container{
+    width:min(1120px,92%);
+    margin-inline:auto;
+  }
+
+  /* =====================================================
+     HERO
+     ===================================================== */
+
+  .vx-hero{
+    position:relative;
+    overflow:hidden;
+    min-height:520px;
+    display:flex;
+    align-items:center;
+    padding:70px 20px 56px;
+    color:#fff;
+    text-align:center;
+    background:
+      radial-gradient(
+        circle at 50% 0%,
+        rgba(93,192,255,.25),
+        transparent 38%
+      ),
+      linear-gradient(
+        180deg,
+        #2196f3 0%,
+        #1169aa 47%,
+        #002448 100%
+      );
+  }
+
+  .vx-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+      radial-gradient(
+        circle at 15% 20%,
+        rgba(255,255,255,.08),
+        transparent 22%
+      ),
+      radial-gradient(
+        circle at 85% 80%,
+        rgba(63,169,245,.15),
+        transparent 28%
+      );
+  }
+
+  .vx-hero-inner{
+    position:relative;
+    z-index:1;
+    width:min(1120px,92%);
+    margin-inline:auto;
+  }
+
+  .vx-hero h1{
+    position:absolute;
+    left:-9999px;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+  }
+
+  .vx-hero-line{
+    margin:0;
+    color:#fff;
+    font:800 clamp(27px,3.25vw,42px)/1.16
+      system-ui,-apple-system,BlinkMacSystemFont,
+      "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing:-.025em;
+  }
+
+  .vx-hero-line + .vx-hero-line{
+    margin-top:37px;
+  }
+
+  /* =====================================================
+     BULKMIND LAUNCH BANNER
+     ===================================================== */
+
+  .vx-launch{
+    max-width:920px;
+    margin:43px auto 0;
+    padding:23px 25px;
+    border:1px solid rgba(255,255,255,.38);
+    border-radius:20px;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255,255,255,.20),
+        rgba(255,255,255,.08)
+      );
+    box-shadow:
+      0 24px 55px -30px rgba(0,0,0,.9),
+      inset 0 1px 0 rgba(255,255,255,.25);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+  }
+
+  .vx-launch-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:28px;
+    align-items:center;
+    text-align:left;
+  }
+
+  .vx-launch-label{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    margin-bottom:10px;
+    color:#fff;
+    font:800 11px/1.2 system-ui,-apple-system,
+      BlinkMacSystemFont,"Segoe UI",sans-serif;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+
+  .vx-launch-dot{
+    width:9px;
+    height:9px;
+    flex:0 0 9px;
+    border-radius:50%;
+    background:#49e1a6;
+    box-shadow:
+      0 0 0 6px rgba(73,225,166,.13),
+      0 0 14px rgba(73,225,166,.8);
+  }
+
+  .vx-launch h2{
+    margin:0 0 7px;
+    color:#fff;
+    font:800 clamp(22px,2.6vw,32px)/1.15
+      system-ui,-apple-system,BlinkMacSystemFont,
+      "Segoe UI",sans-serif;
+    letter-spacing:-.02em;
+  }
+
+  .vx-launch h2 span{
+    color:#a9d8ff;
+  }
+
+  .vx-launch-description{
+    max-width:690px;
+    margin:0;
+    color:rgba(255,255,255,.91);
+    font:500 14px/1.55 system-ui,-apple-system,
+      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  .vx-launch-disclosure{
+    margin:9px 0 0;
+    color:rgba(255,255,255,.72);
+    font:600 11px/1.5 system-ui,-apple-system,
+      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  /* =====================================================
+     BUTTONS
+     ===================================================== */
+
+  .vx-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    min-height:44px;
+    padding:.82rem 1.3rem;
+    border:1px solid rgba(27,66,122,.18);
+    border-radius:12px;
+    color:var(--vx-blue);
+    background:#fff;
+    text-decoration:none;
+    font:750 14px/1.2 system-ui,-apple-system,
+      BlinkMacSystemFont,"Segoe UI",sans-serif;
+    transition:
+      transform .2s ease,
+      box-shadow .2s ease,
+      background .2s ease;
+  }
+
+  .vx-btn:hover{
+    transform:translateY(-2px);
+  }
+
+  .vx-btn-orange{
+    min-width:186px;
+    border:none;
+    color:#fff;
+    background:linear-gradient(180deg,#ff784f,#f2552e);
+    box-shadow:0 15px 32px -14px rgba(255,91,45,.95);
+  }
+
+  .vx-btn-orange:hover{
+    box-shadow:0 18px 38px -14px rgba(255,91,45,1);
+  }
+
+  .vx-btn-blue{
+    border-color:rgba(158,222,255,.42);
+    color:#fff;
+    background:linear-gradient(180deg,#3fa9f5,#167fd8);
+    box-shadow:0 14px 30px -16px rgba(63,169,245,.9);
+  }
+
+  /* =====================================================
+     WELCOME SECTION
+     ===================================================== */
+
+  .vx-intro{
+    padding:52px 0;
+    text-align:center;
+    background:#fff;
+  }
+
+  .vx-title{
+    margin:0 0 14px;
+    color:var(--vx-blue);
+    font:800 clamp(25px,3vw,34px)/1.2
+      system-ui,-apple-system,BlinkMacSystemFont,
+      "Segoe UI",sans-serif;
+    letter-spacing:-.02em;
+  }
+
+  .vx-intro p{
+    max-width:790px;
+    margin:0 auto;
+    color:#35435b;
+    font:400 16px/1.7 system-ui,-apple-system,
+      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  /* =====================================================
+     GLOBAL INNOVATION NETWORK
+     ===================================================== */
+
+  .vx-global-network{
+    position:relative;
+    overflow:hidden;
+    padding:54px 0 44px;
+    color:#fff;
+
+    /*
+      Add the DNA background image here:
+      /assets/images/global-innovation-network.webp
+    */
+
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(0,36,79,.91),
+        rgba(0,80,157,.86) 50%,
+        rgba(0,36,79,.91)
+      ),
+      url("{{ '/assets/images/global-innovation-network.webp' | relative_url }}");
+
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+  }
+
+  /*
+    This provides a blue fallback if the DNA image has not
+    yet been added to the assets folder.
+  */
+
+  .vx-global-network::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+      radial-gradient(
+        circle at 50% 35%,
+        rgba(40,165,255,.28),
+        transparent 35%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(0,73,149,.25),
+        rgba(0,19,52,.48)
+      );
+  }
+
+  .vx-network-inner{
+    position:relative;
+    z-index:1;
+  }
+
+  .vx-network-heading{
+    margin-bottom:27px;
+    text-align:center;
+  }
+
+  .vx-network-heading h2{
+    margin:0 0 9px;
+    color:#fff;
+    font:800 clamp(27px,3.5vw,39px)/1.15
+      system-ui,-apple-system,BlinkMacSystemFont,
+      "Segoe UI",sans-serif;
+    letter-spacing:-.025em;
+  }
+
+  .vx-network-heading p{
+    margin:0;
+    color:rgba(255,255,255,.91);
+    font:500 16px/1.5 system-ui,-apple-system,
+      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  .vx-company-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
+  }
+
+  .vx-company-card{
+    position:relative;
+    display:grid;
+    grid-template-columns:82px minmax(0,1fr);
+    gap:24px;
+    align-items:start;
+    min-height:205px;
+    padding:29px;
+    border:1px solid rgba(164,222,255,.55);
+    border-radius:22px;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255,255,255,.17),
+        rgba(255,255,255,.075)
+      );
+    box-shadow:
+      0 24px 55px -32px rgba(0,0,0,.9),
+      inset 0 1px 0 rgba(255,255,255,.18);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    transition:
+      transform .2s ease,
+      border-color .2s ease,
+      box-shadow .2s ease;
+  }
+
+  .vx-company-card:hover{
+    transform:translateY(-3px);
+    border-color:rgba(187,233,255,.78);
+    box-shadow:0 30px 65px -34px rgba(0,0,0,.95);
+  }
+
+  /* CSS DNA icon */
+
+  .vx-dna-icon{
+    position:relative;
+    width:66px;
+    height:96px;
+    margin-top:4px;
+    border-left:5px solid #76ccff;
+    border-right:5px solid #76ccff;
+    border-radius:50%;
+    transform:rotate(12deg);
+    opacity:.94;
+  }
+
+  .vx-dna-icon::before{
+    content:"";
+    position:absolute;
+    inset:8px -5px;
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 10px,
+        #76ccff 11px,
+        #76ccff 14px,
+        transparent 15px,
+        transparent 21px
+      );
+    transform:rotate(-12deg);
+    opacity:.85;
+  }
+
+  .vx-dna-icon::after{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:50%;
+    width:1px;
+    background:rgba(139,217,255,.35);
+  }
+
+  .vx-company-content{
+    position:relative;
+    padding-left:24px;
+    border-left:1px solid rgba(189,231,255,.45);
+  }
+
+  .vx-company-card h3{
+    margin:0 0 9px;
+    color:#fff;
+    font:800 24px/1.2 system-ui,-apple-system,
+      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  .vx-company-card h3 span{
+    color:#8fd3ff;
+  }
+
+  .vx-company-card p{
+    max-width:460px;
+    margin:0;
+    color:rgba(255,255,255,.88);
+    font:400 14px/1.6 system-ui,-apple-system,
+      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  .vx-company-actions{
+    margin-top:17px;
+  }
+
+  .vx-network-disclosure{
+    max-width:900px;
+    margin:17px auto 0;
+    color:rgba(255,255,255,.78);
+    text-align:center;
+    font:500 11px/1.55 system-ui,-apple-system,
+      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  /* =====================================================
+     VAXOGENE FOCUS AREAS
+     ===================================================== */
+
+  .vx-focus{
+    padding:68px 0;
+    background:#fff;
+  }
+
+  .vx-section-heading{
+    max-width:760px;
+    margin:0 auto 32px;
+    text-align:center;
+  }
+
+  .vx-section-heading p{
+    margin:0;
+    color:var(--vx-muted);
+    font:400 15px/1.7 system-ui,-apple-system,
+      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  .vx-focus-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+  }
+
+  .vx-focus-card{
+    position:relative;
+    overflow:hidden;
+    padding:24px 22px;
+    border:1px solid var(--vx-line);
+    border-radius:18px;
+    background:#fff;
+    box-shadow:0 15px 35px -29px rgba(0,52,100,.55);
+  }
+
+  .vx-focus-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:4px;
+    background:linear-gradient(90deg,var(--vx-teal),var(--vx-sky));
+  }
+
+  .vx-focus-card h3{
+    margin:0 0 9px;
+    color:var(--vx-ink);
+    font:750 18px/1.3 system-ui,-apple-system,
+      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  .vx-focus-card p{
+    margin:0;
+    color:var(--vx-muted);
+    font:400 14px/1.65 system-ui,-apple-system,
+      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  .vx-text-link{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    margin-top:17px;
+    color:var(--vx-teal);
+    text-decoration:none;
+    font:750 13px/1.2 system-ui,-apple-system,
+      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  /* =====================================================
+     FINAL CTA
+     ===================================================== */
+
+  .vx-final-cta{
+    padding:58px 0;
+    background:#f3f7fd;
+  }
+
+  .vx-final-panel{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:30px;
+    align-items:center;
+    padding:34px 36px;
+    border:1px solid var(--vx-line);
+    border-radius:20px;
+    background:
+      radial-gradient(
+        circle at 0% 100%,
+        rgba(63,169,245,.16),
+        transparent 38%
+      ),
+      #fff;
+  }
+
+  .vx-final-panel h2{
+    margin:0 0 8px;
+    color:var(--vx-blue);
+    font:800 clamp(22px,2.8vw,30px)/1.2
+      system-ui,-apple-system,BlinkMacSystemFont,
+      "Segoe UI",sans-serif;
+  }
+
+  .vx-final-panel p{
+    max-width:720px;
+    margin:0;
+    color:var(--vx-muted);
+    font:400 15px/1.65 system-ui,-apple-system,
+      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  /* =====================================================
+     RESPONSIVE
+     ===================================================== */
+
+  @media (max-width:850px){
+    .vx-company-grid,
+    .vx-focus-grid{
+      grid-template-columns:1fr;
+    }
+
+    .vx-company-card{
+      min-height:auto;
+    }
+  }
+
+  @media (max-width:720px){
+    .vx-hero{
+      min-height:auto;
+      padding:62px 16px 48px;
+    }
+
+    .vx-hero-line{
+      font-size:clamp(24px,7vw,31px);
+      line-height:1.23;
+    }
+
+    .vx-hero-line + .vx-hero-line{
+      margin-top:24px;
+    }
+
+    .vx-launch{
+      margin-top:34px;
+      padding:21px 18px;
+    }
+
+    .vx-launch-grid{
+      grid-template-columns:1fr;
+      gap:19px;
+      text-align:center;
+    }
+
+    .vx-launch-label{
+      justify-content:center;
+    }
+
+    .vx-btn-orange{
+      width:100%;
+    }
+
+    .vx-intro{
+      padding:46px 0;
+    }
+
+    .vx-global-network{
+      padding:48px 0 39px;
+    }
+
+    .vx-company-card{
+      grid-template-columns:1fr;
+      gap:17px;
+      padding:24px 20px;
+      text-align:center;
+    }
+
+    .vx-dna-icon{
+      margin:0 auto;
+    }
+
+    .vx-company-content{
+      padding:18px 0 0;
+      border-top:1px solid rgba(189,231,255,.4);
+      border-left:none;
+    }
+
+    .vx-company-card p{
+      margin-inline:auto;
+    }
+
+    .vx-company-actions .vx-btn{
+      width:100%;
+    }
+
+    .vx-focus{
+      padding:55px 0;
+    }
+
+    .vx-final-panel{
+      grid-template-columns:1fr;
+      padding:27px 22px;
+      text-align:center;
+    }
+
+    .vx-final-panel .vx-btn{
+      width:100%;
+    }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .vx-btn,
+    .vx-company-card{
+      transition:none;
+    }
+
+    .vx-btn:hover,
+    .vx-company-card:hover{
+      transform:none;
+    }
+  }
 </style>
 
-<section class="vx-hero">
-  <div class="vx-inner">
-    <h1>Vaxogene</h1>
-    <p class="vx-line">Science for All — Affordable, Accessible, Advanced.</p>
-    <p class="vx-line">AI-Driven Solutions for Next-Gen Therapeutics.</p>
+<main id="main">
 
-    <aside class="vx-platform-promo" aria-label="Featured AI platform from Vaxonyx USA">
-      <div>
-        <div class="vx-platform-label"><span class="vx-status-dot" aria-hidden="true"></span><span>New Launch</span><span aria-hidden="true">•</span><span>From Vaxonyx USA</span></div>
-        <h2>Introducing <span>BulkMind AI</span></h2>
-        <p class="vx-platform-description">AI-powered bulk RNA-seq analysis, pathway prioritization, transcription-factor activity, and biological interpretation.</p>
-        <p class="vx-platform-provider">Developed, operated, and supported by <strong>Vaxonyx, USA</strong>, a separate U.S.-based biotechnology company.</p>
+  <!-- HERO -->
+
+  <section class="vx-hero">
+
+    <div class="vx-hero-inner">
+
+      <h1>Vaxogene</h1>
+
+      <p class="vx-hero-line">
+        Science for All — Affordable, Accessible, Advanced.
+      </p>
+
+      <p class="vx-hero-line">
+        AI-Driven Solutions for Next-Gen Therapeutics.
+      </p>
+
+      <!-- BULKMIND LAUNCH -->
+
+      <article class="vx-launch">
+
+        <div class="vx-launch-grid">
+
+          <div>
+
+            <div class="vx-launch-label">
+              <span class="vx-launch-dot"></span>
+              New launch &nbsp;•&nbsp; From Vaxonyx USA
+            </div>
+
+            <h2>
+              Introducing <span>BulkMind AI</span>
+            </h2>
+
+            <p class="vx-launch-description">
+              AI-powered bulk RNA-seq analysis, pathway
+              prioritization, transcription-factor activity,
+              and biological interpretation.
+            </p>
+
+            <p class="vx-launch-disclosure">
+              Developed, operated, and supported by
+              <strong>Vaxonyx USA</strong>, a separate
+              U.S.-based biotechnology company.
+            </p>
+
+          </div>
+
+          <div>
+
+            <a
+              class="vx-btn vx-btn-orange"
+              href="https://ai.vaxonyx.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore BulkMind AI
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- WELCOME -->
+
+  <section class="vx-intro">
+
+    <div class="vx-container">
+
+      <h2 class="vx-title">
+        Welcome to Vaxogene
+      </h2>
+
+      <p>
+        Vaxogene advances biotechnology research, scientific
+        collaboration, and translational innovation from India.
+        We apply genomics, bioinformatics, molecular biology,
+        and AI-guided approaches to support the development of
+        next-generation therapeutics for global health challenges.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- GLOBAL INNOVATION NETWORK -->
+
+  <section class="vx-global-network">
+
+    <div class="vx-container vx-network-inner">
+
+      <header class="vx-network-heading">
+
+        <h2>
+          Global Innovation Network
+        </h2>
+
+        <p>
+          Two companies. One shared scientific vision.
+        </p>
+
+      </header>
+
+      <div class="vx-company-grid">
+
+        <!-- VAXOGENE -->
+
+        <article class="vx-company-card">
+
+          <div
+            class="vx-dna-icon"
+            aria-hidden="true"
+          ></div>
+
+          <div class="vx-company-content">
+
+            <h3>
+              Vaxogene <span>India</span>
+            </h3>
+
+            <p>
+              Biotechnology research, genomics, molecular
+              biology, laboratory services, and translational
+              collaboration in India.
+            </p>
+
+            <div class="vx-company-actions">
+
+              <a
+                class="vx-btn vx-btn-blue"
+                href="{{ '/innovation/' | relative_url }}"
+              >
+                Explore Vaxogene
+                <span aria-hidden="true">→</span>
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- VAXONYX -->
+
+        <article class="vx-company-card">
+
+          <div
+            class="vx-dna-icon"
+            aria-hidden="true"
+          ></div>
+
+          <div class="vx-company-content">
+
+            <h3>
+              Vaxonyx <span>USA</span>
+            </h3>
+
+            <p>
+              AI-powered bioinformatics platforms, including
+              BulkMind AI, and next-generation therapeutic
+              innovation in the United States.
+            </p>
+
+            <div class="vx-company-actions">
+
+              <a
+                class="vx-btn vx-btn-orange"
+                href="https://vaxonyx.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Vaxonyx USA
+                <span aria-hidden="true">↗</span>
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
       </div>
-      <a class="vx-platform-button" href="https://ai.vaxonyx.com/bulkmind/#/" target="_blank" rel="noopener noreferrer">Explore BulkMind AI →</a>
-    </aside>
-  </div>
-</section>
 
-<section class="vx-intro">
-  <div class="vx-wrap">
-    <h2 class="vx-title">Welcome to Vaxogene</h2>
-    <p class="vx-intro-text">Vaxogene advances biotechnology research, scientific collaboration, and translational innovation from India. We apply genomics, bioinformatics, molecular biology, and AI-guided approaches to support the development of next-generation therapeutic solutions. Our mission is to make biomedical innovation <strong>affordable, accessible, and advanced</strong>.</p>
-  </div>
-</section>
+      <p class="vx-network-disclosure">
+        Vaxogene and Vaxonyx are separate biotechnology companies
+        operating in India and the United States, respectively.
+        Products and platforms offered through Vaxonyx are developed,
+        operated, and supported by Vaxonyx USA.
+      </p>
 
-<section class="vx-cta">
-  <div class="vx-wrap">
-    <h2 class="vx-title" style="margin-bottom:20px">Explore Our Innovation</h2>
-    <p class="vx-cta-text">From antigen discovery and genomics to delivery technologies, our integrated research approach supports the translation of promising scientific discoveries into future therapeutic solutions.</p>
-    <a href="{{ '/innovation/' | relative_url }}" class="vx-btn">Learn More</a>
-  </div>
-</section>
+    </div>
+
+  </section>
+
+  <!-- FOCUS AREAS -->
+
+  <section class="vx-focus">
+
+    <div class="vx-container">
+
+      <header class="vx-section-heading">
+
+        <h2 class="vx-title">
+          Explore Vaxogene
+        </h2>
+
+        <p>
+          Integrated capabilities supporting biological discovery,
+          research collaboration, and translational development.
+        </p>
+
+      </header>
+
+      <div class="vx-focus-grid">
+
+        <article class="vx-focus-card">
+
+          <h3>
+            Genomics &amp; Bioinformatics
+          </h3>
+
+          <p>
+            Computational approaches for transcriptomics,
+            metagenomics, immune genetics, genomic variation,
+            biomarkers, and biological interpretation.
+          </p>
+
+          <a
+            class="vx-text-link"
+            href="{{ '/AI_Platforms/' | relative_url }}"
+          >
+            Explore platforms
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </article>
+
+        <article class="vx-focus-card">
+
+          <h3>
+            Scientific Services
+          </h3>
+
+          <p>
+            Molecular biology, biochemical assays, virology-based
+            research, experimental planning, and analytical support.
+          </p>
+
+          <a
+            class="vx-text-link"
+            href="{{ '/services/' | relative_url }}"
+          >
+            Explore services
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </article>
+
+        <article class="vx-focus-card">
+
+          <h3>
+            Translational Innovation
+          </h3>
+
+          <p>
+            Collaborative research supporting vaccines,
+            therapeutic targets, regenerative medicine,
+            preclinical development, and precision biotechnology.
+          </p>
+
+          <a
+            class="vx-text-link"
+            href="{{ '/innovation/' | relative_url }}"
+          >
+            View innovation
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FINAL CTA -->
+
+  <section class="vx-final-cta">
+
+    <div class="vx-container">
+
+      <div class="vx-final-panel">
+
+        <div>
+
+          <h2>
+            Interested in scientific collaboration?
+          </h2>
+
+          <p>
+            Tell us about your scientific question, research model,
+            technology requirements, and translational goals.
+          </p>
+
+        </div>
+
+        <div>
+
+          <a
+            class="vx-btn vx-btn-blue"
+            href="{{ '/contact/' | relative_url }}"
+          >
+            Discuss a Project
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
