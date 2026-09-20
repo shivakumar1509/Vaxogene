@@ -12,6 +12,8 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
     --vx-sky:#3fa9f5;
     --vx-teal:#007c91;
     --vx-orange:#ff633c;
+    --vx-cyan:#55d6ff;
+    --vx-amber:#ffb45c;
     --vx-ink:#0b172a;
     --vx-muted:#536174;
     --vx-line:rgba(27,66,122,.15);
@@ -34,7 +36,7 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
   .vx-hero{
     position:relative;
     overflow:hidden;
-    min-height:690px;
+    min-height:700px;
     display:flex;
     align-items:center;
     padding:68px 20px 54px;
@@ -149,7 +151,7 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
   }
 
   .vx-btn-outline{
-    min-width:175px;
+    min-width:178px;
     border:1px solid rgba(143,214,255,.74);
     color:#fff;
     background:rgba(14,103,173,.48);
@@ -164,26 +166,42 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
   }
 
   /* =====================================================
-     BULKMIND BOX
+     BOX 1: BULKMIND AI
+     CYAN TECHNOLOGY BORDER
      ===================================================== */
 
   .vx-launch{
+    position:relative;
     max-width:960px;
     margin:40px auto 0;
     padding:25px 27px;
-    border:1px solid rgba(180,226,255,.55);
+    border:2px solid var(--vx-cyan);
     border-radius:21px;
     background:
       linear-gradient(
         135deg,
-        rgba(25,103,167,.78),
-        rgba(4,42,84,.80)
+        rgba(25,103,167,.82),
+        rgba(4,42,84,.86)
       );
     box-shadow:
+      0 0 0 1px rgba(85,214,255,.10),
+      0 0 22px rgba(85,214,255,.18),
       0 28px 60px -32px rgba(0,0,0,.95),
-      inset 0 1px 0 rgba(255,255,255,.24);
+      inset 0 1px 0 rgba(255,255,255,.20);
     backdrop-filter:blur(14px);
     -webkit-backdrop-filter:blur(14px);
+  }
+
+  .vx-launch::before{
+    content:"";
+    position:absolute;
+    top:-2px;
+    left:40px;
+    width:115px;
+    height:2px;
+    border-radius:999px;
+    background:#d2f5ff;
+    box-shadow:0 0 13px rgba(85,214,255,.85);
   }
 
   .vx-launch-grid{
@@ -251,27 +269,43 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
   }
 
   /* =====================================================
-     SEPARATE VAXONYX BOX
+     BOX 2: VAXONYX USA
+     AMBER DISCOVERY BORDER
      ===================================================== */
 
   .vx-vaxonyx-box{
+    position:relative;
     max-width:960px;
-    margin:14px auto 0;
-    padding:16px 19px;
-    border:1px solid rgba(150,217,255,.50);
+    margin:15px auto 0;
+    padding:17px 20px;
+    border:1.5px solid var(--vx-amber);
     border-radius:15px;
     background:
       linear-gradient(
         90deg,
-        rgba(0,46,91,.84),
-        rgba(4,72,130,.78),
-        rgba(0,46,91,.84)
+        rgba(0,46,91,.88),
+        rgba(4,72,130,.82),
+        rgba(0,46,91,.88)
       );
     box-shadow:
+      0 0 0 1px rgba(255,180,92,.07),
+      0 0 18px rgba(255,180,92,.14),
       0 20px 42px -29px rgba(0,0,0,.95),
-      inset 0 1px 0 rgba(255,255,255,.15);
+      inset 0 1px 0 rgba(255,255,255,.13);
     backdrop-filter:blur(12px);
     -webkit-backdrop-filter:blur(12px);
+  }
+
+  .vx-vaxonyx-box::before{
+    content:"";
+    position:absolute;
+    top:-1.5px;
+    left:32px;
+    width:75px;
+    height:1.5px;
+    border-radius:999px;
+    background:#ffe0af;
+    box-shadow:0 0 10px rgba(255,180,92,.75);
   }
 
   .vx-vaxonyx-grid{
@@ -287,7 +321,7 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
     align-items:center;
     gap:10px;
     padding-right:19px;
-    border-right:1px solid rgba(178,225,255,.36);
+    border-right:1px solid rgba(255,211,157,.40);
     white-space:nowrap;
   }
 
@@ -296,10 +330,10 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
     height:9px;
     flex:0 0 9px;
     border-radius:50%;
-    background:#69ccff;
+    background:var(--vx-amber);
     box-shadow:
-      0 0 0 5px rgba(105,204,255,.11),
-      0 0 13px rgba(105,204,255,.9);
+      0 0 0 5px rgba(255,180,92,.12),
+      0 0 13px rgba(255,180,92,.85);
   }
 
   .vx-vaxonyx-brand strong{
@@ -311,8 +345,8 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
 
   .vx-vaxonyx-copy{
     margin:0;
-    color:rgba(255,255,255,.84);
-    font:500 12px/1.5
+    color:rgba(255,255,255,.86);
+    font:500 12px/1.55
       system-ui,-apple-system,BlinkMacSystemFont,
       "Segoe UI",sans-serif;
   }
@@ -599,6 +633,12 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
       border-radius:18px;
     }
 
+    .vx-launch::before{
+      left:50%;
+      width:90px;
+      transform:translateX(-50%);
+    }
+
     .vx-launch-grid{
       grid-template-columns:1fr;
       gap:20px;
@@ -619,8 +659,14 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
     }
 
     .vx-vaxonyx-box{
-      margin-top:14px;
-      padding:18px 19px;
+      margin-top:15px;
+      padding:19px;
+    }
+
+    .vx-vaxonyx-box::before{
+      left:50%;
+      width:70px;
+      transform:translateX(-50%);
     }
 
     .vx-vaxonyx-grid{
@@ -672,9 +718,7 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
 
 <main id="main">
 
-  <!-- ===================================================
-       HERO
-       =================================================== -->
+  <!-- HERO -->
 
   <section class="vx-hero">
 
@@ -690,9 +734,7 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
         AI-Driven Solutions for Next-Gen Therapeutics.
       </p>
 
-      <!-- ===============================================
-           BOX 1: BULKMIND AI
-           =============================================== -->
+      <!-- BOX 1: BULKMIND AI -->
 
       <article class="vx-launch">
 
@@ -720,8 +762,8 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
 
             <p class="vx-launch-disclosure">
               Developed, operated, and supported by
-              <strong>Vaxonyx USA</strong>, a separate
-              U.S.-based biotechnology company.
+              <strong>Vaxonyx USA</strong>, a separate U.S.-based
+              biotechnology company with shared founding leadership.
             </p>
 
           </div>
@@ -744,13 +786,11 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
 
       </article>
 
-      <!-- ===============================================
-           BOX 2: VAXONYX USA
-           =============================================== -->
+      <!-- BOX 2: VAXONYX USA -->
 
       <aside
         class="vx-vaxonyx-box"
-        aria-label="Visit Vaxonyx USA"
+        aria-label="Learn more about Vaxonyx USA"
       >
 
         <div class="vx-vaxonyx-grid">
@@ -766,9 +806,10 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
           </div>
 
           <p class="vx-vaxonyx-copy">
-            Explore AI-powered bioinformatics platforms and
-            next-generation therapeutic innovation from the
-            United States.
+            A separate U.S.-based biotechnology company connected
+            to Vaxogene through shared founding leadership. Explore
+            its AI-powered bioinformatics platforms and
+            next-generation therapeutic innovation.
           </p>
 
           <a
@@ -789,9 +830,7 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
 
   </section>
 
-  <!-- ===================================================
-       WELCOME
-       =================================================== -->
+  <!-- WELCOME -->
 
   <section class="vx-intro">
 
@@ -817,9 +856,7 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
 
   </section>
 
-  <!-- ===================================================
-       EXPLORE VAXOGENE
-       =================================================== -->
+  <!-- EXPLORE VAXOGENE -->
 
   <section class="vx-explore">
 
@@ -928,9 +965,7 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
 
   </section>
 
-  <!-- ===================================================
-       INNOVATION CTA
-       =================================================== -->
+  <!-- INNOVATION CTA -->
 
   <section class="vx-innovation">
 
@@ -970,9 +1005,7 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
 
   </section>
 
-  <!-- ===================================================
-       CONTACT CTA
-       =================================================== -->
+  <!-- CONTACT CTA -->
 
   <section class="vx-contact">
 
