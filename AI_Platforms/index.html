@@ -143,9 +143,69 @@ permalink: /AI_Platforms/
   }
 
   .bulkmind-highlight h4{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    align-items:center;
     margin:0 0 6px;
     color:var(--vx-primary);
     font:700 17px/1.3 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+
+  .launch-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:5px 8px;
+    border:1px solid rgba(33,184,121,.24);
+    border-radius:999px;
+    background:rgba(33,184,121,.10);
+    color:#08794e;
+    font:800 10px/1 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+
+  .launch-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#21b879;
+    animation:launch-pulse 1.8s ease-out infinite;
+  }
+
+  @keyframes launch-pulse{
+    0%{box-shadow:0 0 0 0 rgba(33,184,121,.38)}
+    70%{box-shadow:0 0 0 7px rgba(33,184,121,0)}
+    100%{box-shadow:0 0 0 0 rgba(33,184,121,0)}
+  }
+
+  .development-row{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:10px;
+    margin-top:18px;
+  }
+
+  .development-item{
+    padding:12px;
+    border:1px solid var(--vx-line);
+    border-radius:12px;
+    background:#f8fafc;
+  }
+
+  .development-item strong{
+    display:block;
+    margin-bottom:5px;
+    color:#475569;
+    font:700 13px/1.3 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+
+  .development-item span{
+    color:#7b8798;
+    font:700 10px/1.2 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing:.06em;
+    text-transform:uppercase;
   }
 
   .bulkmind-highlight p{
@@ -278,6 +338,20 @@ permalink: /AI_Platforms/
       width:100%;
       box-sizing:border-box;
     }
+
+    .development-row{
+      grid-template-columns:1fr 1fr;
+    }
+  }
+
+  @media(max-width:440px){
+    .development-row{
+      grid-template-columns:1fr;
+    }
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    .launch-dot{animation:none}
   }
 </style>
 
@@ -305,7 +379,7 @@ permalink: /AI_Platforms/
   <section class="container" aria-labelledby="featured-platform">
 
     <h2 id="featured-platform" class="aip-h2">
-      Featured AI platform network
+      Explore AI Platforms
     </h2>
 
     <article class="platform-card">
@@ -317,7 +391,7 @@ permalink: /AI_Platforms/
           Vaxonyx USA · AI Platforms
         </div>
 
-        <h3>Explore Vaxonyx AI</h3>
+        <h3>AI Platforms from Vaxonyx USA</h3>
 
         <p>
           Discover AI-powered bioinformatics platforms for genomics,
@@ -325,7 +399,13 @@ permalink: /AI_Platforms/
         </p>
 
         <div class="bulkmind-highlight">
-          <h4>BulkMind AI — Available Now</h4>
+          <h4>
+            BulkMind AI
+            <span class="launch-badge">
+              <span class="launch-dot" aria-hidden="true"></span>
+              Live · Available Now
+            </span>
+          </h4>
           <p>
             A self-service bulk RNA-seq analysis platform that guides
             researchers from raw sequencing data through quality assessment,
@@ -343,6 +423,25 @@ permalink: /AI_Platforms/
           <li>TF Activity</li>
           <li>AI-Assisted Interpretation</li>
         </ul>
+
+        <div class="development-row" aria-label="AI platforms under development">
+          <div class="development-item">
+            <strong>Metagenomics AI</strong>
+            <span>Under Development</span>
+          </div>
+          <div class="development-item">
+            <strong>HLA Typing AI</strong>
+            <span>Under Development</span>
+          </div>
+          <div class="development-item">
+            <strong>Variant Calling AI</strong>
+            <span>Under Development</span>
+          </div>
+          <div class="development-item">
+            <strong>Neoantigen Discovery AI</strong>
+            <span>Under Development</span>
+          </div>
+        </div>
 
       </div>
 

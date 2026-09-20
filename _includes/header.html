@@ -24,6 +24,94 @@
     box-sizing:border-box !important;
   }
 
+  /* =========================================================
+     AI PLATFORM STATUS ITEMS
+     ========================================================= */
+
+  .site-header .vx-header-shell .vx-platform-live-link{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:14px !important;
+  }
+
+  .site-header .vx-header-shell .vx-platform-live-link:hover{
+    background:rgba(33,184,121,.09) !important;
+  }
+
+  .vx-live-group{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  .vx-live-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#21b879;
+    box-shadow:0 0 0 4px rgba(33,184,121,.13);
+    animation:vx-live-pulse 1.8s ease-out infinite;
+  }
+
+  .vx-live-badge,
+  .vx-soon-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:4px 7px;
+    border-radius:999px;
+    font:800 9px/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    letter-spacing:.07em;
+    text-transform:uppercase;
+  }
+
+  .vx-live-badge{
+    border:1px solid rgba(33,184,121,.24);
+    background:rgba(33,184,121,.11);
+    color:#08794e;
+  }
+
+  .vx-soon-badge{
+    border:1px solid rgba(100,116,139,.18);
+    background:#f1f5f9;
+    color:#64748b;
+  }
+
+  .vx-development-label{
+    display:block;
+    margin:8px 10px 3px;
+    color:#8490a1;
+    font:800 10px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    letter-spacing:.10em;
+    text-transform:uppercase;
+  }
+
+  .vx-disabled-platform{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    width:100%;
+    padding:7px 10px;
+    border-radius:8px;
+    box-sizing:border-box;
+    color:#667085;
+    cursor:default;
+    font:650 14px/1.25 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    white-space:nowrap;
+  }
+
+  @keyframes vx-live-pulse{
+    0%{box-shadow:0 0 0 0 rgba(33,184,121,.38)}
+    70%{box-shadow:0 0 0 7px rgba(33,184,121,0)}
+    100%{box-shadow:0 0 0 0 rgba(33,184,121,0)}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    .vx-live-dot{animation:none}
+  }
+
   .site-header .vx-header-shell .brand{
     display:inline-flex !important;
     align-items:center !important;
@@ -653,43 +741,50 @@
           <ul class="dropdown-menu" role="menu">
 
             <li>
-              <a href="{{ '/AI_Platforms/' | relative_url }}">
-                Platform Overview
-              </a>
-            </li>
-
-            <li>
               <a
+                class="vx-platform-live-link"
                 href="https://ai.vaxonyx.com/bulkmind/#/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                BulkMind AI — Vaxonyx USA ↗
+                <span>BulkMind AI ↗</span>
+                <span class="vx-live-group">
+                  <span class="vx-live-dot" aria-hidden="true"></span>
+                  <span class="vx-live-badge">Live</span>
+                </span>
               </a>
             </li>
 
-            <li>
-              <a
-                href="{{ '/AI_Platforms/#neoantigen-discovery' | relative_url }}"
-              >
-                Neoantigen Discovery
-              </a>
+            <li aria-hidden="true">
+              <span class="vx-development-label">In Development</span>
             </li>
 
             <li>
-              <a
-                href="{{ '/AI_Platforms/#hla-typing' | relative_url }}"
-              >
-                HLA Typing
-              </a>
+              <span class="vx-disabled-platform" aria-disabled="true">
+                <span>Metagenomics AI</span>
+                <span class="vx-soon-badge">Soon</span>
+              </span>
             </li>
 
             <li>
-              <a
-                href="{{ '/AI_Platforms/#variant-calling' | relative_url }}"
-              >
-                Variant Calling
-              </a>
+              <span class="vx-disabled-platform" aria-disabled="true">
+                <span>HLA Typing AI</span>
+                <span class="vx-soon-badge">Soon</span>
+              </span>
+            </li>
+
+            <li>
+              <span class="vx-disabled-platform" aria-disabled="true">
+                <span>Variant Calling AI</span>
+                <span class="vx-soon-badge">Soon</span>
+              </span>
+            </li>
+
+            <li>
+              <span class="vx-disabled-platform" aria-disabled="true">
+                <span>Neoantigen Discovery AI</span>
+                <span class="vx-soon-badge">Soon</span>
+              </span>
             </li>
 
           </ul>
