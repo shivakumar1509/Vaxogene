@@ -641,7 +641,7 @@
         <li class="dropdown">
 
           <a
-            href="https://ai.vaxogene.com/"
+            href="{{ '/AI_Platforms/' | relative_url }}"
             class="dropdown-link vx-top-link"
             aria-haspopup="true"
             aria-expanded="false"
@@ -653,19 +653,24 @@
           <ul class="dropdown-menu" role="menu">
 
             <li>
-              <a href="https://ai.vaxogene.com/bulkmind/#/">
-                Bulk RNA-Seq Analysis
+              <a href="{{ '/AI_Platforms/' | relative_url }}">
+                Platform Overview
               </a>
             </li>
 
             <li>
               <a
-                href="#"
-                aria-disabled="true"
-                tabindex="-1"
-                onclick="return false;"
-                title="Under Development"
-                style="cursor:default;"
+                href="https://ai.vaxonyx.com/bulkmind/#/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                BulkMind AI — Vaxonyx USA ↗
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="{{ '/AI_Platforms/#neoantigen-discovery' | relative_url }}"
               >
                 Neoantigen Discovery
               </a>
@@ -673,12 +678,7 @@
 
             <li>
               <a
-                href="#"
-                aria-disabled="true"
-                tabindex="-1"
-                onclick="return false;"
-                title="Under Development"
-                style="cursor:default;"
+                href="{{ '/AI_Platforms/#hla-typing' | relative_url }}"
               >
                 HLA Typing
               </a>
@@ -686,12 +686,7 @@
 
             <li>
               <a
-                href="#"
-                aria-disabled="true"
-                tabindex="-1"
-                onclick="return false;"
-                title="Under Development"
-                style="cursor:default;"
+                href="{{ '/AI_Platforms/#variant-calling' | relative_url }}"
               >
                 Variant Calling
               </a>
