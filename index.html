@@ -16,7 +16,6 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
     --vx-muted:#536174;
     --vx-line:rgba(27,66,122,.15);
     --vx-soft:#f3f7fd;
-    --vx-white:#ffffff;
   }
 
   *{
@@ -29,26 +28,26 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
   }
 
   /* =====================================================
-     HERO WITH DNA BACKGROUND
+     HERO
      ===================================================== */
 
   .vx-hero{
     position:relative;
     overflow:hidden;
-    min-height:610px;
+    min-height:690px;
     display:flex;
     align-items:center;
-    padding:76px 20px 58px;
+    padding:68px 20px 54px;
     color:#fff;
     text-align:center;
 
     background-image:
       linear-gradient(
         90deg,
-        rgba(0,20,48,.22) 0%,
-        rgba(0,31,69,.45) 34%,
-        rgba(0,31,69,.50) 66%,
-        rgba(0,20,48,.22) 100%
+        rgba(0,20,48,.19) 0%,
+        rgba(0,31,69,.40) 34%,
+        rgba(0,31,69,.44) 66%,
+        rgba(0,20,48,.19) 100%
       ),
       url("{{ '/assets/global-innovation-network.webp' | relative_url }}");
 
@@ -65,20 +64,10 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
     background:
       linear-gradient(
         to bottom,
-        rgba(0,20,48,.05) 0%,
-        rgba(0,27,60,.10) 55%,
-        rgba(0,16,40,.34) 100%
+        rgba(0,20,48,.03) 0%,
+        rgba(0,27,60,.08) 55%,
+        rgba(0,16,40,.28) 100%
       );
-  }
-
-  .vx-hero::after{
-    content:"";
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    height:1px;
-    background:rgba(255,255,255,.18);
   }
 
   .vx-hero-inner{
@@ -99,7 +88,7 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
   .vx-hero-line{
     margin:0;
     color:#fff;
-    text-shadow:0 3px 20px rgba(0,13,38,.48);
+    text-shadow:0 3px 20px rgba(0,13,38,.58);
     font:800 clamp(27px,3.25vw,43px)/1.16
       system-ui,-apple-system,BlinkMacSystemFont,
       "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -111,20 +100,84 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
   }
 
   /* =====================================================
-     BULKMIND LAUNCH CARD
+     BUTTONS
+     ===================================================== */
+
+  .vx-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    min-height:44px;
+    padding:.82rem 1.3rem;
+    border:1px solid var(--vx-line);
+    border-radius:12px;
+    color:var(--vx-blue);
+    background:#fff;
+    text-decoration:none;
+    white-space:nowrap;
+    font:750 14px/1.2
+      system-ui,-apple-system,BlinkMacSystemFont,
+      "Segoe UI",sans-serif;
+    transition:
+      transform .2s ease,
+      box-shadow .2s ease,
+      background .2s ease;
+  }
+
+  .vx-btn:hover{
+    transform:translateY(-2px);
+  }
+
+  .vx-btn-orange{
+    min-width:190px;
+    border:none;
+    color:#fff;
+    background:linear-gradient(180deg,#ff784f,#f2552e);
+    box-shadow:0 15px 32px -14px rgba(255,91,45,.95);
+  }
+
+  .vx-btn-orange:hover{
+    box-shadow:0 18px 38px -14px rgba(255,91,45,1);
+  }
+
+  .vx-btn-blue{
+    border:none;
+    color:#fff;
+    background:linear-gradient(180deg,#3fa9f5,#167fd8);
+    box-shadow:0 13px 28px -16px rgba(63,169,245,.9);
+  }
+
+  .vx-btn-outline{
+    min-width:175px;
+    border:1px solid rgba(143,214,255,.74);
+    color:#fff;
+    background:rgba(14,103,173,.48);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.15),
+      0 12px 25px -18px rgba(79,190,255,.9);
+  }
+
+  .vx-btn-outline:hover{
+    background:rgba(25,131,210,.68);
+    box-shadow:0 14px 30px -16px rgba(79,190,255,.95);
+  }
+
+  /* =====================================================
+     BULKMIND BOX
      ===================================================== */
 
   .vx-launch{
     max-width:960px;
-    margin:42px auto 0;
-    overflow:hidden;
+    margin:40px auto 0;
+    padding:25px 27px;
     border:1px solid rgba(180,226,255,.55);
-    border-radius:22px;
+    border-radius:21px;
     background:
       linear-gradient(
         135deg,
-        rgba(28,106,169,.72),
-        rgba(5,45,89,.72)
+        rgba(25,103,167,.78),
+        rgba(4,42,84,.80)
       );
     box-shadow:
       0 28px 60px -32px rgba(0,0,0,.95),
@@ -133,12 +186,11 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
     -webkit-backdrop-filter:blur(14px);
   }
 
-  .vx-launch-main{
+  .vx-launch-grid{
     display:grid;
     grid-template-columns:minmax(0,1fr) auto;
     gap:30px;
     align-items:center;
-    padding:25px 27px 23px;
     text-align:left;
   }
 
@@ -199,116 +251,74 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
   }
 
   /* =====================================================
-     SMALL VAXONYX HORIZONTAL STRIP
+     SEPARATE VAXONYX BOX
      ===================================================== */
 
-  .vx-vaxonyx-strip{
-    display:grid;
-    grid-template-columns:auto minmax(0,1fr) auto;
-    gap:18px;
-    align-items:center;
-    padding:16px 27px;
-    border-top:1px solid rgba(185,228,255,.28);
-    text-align:left;
-    background:rgba(0,25,58,.38);
+  .vx-vaxonyx-box{
+    max-width:960px;
+    margin:14px auto 0;
+    padding:16px 19px;
+    border:1px solid rgba(150,217,255,.50);
+    border-radius:15px;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,46,91,.84),
+        rgba(4,72,130,.78),
+        rgba(0,46,91,.84)
+      );
+    box-shadow:
+      0 20px 42px -29px rgba(0,0,0,.95),
+      inset 0 1px 0 rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
   }
 
-  .vx-vaxonyx-name{
+  .vx-vaxonyx-grid{
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr) auto;
+    gap:19px;
+    align-items:center;
+    text-align:left;
+  }
+
+  .vx-vaxonyx-brand{
     display:flex;
     align-items:center;
     gap:10px;
-    padding-right:18px;
-    border-right:1px solid rgba(185,228,255,.30);
-    color:#fff;
+    padding-right:19px;
+    border-right:1px solid rgba(178,225,255,.36);
     white-space:nowrap;
+  }
+
+  .vx-vaxonyx-marker{
+    width:9px;
+    height:9px;
+    flex:0 0 9px;
+    border-radius:50%;
+    background:#69ccff;
+    box-shadow:
+      0 0 0 5px rgba(105,204,255,.11),
+      0 0 13px rgba(105,204,255,.9);
+  }
+
+  .vx-vaxonyx-brand strong{
+    color:#fff;
     font:800 14px/1.2
       system-ui,-apple-system,BlinkMacSystemFont,
       "Segoe UI",sans-serif;
   }
 
-  .vx-vaxonyx-name::before{
-    content:"";
-    width:8px;
-    height:8px;
-    flex:0 0 8px;
-    border-radius:50%;
-    background:#69ccff;
-    box-shadow:0 0 12px rgba(105,204,255,.85);
-  }
-
   .vx-vaxonyx-copy{
     margin:0;
-    color:rgba(255,255,255,.82);
+    color:rgba(255,255,255,.84);
     font:500 12px/1.5
       system-ui,-apple-system,BlinkMacSystemFont,
       "Segoe UI",sans-serif;
   }
 
   /* =====================================================
-     BUTTONS
-     ===================================================== */
-
-  .vx-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    min-height:44px;
-    padding:.82rem 1.28rem;
-    border:1px solid var(--vx-line);
-    border-radius:12px;
-    color:var(--vx-blue);
-    background:#fff;
-    text-decoration:none;
-    white-space:nowrap;
-    font:750 14px/1.2
-      system-ui,-apple-system,BlinkMacSystemFont,
-      "Segoe UI",sans-serif;
-    transition:
-      transform .2s ease,
-      box-shadow .2s ease,
-      background .2s ease;
-  }
-
-  .vx-btn:hover{
-    transform:translateY(-2px);
-  }
-
-  .vx-btn-orange{
-    min-width:190px;
-    border:none;
-    color:#fff;
-    background:linear-gradient(180deg,#ff784f,#f2552e);
-    box-shadow:0 15px 32px -14px rgba(255,91,45,.95);
-  }
-
-  .vx-btn-orange:hover{
-    box-shadow:0 18px 38px -14px rgba(255,91,45,1);
-  }
-
-  .vx-btn-blue{
-    border:none;
-    color:#fff;
-    background:linear-gradient(180deg,#3fa9f5,#167fd8);
-    box-shadow:0 13px 28px -16px rgba(63,169,245,.9);
-  }
-
-  .vx-btn-small{
-    min-height:36px;
-    padding:.65rem 1rem;
-    border:1px solid rgba(165,222,255,.38);
-    color:#fff;
-    background:rgba(33,150,243,.24);
-    font-size:12px;
-  }
-
-  .vx-btn-small:hover{
-    background:rgba(33,150,243,.40);
-    box-shadow:0 10px 25px -15px rgba(76,185,255,.9);
-  }
-
-  /* =====================================================
-     WELCOME SECTION
+     WELCOME
      ===================================================== */
 
   .vx-intro{
@@ -516,7 +526,7 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
   }
 
   /* =====================================================
-     FINAL CONTACT CTA
+     CONTACT CTA
      ===================================================== */
 
   .vx-contact{
@@ -570,7 +580,7 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
   @media (max-width:720px){
     .vx-hero{
       min-height:auto;
-      padding:62px 16px 48px;
+      padding:58px 16px 46px;
       background-position:center center;
     }
 
@@ -584,14 +594,14 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
     }
 
     .vx-launch{
-      margin-top:34px;
+      margin-top:33px;
+      padding:22px 19px;
       border-radius:18px;
     }
 
-    .vx-launch-main{
+    .vx-launch-grid{
       grid-template-columns:1fr;
       gap:20px;
-      padding:22px 19px;
       text-align:center;
     }
 
@@ -608,20 +618,24 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
       width:100%;
     }
 
-    .vx-vaxonyx-strip{
-      grid-template-columns:1fr;
-      gap:11px;
+    .vx-vaxonyx-box{
+      margin-top:14px;
       padding:18px 19px;
+    }
+
+    .vx-vaxonyx-grid{
+      grid-template-columns:1fr;
+      gap:12px;
       text-align:center;
     }
 
-    .vx-vaxonyx-name{
+    .vx-vaxonyx-brand{
       justify-content:center;
       padding:0;
       border-right:none;
     }
 
-    .vx-btn-small{
+    .vx-btn-outline{
       width:100%;
     }
 
@@ -676,11 +690,13 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
         AI-Driven Solutions for Next-Gen Therapeutics.
       </p>
 
-      <!-- BULKMIND LAUNCH CARD -->
+      <!-- ===============================================
+           BOX 1: BULKMIND AI
+           =============================================== -->
 
       <article class="vx-launch">
 
-        <div class="vx-launch-main">
+        <div class="vx-launch-grid">
 
           <div>
 
@@ -726,12 +742,27 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
 
         </div>
 
-        <!-- SMALL VAXONYX USA STRIP -->
+      </article>
 
-        <div class="vx-vaxonyx-strip">
+      <!-- ===============================================
+           BOX 2: VAXONYX USA
+           =============================================== -->
 
-          <div class="vx-vaxonyx-name">
-            Vaxonyx USA
+      <aside
+        class="vx-vaxonyx-box"
+        aria-label="Visit Vaxonyx USA"
+      >
+
+        <div class="vx-vaxonyx-grid">
+
+          <div class="vx-vaxonyx-brand">
+
+            <span class="vx-vaxonyx-marker"></span>
+
+            <strong>
+              Vaxonyx USA
+            </strong>
+
           </div>
 
           <p class="vx-vaxonyx-copy">
@@ -741,7 +772,7 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
           </p>
 
           <a
-            class="vx-btn vx-btn-small"
+            class="vx-btn vx-btn-outline"
             href="https://vaxonyx.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -752,7 +783,7 @@ description: Vaxogene advances biotechnology research, genomics, bioinformatics,
 
         </div>
 
-      </article>
+      </aside>
 
     </div>
 
