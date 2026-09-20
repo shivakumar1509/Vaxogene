@@ -1,7 +1,7 @@
 ---
 layout: default
 title: AI Platforms – Vaxogene
-description: Explore AI-powered biomedical platforms available through Vaxogene's global innovation network.
+description: Explore available and upcoming AI-powered platforms for genomics, bioinformatics, immunology, and translational research.
 permalink: /AI_Platforms/
 ---
 
@@ -12,361 +12,95 @@ permalink: /AI_Platforms/
     --vx-ink:#0b1220;
     --vx-muted:#5b6375;
     --vx-line:rgba(12,18,32,.12);
-    --vx-ring:rgba(63,169,245,.45);
     --vx-bg:conic-gradient(from 210deg at 30% -10%,rgba(0,124,145,.10),rgba(63,169,245,.12),transparent 50%);
   }
 
-  .container{
-    width:min(1120px,92%);
-    margin-inline:auto;
-  }
+  .container{width:min(1120px,92%);margin-inline:auto}
 
-  /* Hero */
-  .aip-hero{
-    position:relative;
-    padding:88px 0 42px;
-    background:var(--vx-bg);
-  }
+  /* Vaxogene hero — matches the rest of the Vaxogene website */
+  .aip-hero{position:relative;padding:96px 0 48px;background:var(--vx-bg)}
+  .aip-hero h1{margin:0 0 12px;color:var(--vx-ink);font:800 clamp(30px,4.8vw,54px)/1.05 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .aip-hero p{max-width:74ch;margin:0;color:#213;font:400 16px/1.65 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .aip-badges{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:16px 0 0}
+  .aip-badge{display:inline-flex;align-items:center;padding:.4rem .7rem;border:1px solid var(--vx-line);border-radius:999px;background:#fff;color:var(--vx-primary);font:600 12px/1.1 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
 
-  .aip-hero h1{
-    margin:0 0 10px;
-    color:var(--vx-ink);
-    font:800 clamp(30px,4.8vw,54px)/1.05 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  }
+  /* =========================================================
+     VAXONYX AI PLATFORM SECTION
+     Card structure and styling mirror ai.vaxonyx.com
+     ========================================================= */
+  .vxai-section{width:100%;margin:0 auto;padding:54px 18px 64px;box-sizing:border-box}
+  .vxai-wrap{max-width:1220px;margin:0 auto}
+  .vxai-platforms{background:radial-gradient(circle at 18% 10%,rgba(33,150,243,.10),transparent 24%),radial-gradient(circle at 82% 18%,rgba(124,58,237,.08),transparent 26%),#f8fafc}
+  .vxai-section-kicker{margin:0 0 10px;color:#1f4a89;font:900 12px/1.2 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+  .vxai-section h2{margin:0;color:#0f172a;font:900 clamp(28px,4vw,44px)/1.08 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;letter-spacing:-.035em}
+  .vxai-section-copy{max-width:780px;margin:14px 0 0;color:#5b6b82;font:500 16px/1.7 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .vxai-platform-grid{display:grid;gap:18px;margin-top:28px}
 
-  .aip-hero p{
-    max-width:70ch;
-    margin:0;
-    color:#213;
-    font:400 16px/1.65 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  }
+  .vxai-platform-card{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:318px;padding:22px 20px 20px;border:1px solid rgba(217,227,240,.95);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.90));box-shadow:0 22px 60px -36px rgba(15,23,42,.48),inset 0 1px 0 rgba(255,255,255,.9);color:#0f172a;text-decoration:none;transition:transform 160ms ease,box-shadow 160ms ease,border-color 160ms ease;box-sizing:border-box}
+  .vxai-platform-card::before{content:"";position:absolute;inset:0;height:5px;background:linear-gradient(90deg,#1b427a,#3fa9f5)}
+  a.vxai-platform-card:hover{transform:translateY(-5px);box-shadow:0 30px 70px -32px rgba(15,23,42,.55),inset 0 1px 0 rgba(255,255,255,.9);text-decoration:none}
+  .vxai-platform-card.is-live{border:2px solid #1b427a;box-shadow:0 30px 75px -34px rgba(27,66,122,.55),0 0 0 4px rgba(31,74,137,.10)}
+  .vxai-platform-card.is-live::before{background:linear-gradient(90deg,#1b427a,#3fa9f5)}
+  .platform-card-green::before{background:linear-gradient(90deg,#16a34a,#14b8a6)}
+  .platform-card-cyan::before{background:linear-gradient(90deg,#0891b2,#38bdf8)}
+  .platform-card-orange::before{background:linear-gradient(90deg,#f97316,#facc15)}
+  .platform-card-purple::before{background:linear-gradient(90deg,#7c3aed,#3b82f6)}
 
-  .aip-badges{
-    display:flex;
-    flex-wrap:wrap;
-    gap:.5rem;
-    align-items:center;
-    margin:14px 0 0;
-  }
+  .platform-topline{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .platform-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:15px;background:#eef6ff;font-size:24px;box-shadow:inset 0 0 0 1px rgba(217,227,240,.8)}
+  .platform-card-green .platform-icon{background:#ecfdf5}
+  .vxai-platform-badge{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;height:24px;padding:0 9px;border-radius:8px;background:#1f4a89;color:#fff;font:900 10px/1 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;letter-spacing:.025em;text-transform:uppercase;white-space:nowrap}
+  .vxai-platform-badge--soft{background:#eef4fb;color:#1f4a89}
 
-  .aip-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:.5ch;
-    padding:.4rem .7rem;
-    border:1px solid var(--vx-line);
-    border-radius:999px;
-    background:#fff;
-    color:var(--vx-primary);
-    font:600 12px/1.1 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  }
+  .bm-card-brand{display:flex;align-items:center;gap:10px;margin:18px 0 12px}
+  .bm-card-brand h3{margin:0;color:#1b427a;font:800 22px/1 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;letter-spacing:-.04em}
+  .bm-card-ai-badge{width:42px;height:42px;flex:0 0 auto}
+  .bm-card-ai-svg{display:block;width:100%;height:100%}
+  .vxai-platform-card>h3{margin:18px 0 10px;color:#1f2937;font:900 21px/1.1 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;letter-spacing:-.035em}
+  .vxai-platform-card p{margin:0;color:#5b6b82;font:560 13.5px/1.62 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;text-align:left}
+  .vxai-platform-card .card-action{margin-top:auto;padding-top:18px;color:#1f4a89;font:900 14px/1.3 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
 
-  /* Section title */
-  .aip-h2{
-    margin:34px 0 14px;
-    color:var(--vx-ink);
-    font:700 clamp(20px,2.6vw,28px)/1.2 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  }
+  /* Five-card layout: three cards, then two centered cards */
+  .vxai-platform-grid--five{grid-template-columns:repeat(6,minmax(0,1fr));max-width:1220px;margin-left:auto;margin-right:auto}
+  .vxai-platform-grid--five>.vxai-platform-card{grid-column:span 2}
+  .vxai-platform-grid--five>.vxai-platform-card:nth-child(4){grid-column:2/span 2}
+  .vxai-platform-grid--five>.vxai-platform-card:nth-child(5){grid-column:4/span 2}
 
-  /* Featured platform card */
-  .platform-card{
-    position:relative;
-    display:grid;
-    grid-template-columns:minmax(0,1fr) auto;
-    gap:28px;
-    align-items:center;
-    margin:22px 0;
-    padding:28px;
-    overflow:hidden;
-    border:1px solid rgba(63,169,245,.34);
-    border-radius:16px;
-    background:
-      radial-gradient(700px 360px at 100% 0%,rgba(63,169,245,.16),transparent 60%),
-      linear-gradient(135deg,#f7fbff,#ffffff 62%);
-    box-shadow:0 12px 30px -18px rgba(0,28,57,.30);
-    transition:transform .2s ease,box-shadow .2s ease;
-  }
+  .provider-note{max-width:1220px;margin:24px auto 0;padding:17px 20px;border-left:4px solid var(--vx-primary);border-radius:0 12px 12px 0;background:#eef7f9;color:#334155;font:400 13px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;box-sizing:border-box}
+  .provider-note strong{color:#0f172a}
 
-  .platform-card:hover{
-    transform:translateY(-2px);
-    box-shadow:0 16px 34px -18px rgba(0,28,57,.38);
-  }
+  .contact-cta{display:grid;gap:7px;justify-items:start;margin:30px 0 44px;padding:22px;border:1px solid var(--vx-line);border-radius:16px;background:radial-gradient(1200px 1200px at 0 100%,rgba(63,169,245,.12),transparent),#fff}
+  .contact-cta h2{margin:0;color:#0a1626;font:700 22px/1.2 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .contact-cta p{margin:0 0 7px;color:#2a3040;font:400 14px/1.55 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:.75rem 1.1rem;border:0;border-radius:14px;background:linear-gradient(180deg,var(--vx-accent),#167fd8);box-shadow:0 8px 22px -10px rgba(63,169,245,.45);color:#fff;text-decoration:none;font:600 14px/1 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .btn:hover{color:#fff;transform:translateY(-2px)}
 
-  .platform-content{
-    position:relative;
-    z-index:1;
-    min-width:0;
-  }
-
-  .platform-label{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    margin:0 0 12px;
-    padding:.4rem .7rem;
-    border:1px solid rgba(0,124,145,.20);
-    border-radius:999px;
-    background:#fff;
-    color:var(--vx-primary);
-    font:700 12px/1.1 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-  }
-
-  .platform-dot{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:#21b879;
-    box-shadow:0 0 0 4px rgba(33,184,121,.12);
-  }
-
-  .platform-card h3{
-    margin:.2rem 0 .55rem;
-    color:#0f1a2a;
-    font:700 clamp(22px,3vw,32px)/1.2 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  }
-
-  .platform-card p{
-    max-width:720px;
-    margin:0;
-    color:#2a3040;
-    font:400 15px/1.65 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  }
-
-  .bulkmind-highlight{
-    margin-top:18px;
-    padding:16px;
-    border:1px solid rgba(0,124,145,.18);
-    border-radius:14px;
-    background:rgba(255,255,255,.78);
-  }
-
-  .bulkmind-highlight h4{
-    display:flex;
-    flex-wrap:wrap;
-    gap:9px;
-    align-items:center;
-    margin:0 0 6px;
-    color:var(--vx-primary);
-    font:700 17px/1.3 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  }
-
-  .launch-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    padding:5px 8px;
-    border:1px solid rgba(33,184,121,.24);
-    border-radius:999px;
-    background:rgba(33,184,121,.10);
-    color:#08794e;
-    font:800 10px/1 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-  }
-
-  .launch-dot{
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:#21b879;
-    animation:launch-pulse 1.8s ease-out infinite;
-  }
-
-  @keyframes launch-pulse{
-    0%{box-shadow:0 0 0 0 rgba(33,184,121,.38)}
-    70%{box-shadow:0 0 0 7px rgba(33,184,121,0)}
-    100%{box-shadow:0 0 0 0 rgba(33,184,121,0)}
-  }
-
-  .development-row{
-    display:grid;
-    grid-template-columns:repeat(4,minmax(0,1fr));
-    gap:10px;
-    margin-top:18px;
-  }
-
-  .development-item{
-    padding:12px;
-    border:1px solid var(--vx-line);
-    border-radius:12px;
-    background:#f8fafc;
-  }
-
-  .development-item strong{
-    display:block;
-    margin-bottom:5px;
-    color:#475569;
-    font:700 13px/1.3 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  }
-
-  .development-item span{
-    color:#7b8798;
-    font:700 10px/1.2 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-  }
-
-  .bulkmind-highlight p{
-    font-size:14px;
-  }
-
-  .platform-features{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin:16px 0 0;
-    padding:0;
-    list-style:none;
-  }
-
-  .platform-features li{
-    padding:.4rem .65rem;
-    border:1px solid var(--vx-line);
-    border-radius:999px;
-    background:rgba(255,255,255,.82);
-    color:#314158;
-    font:600 12px/1.2 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  }
-
-  .platform-actions{
-    position:relative;
-    z-index:1;
-    display:grid;
-    gap:10px;
-    justify-items:stretch;
-    min-width:190px;
-  }
-
-  /* Buttons */
-  .btn{
-    --bg:transparent;
-    --fg:var(--vx-primary);
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:.75rem 1.1rem;
-    border:1px solid var(--vx-line);
-    border-radius:14px;
-    background:var(--bg);
-    color:var(--fg);
-    text-decoration:none;
-    font:600 14px/1 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    transition:transform .2s ease,box-shadow .2s ease;
-  }
-
-  .btn.primary{
-    --bg:linear-gradient(180deg,var(--vx-accent),#167fd8);
-    --fg:#fff;
-    border:none;
-    box-shadow:0 8px 22px -10px var(--vx-ring);
-  }
-
-  .btn:hover{
-    transform:translateY(-2px);
-  }
-
-  .btn.primary:hover{
-    color:#fff;
-    box-shadow:0 10px 26px -10px rgba(63,169,245,.65);
-  }
-
-  /* Company clarification */
-  .company-note{
-    margin:18px 0 0;
-    padding:16px 18px;
-    border-left:4px solid var(--vx-primary);
-    border-radius:0 12px 12px 0;
-    background:#f5fafb;
-  }
-
-  .company-note p{
-    margin:0;
-    color:#2a3040;
-    font:400 13px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  }
-
-  /* Final CTA */
-  .final-cta{
-    display:grid;
-    gap:6px;
-    justify-items:start;
-    margin:26px 0 40px;
-    padding:22px;
-    border:1px solid var(--vx-line);
-    border-radius:16px;
-    background:
-      radial-gradient(1200px 1200px at 0% 100%,rgba(63,169,245,.12),transparent),
-      #fff;
-  }
-
-  .final-cta h2{
-    margin:0;
-    color:#0a1626;
-    font:700 22px/1.2 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  }
-
-  .final-cta p{
-    margin:0 0 6px;
-    color:#2a3040;
-    font:400 14px/1.55 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  }
-
-  .dropdown-menu a[aria-current="page"]{
-    color:var(--vx-blue) !important;
-    background:rgba(27,66,122,.08);
-    font-weight:700;
-  }
-
-  .dropdown-menu a[aria-current="page"]:hover{
-    background:rgba(27,66,122,.12);
+  @media(max-width:1180px){
+    .vxai-platform-grid--five{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px}
+    .vxai-platform-grid--five>.vxai-platform-card,.vxai-platform-grid--five>.vxai-platform-card:nth-child(4),.vxai-platform-grid--five>.vxai-platform-card:nth-child(5){grid-column:auto}
+    .vxai-platform-grid--five>.vxai-platform-card:last-child{grid-column:1/-1;width:calc(50% - 9px);justify-self:center}
   }
 
   @media(max-width:720px){
-    .platform-card{
-      grid-template-columns:1fr;
-      gap:22px;
-      padding:22px 18px;
-    }
-
-    .platform-actions{
-      min-width:0;
-    }
-
-    .platform-actions .btn{
-      width:100%;
-      box-sizing:border-box;
-    }
-
-    .development-row{
-      grid-template-columns:1fr 1fr;
-    }
+    .aip-hero{padding:82px 0 40px}
+    .vxai-section{padding:44px 16px 52px}
+    .vxai-platform-grid--five{grid-template-columns:1fr;max-width:720px}
+    .vxai-platform-grid--five>.vxai-platform-card:last-child{grid-column:auto;width:100%}
+    .vxai-platform-card{min-height:295px}
   }
 
-  @media(max-width:440px){
-    .development-row{
-      grid-template-columns:1fr;
-    }
-  }
-
-  @media(prefers-reduced-motion:reduce){
-    .launch-dot{animation:none}
-  }
+  @media(prefers-reduced-motion:reduce){.vxai-platform-card,.btn{transition:none}}
 </style>
 
 <main id="main" class="page-ai-platforms">
 
-  <!-- Hero -->
   <section class="aip-hero">
     <div class="container">
       <h1>AI Platforms</h1>
       <p>
-        Explore AI-powered technologies supporting genomics,
-        bioinformatics, and translational research through our global
-        innovation network.
+        Discover available and upcoming AI-powered platforms supporting
+        genomics, bioinformatics, immunology, and translational research.
       </p>
-
       <div class="aip-badges">
         <span class="aip-badge">Genomics</span>
         <span class="aip-badge">Bioinformatics</span>
@@ -375,122 +109,134 @@ permalink: /AI_Platforms/
     </div>
   </section>
 
-  <!-- Vaxonyx AI gateway -->
-  <section class="container" aria-labelledby="featured-platform">
+  <section class="vxai-section vxai-platforms" id="platforms">
+    <div class="vxai-wrap">
 
-    <h2 id="featured-platform" class="aip-h2">
-      Explore AI Platforms
-    </h2>
+      <div class="vxai-section-kicker">Platforms</div>
+      <h2>Available and upcoming tools</h2>
+      <p class="vxai-section-copy">
+        Start with BulkMind today. Vaxonyx AI is expanding across genomics,
+        metagenomics, immunology, and translational research.
+      </p>
 
-    <article class="platform-card">
+      <div class="vxai-platform-grid vxai-platform-grid--five">
 
-      <div class="platform-content">
-
-        <div class="platform-label">
-          <span class="platform-dot" aria-hidden="true"></span>
-          Vaxonyx USA · AI Platforms
-        </div>
-
-        <h3>AI Platforms from Vaxonyx USA</h3>
-
-        <p>
-          Discover AI-powered bioinformatics platforms for genomics,
-          metagenomics, immunology, and translational research.
-        </p>
-
-        <div class="bulkmind-highlight">
-          <h4>
-            BulkMind AI
-            <span class="launch-badge">
-              <span class="launch-dot" aria-hidden="true"></span>
-              Live · Available Now
-            </span>
-          </h4>
-          <p>
-            A self-service bulk RNA-seq analysis platform that guides
-            researchers from raw sequencing data through quality assessment,
-            differential expression, pathway analysis, transcription-factor
-            activity, biological interpretation, and publication-ready
-            visualizations.
-          </p>
-        </div>
-
-        <ul class="platform-features" aria-label="Vaxonyx AI platform areas">
-          <li>Bulk RNA-Seq</li>
-          <li>Automated QC</li>
-          <li>Differential Expression</li>
-          <li>Pathway Analysis</li>
-          <li>TF Activity</li>
-          <li>AI-Assisted Interpretation</li>
-        </ul>
-
-        <div class="development-row" aria-label="AI platforms under development">
-          <div class="development-item">
-            <strong>Metagenomics AI</strong>
-            <span>Under Development</span>
-          </div>
-          <div class="development-item">
-            <strong>HLA Typing AI</strong>
-            <span>Under Development</span>
-          </div>
-          <div class="development-item">
-            <strong>Variant Calling AI</strong>
-            <span>Under Development</span>
-          </div>
-          <div class="development-item">
-            <strong>Neoantigen Discovery AI</strong>
-            <span>Under Development</span>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="platform-actions">
         <a
-          class="btn primary"
+          class="vxai-platform-card is-live"
           href="https://ai.vaxonyx.com/bulkmind/#/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open BulkMind AI on the Vaxonyx USA website"
+          aria-label="Open BulkMind AI"
         >
-          Open BulkMind AI ↗
+          <div class="platform-topline">
+            <div class="vxai-platform-badge">Available Now</div>
+            <div class="platform-icon" aria-hidden="true">🧬</div>
+          </div>
+
+          <div class="bm-card-brand">
+            <h3>BulkMind AI</h3>
+            <div class="bm-card-ai-badge" aria-hidden="true">
+              <svg class="bm-card-ai-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="20" width="60" height="60" rx="12" fill="#fff" stroke="#111" stroke-width="4"/>
+                <text x="50" y="58" text-anchor="middle" font-size="32" font-weight="700" fill="#111" font-family="Georgia, Times New Roman, serif">AI</text>
+                <g fill="#111" stroke="#111" stroke-width="3">
+                  <circle cx="32" cy="8" r="3.5"/><line x1="32" y1="12" x2="32" y2="20"/>
+                  <circle cx="50" cy="8" r="3.5"/><line x1="50" y1="12" x2="50" y2="20"/>
+                  <circle cx="68" cy="8" r="3.5"/><line x1="68" y1="12" x2="68" y2="20"/>
+                  <circle cx="92" cy="32" r="3.5"/><line x1="88" y1="32" x2="80" y2="32"/>
+                  <circle cx="92" cy="50" r="3.5"/><line x1="88" y1="50" x2="80" y2="50"/>
+                  <circle cx="92" cy="68" r="3.5"/><line x1="88" y1="68" x2="80" y2="68"/>
+                  <circle cx="32" cy="92" r="3.5"/><line x1="32" y1="88" x2="32" y2="80"/>
+                  <circle cx="50" cy="92" r="3.5"/><line x1="50" y1="88" x2="50" y2="80"/>
+                  <circle cx="68" cy="92" r="3.5"/><line x1="68" y1="88" x2="68" y2="80"/>
+                  <circle cx="8" cy="32" r="3.5"/><line x1="12" y1="32" x2="20" y2="32"/>
+                  <circle cx="8" cy="50" r="3.5"/><line x1="12" y1="50" x2="20" y2="50"/>
+                  <circle cx="8" cy="68" r="3.5"/><line x1="12" y1="68" x2="20" y2="68"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <p>
+            AI-powered bulk RNA-seq analysis with upload, QC, differential
+            expression, pathway discovery, volcano plots, heatmaps, and
+            result exploration.
+          </p>
+          <span class="card-action">Open BulkMind →</span>
         </a>
 
-        <a
-          class="btn"
-          href="https://ai.vaxonyx.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Explore all Vaxonyx AI platforms"
-        >
-          Explore All AI Platforms ↗
-        </a>
+        <article class="vxai-platform-card platform-card-green">
+          <div class="platform-topline">
+            <div class="vxai-platform-badge vxai-platform-badge--soft">Coming Soon · Est. Dec. 2026</div>
+            <div class="platform-icon" aria-hidden="true">🦠</div>
+          </div>
+          <h3>Metagenomics AI</h3>
+          <p>
+            AI-powered metagenomic analysis for microbial profiling,
+            community composition, functional insights, comparative analysis,
+            and microbiome research.
+          </p>
+          <span class="card-action">Est. Dec. 2026</span>
+        </article>
+
+        <article class="vxai-platform-card platform-card-cyan">
+          <div class="platform-topline">
+            <div class="vxai-platform-badge vxai-platform-badge--soft">Coming Soon · Est. Oct. 2026</div>
+            <div class="platform-icon" aria-hidden="true">🧫</div>
+          </div>
+          <h3>HLA Typing AI</h3>
+          <p>
+            Future AI-assisted HLA typing workflows for immunogenomics,
+            transplant compatibility, neoantigen analysis, and vaccine research.
+          </p>
+          <span class="card-action">Est. Oct. 2026</span>
+        </article>
+
+        <article class="vxai-platform-card platform-card-orange">
+          <div class="platform-topline">
+            <div class="vxai-platform-badge vxai-platform-badge--soft">Coming Soon · Est. Dec. 2026</div>
+            <div class="platform-icon" aria-hidden="true">🔬</div>
+          </div>
+          <h3>Variant Calling AI</h3>
+          <p>
+            Future AI-assisted workflows for variant calling, prioritization,
+            interpretation, and reporting.
+          </p>
+          <span class="card-action">Est. Dec. 2026</span>
+        </article>
+
+        <article class="vxai-platform-card platform-card-purple">
+          <div class="platform-topline">
+            <div class="vxai-platform-badge vxai-platform-badge--soft">Coming Soon · Est. Jun. 2027</div>
+            <div class="platform-icon" aria-hidden="true">💉</div>
+          </div>
+          <h3>Neoantigen Discovery AI</h3>
+          <p>
+            Future tools for neoantigen prediction, immunogenicity
+            prioritization, and vaccine-design workflows.
+          </p>
+          <span class="card-action">Est. Jun. 2027</span>
+        </article>
+
       </div>
 
-    </article>
+      <div class="provider-note">
+        <strong>Platform provider:</strong> The AI platforms displayed here
+        are developed, operated, and supported by Vaxonyx USA, a separate
+        U.S.-based biotechnology company.
+      </div>
 
-    <div class="company-note">
-      <p>
-        <strong>Company information:</strong> Vaxogene and Vaxonyx are
-        separate biotechnology companies operating in India and the United
-        States, respectively. The platforms presented on the Vaxonyx AI
-        website are developed, operated, and supported by Vaxonyx USA.
-      </p>
     </div>
-
   </section>
 
-  <!-- Contact CTA -->
   <section class="container">
-    <div class="final-cta">
+    <div class="contact-cta">
       <h2>Interested in scientific collaboration?</h2>
       <p>
         Contact Vaxogene to discuss genomics, bioinformatics, molecular
         biology, and translational research opportunities in India.
       </p>
-      <a class="btn primary" href="{{ '/contact/' | relative_url }}">
-        Contact Vaxogene
-      </a>
+      <a class="btn" href="{{ '/contact/' | relative_url }}">Contact Vaxogene</a>
     </div>
   </section>
 
