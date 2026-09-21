@@ -1,1202 +1,630 @@
 ---
 layout: default
-title: Home
-description: Vaxogene advances genomics, bioinformatics, vaccine research, and translational biotechnology from India.
+title: AI Platforms – Vaxogene
+description: Available and upcoming AI-powered bioinformatics tools for genomics, metagenomics, immunology, and translational research.
+permalink: /AI_Platforms/
 ---
 
 <style>
-  :root{
-    --vx-blue:#1b427a;
-    --vx-blue-light:#2196f3;
-    --vx-blue-medium:#116bad;
-    --vx-blue-dark:#001c39;
-    --vx-sky:#3fa9f5;
-    --vx-teal:#007c91;
-    --vx-orange:#ff6b3d;
-    --vx-ink:#0b172a;
-    --vx-muted:#536174;
-    --vx-line:rgba(15,55,95,.14);
-    --vx-soft:#f4f8fd;
-    --vx-white:#ffffff;
-    --vx-shadow:0 20px 55px -30px rgba(0,43,84,.45);
+  .vxai-page,
+  .vxai-page * { box-sizing: border-box; }
+
+  .vxai-page {
+    --vx-blue: #1b427a;
+    --vx-blue-2: #1f4a89;
+    --vx-sky: #3fa9f5;
+    --vx-orange: #f97316;
+    --vx-ink: #1f2937;
+    --vx-muted: #64748b;
+    --vx-line: #d9e3f0;
+    color: var(--vx-ink);
+    background: #f8fafc;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
 
-  *{
-    box-sizing:border-box;
-  }
-
-  .vx-container{
-    width:min(1120px,92%);
-    margin-inline:auto;
-  }
-
-  /* =====================================================
-     HERO
-     ===================================================== */
-
-  .vx-hero{
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    min-height:590px;
-    padding:84px 20px 70px;
-    color:#fff;
-    text-align:center;
+  /* Hero */
+  .vxai-hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
     background:
-      radial-gradient(
-        circle at 50% 18%,
-        rgba(69,176,255,.24),
-        transparent 34%
-      ),
-      linear-gradient(
-        180deg,
-        var(--vx-blue-light) 0%,
-        #126cac 47%,
-        var(--vx-blue-dark) 100%
-      );
+      linear-gradient(180deg, rgba(244,247,252,.98), rgba(255,255,255,.95)),
+      radial-gradient(circle at 50% 0%, rgba(27,66,122,.10), transparent 42%);
+    border-bottom: 1px solid rgba(217,227,240,.9);
   }
 
-  .vx-hero::before,
-  .vx-hero::after{
-    content:"";
-    position:absolute;
-    border-radius:50%;
-    pointer-events:none;
+  .vxai-hero__glow {
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border-radius: 999px;
+    filter: blur(34px);
+    opacity: .45;
+    pointer-events: none;
   }
 
-  .vx-hero::before{
-    width:460px;
-    height:460px;
-    top:-300px;
-    left:-120px;
-    background:rgba(255,255,255,.07);
+  .vxai-hero__glow--left {
+    left: -120px;
+    top: -130px;
+    background: rgba(33,150,243,.22);
   }
 
-  .vx-hero::after{
-    width:520px;
-    height:520px;
-    right:-280px;
-    bottom:-380px;
-    border:1px solid rgba(255,255,255,.12);
+  .vxai-hero__glow--right {
+    right: -120px;
+    top: -130px;
+    background: rgba(249,115,22,.16);
   }
 
-  .vx-hero-inner{
-    position:relative;
-    z-index:1;
-    width:min(1120px,92%);
-    margin-inline:auto;
+  .vxai-hero__inner {
+    position: relative;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 28px 24px 52px;
   }
 
-  .vx-hero h1{
-    position:absolute;
-    left:-9999px;
-    width:1px;
-    height:1px;
-    overflow:hidden;
+  .vxai-hero__welcome {
+    margin-bottom: 10px;
+    color: var(--vx-muted);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.2;
   }
 
-  .vx-hero-line{
-    margin:0;
-    color:#fff;
-    font-family:system-ui,-apple-system,BlinkMacSystemFont,
-      "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    font-size:clamp(28px,3.25vw,44px);
-    font-weight:800;
-    line-height:1.15;
-    letter-spacing:-.02em;
+  .vxai-hero__center { text-align: center; }
+
+  .vxai-hero__title {
+    margin: 0;
+    color: var(--vx-blue);
+    font-size: clamp(38px, 5vw, 56px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -.055em;
+    text-shadow: 0 18px 40px rgba(27,66,122,.12);
   }
 
-  .vx-hero-line + .vx-hero-line{
-    margin-top:46px;
+  .vxai-hero__subtitle {
+    max-width: 1000px;
+    margin: 15px auto 16px;
+    color: var(--vx-ink);
+    font-size: clamp(16px, 2vw, 19px);
+    font-weight: 800;
+    line-height: 1.35;
   }
 
-  /* Hero feature panel */
+  .vxai-hero__pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 18px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #ff8a3d, var(--vx-orange));
+    color: #fff;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.2;
+    box-shadow: 0 14px 30px rgba(249,115,22,.24);
+  }
 
-  .vx-hero-panel{
-    max-width:940px;
-    margin:48px auto 0;
-    padding:25px 28px;
-    border:1px solid rgba(255,255,255,.34);
-    border-radius:22px;
+  .vxai-welcome-block {
+    max-width: 900px;
+    margin: 30px auto 0;
+    padding: 22px 26px;
+    text-align: center;
+    border: 1px solid rgba(217,227,240,.9);
+    border-radius: 24px;
+    background: rgba(255,255,255,.66);
+    box-shadow: 0 20px 55px -42px rgba(15,23,42,.50);
+  }
+
+  .vxai-section-kicker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 23px;
+    padding: 0 11px;
+    border-radius: 8px;
+    background: var(--vx-blue-2);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .vxai-welcome-block h2,
+  .vxai-section h2 {
+    margin: 16px 0 0;
+    color: var(--vx-blue-2);
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -.035em;
+    text-align: center;
+  }
+
+  .vxai-welcome-block p,
+  .vxai-section-copy {
+    max-width: 900px;
+    margin: 14px auto 0;
+    color: var(--vx-muted);
+    font-size: 14.5px;
+    font-weight: 550;
+    line-height: 1.65;
+    text-align: center;
+  }
+
+  /* Platform section */
+  .vxai-section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 54px 18px 64px;
+  }
+
+  .vxai-wrap {
+    max-width: 1220px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .vxai-platforms {
     background:
-      linear-gradient(
-        135deg,
-        rgba(255,255,255,.20),
-        rgba(255,255,255,.08)
-      );
+      radial-gradient(circle at 18% 10%, rgba(33,150,243,.10), transparent 24%),
+      radial-gradient(circle at 82% 18%, rgba(124,58,237,.08), transparent 26%),
+      #f8fafc;
+  }
+
+  .vxai-platform-grid {
+    display: grid;
+    gap: 18px;
+    max-width: 1220px;
+    margin: 28px auto 0;
+    text-align: left;
+  }
+
+  /* Six tracks create three equal cards, then two cards centered below. */
+  .vxai-platform-grid--five {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .vxai-platform-grid--five > .vxai-platform-card {
+    grid-column: span 2;
+  }
+
+  .vxai-platform-grid--five > .vxai-platform-card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .vxai-platform-grid--five > .vxai-platform-card:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+
+  .vxai-platform-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 318px;
+    padding: 22px 20px 20px;
+    color: #0f172a;
+    text-decoration: none;
+    background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.90));
+    border: 1px solid rgba(217,227,240,.95);
+    border-radius: 24px;
     box-shadow:
-      0 24px 55px -28px rgba(0,0,0,.75),
-      inset 0 1px 0 rgba(255,255,255,.22);
-    backdrop-filter:blur(12px);
-    -webkit-backdrop-filter:blur(12px);
+      0 22px 60px -36px rgba(15,23,42,.48),
+      inset 0 1px 0 rgba(255,255,255,.9);
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
   }
 
-  .vx-hero-panel-grid{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) auto;
-    gap:30px;
-    align-items:center;
-    text-align:left;
+  .vxai-platform-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 5px;
+    background: linear-gradient(90deg, var(--vx-blue), var(--vx-sky));
   }
 
-  .vx-status{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-    margin-bottom:10px;
-    color:#fff;
-    font:800 11px/1.2 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-  }
-
-  .vx-status-dot{
-    width:10px;
-    height:10px;
-    flex:0 0 10px;
-    border-radius:50%;
-    background:#48e5ad;
-    box-shadow:0 0 0 6px rgba(72,229,173,.13);
-  }
-
-  .vx-hero-panel h2{
-    margin:0 0 8px;
-    color:#fff;
-    font:800 clamp(23px,2.7vw,34px)/1.15 system-ui,
-      -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    letter-spacing:-.02em;
-  }
-
-  .vx-hero-panel p{
-    max-width:700px;
-    margin:0;
-    color:rgba(255,255,255,.91);
-    font:500 15px/1.6 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
-  }
-
-  /* =====================================================
-     BUTTONS
-     ===================================================== */
-
-  .vx-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    min-height:46px;
-    padding:.88rem 1.35rem;
-    border:1px solid var(--vx-line);
-    border-radius:13px;
-    color:var(--vx-blue);
-    background:#fff;
-    text-decoration:none;
-    font:750 14px/1.2 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
-    transition:
-      transform .2s ease,
-      box-shadow .2s ease,
-      background .2s ease;
-  }
-
-  .vx-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 12px 28px -16px rgba(0,46,91,.55);
-  }
-
-  .vx-btn-primary{
-    border:none;
-    color:#fff;
-    background:linear-gradient(180deg,#42adf6,#167fd8);
-    box-shadow:0 12px 28px -16px rgba(63,169,245,.8);
-  }
-
-  .vx-btn-orange{
-    min-width:190px;
-    border:none;
-    color:#fff;
-    background:linear-gradient(180deg,#ff784e,#f2542d);
-    box-shadow:0 15px 32px -15px rgba(255,95,52,.85);
-  }
-
-  .vx-btn-orange:hover{
-    box-shadow:0 18px 38px -15px rgba(255,95,52,.95);
-  }
-
-  /* =====================================================
-     INTRODUCTION
-     ===================================================== */
-
-  .vx-intro{
-    padding:68px 0 62px;
-    text-align:center;
-    background:#fff;
-  }
-
-  .vx-eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    margin-bottom:10px;
-    color:var(--vx-teal);
-    font:800 12px/1.2 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
-    letter-spacing:.13em;
-    text-transform:uppercase;
-  }
-
-  .vx-eyebrow::before{
-    content:"";
-    width:20px;
-    height:2px;
-    border-radius:999px;
-    background:var(--vx-sky);
-  }
-
-  .vx-title{
-    margin:0 0 16px;
-    color:var(--vx-blue);
-    font:800 clamp(25px,3vw,36px)/1.16 system-ui,
-      -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    letter-spacing:-.02em;
-  }
-
-  .vx-lead{
-    max-width:820px;
-    margin:0 auto;
-    color:#334057;
-    font:400 16px/1.75 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
-  }
-
-  /* =====================================================
-     VAXOGENE INNOVATION NETWORK
-     ===================================================== */
-
-  .vx-network{
-    position:relative;
-    overflow:hidden;
-    padding:76px 0;
-    color:#fff;
-    background:
-      radial-gradient(
-        circle at 50% 45%,
-        rgba(54,170,244,.23),
-        transparent 30%
-      ),
-      radial-gradient(
-        circle at 10% 5%,
-        rgba(0,184,212,.16),
-        transparent 26%
-      ),
-      linear-gradient(
-        135deg,
-        #031d38 0%,
-        #073764 50%,
-        #07578b 100%
-      );
-  }
-
-  .vx-network::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    opacity:.18;
-    pointer-events:none;
-    background-image:
-      linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
-    background-size:46px 46px;
-    mask-image:linear-gradient(
-      to bottom,
-      transparent,
-      #000 20%,
-      #000 80%,
-      transparent
-    );
-    -webkit-mask-image:linear-gradient(
-      to bottom,
-      transparent,
-      #000 20%,
-      #000 80%,
-      transparent
-    );
-  }
-
-  .vx-network-inner{
-    position:relative;
-    z-index:1;
-  }
-
-  .vx-network-header{
-    max-width:760px;
-    margin:0 auto 38px;
-    text-align:center;
-  }
-
-  .vx-network-kicker{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-    margin-bottom:12px;
-    color:#88d5ff;
-    font:800 12px/1.2 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-  }
-
-  .vx-network-kicker::before,
-  .vx-network-kicker::after{
-    content:"";
-    width:26px;
-    height:1px;
-    background:rgba(136,213,255,.65);
-  }
-
-  .vx-network-header h2{
-    margin:0 0 13px;
-    color:#fff;
-    font:800 clamp(27px,3.5vw,42px)/1.15 system-ui,
-      -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    letter-spacing:-.025em;
-  }
-
-  .vx-network-header p{
-    margin:0 auto;
-    color:rgba(255,255,255,.78);
-    font:400 16px/1.7 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
-  }
-
-  .vx-network-panel{
-    position:relative;
-    padding:38px;
-    border:1px solid rgba(158,220,255,.34);
-    border-radius:26px;
-    background:
-      linear-gradient(
-        135deg,
-        rgba(255,255,255,.14),
-        rgba(255,255,255,.055)
-      );
+  a.vxai-platform-card:hover,
+  a.vxai-platform-card:focus-visible {
+    transform: translateY(-5px);
+    border-color: var(--vx-blue);
     box-shadow:
-      0 32px 70px -40px rgba(0,0,0,.9),
-      inset 0 1px 0 rgba(255,255,255,.18);
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
+      0 30px 70px -32px rgba(15,23,42,.55),
+      inset 0 1px 0 rgba(255,255,255,.9);
+    outline: none;
   }
 
-  .vx-network-grid{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) 230px minmax(0,1fr);
-    gap:30px;
-    align-items:center;
-  }
-
-  /* Central CSS globe */
-
-  .vx-globe-wrap{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-  }
-
-  .vx-globe{
-    position:relative;
-    width:176px;
-    height:176px;
-    border:1px solid rgba(123,210,255,.65);
-    border-radius:50%;
-    background:
-      radial-gradient(
-        circle at 38% 32%,
-        rgba(89,198,255,.45),
-        rgba(11,85,139,.25) 42%,
-        rgba(1,28,57,.7) 78%
-      );
+  .vxai-platform-card.is-live {
+    border: 2px solid var(--vx-blue);
     box-shadow:
-      0 0 42px rgba(47,169,239,.35),
-      inset 0 0 30px rgba(74,190,255,.25);
+      0 30px 75px -34px rgba(27,66,122,.55),
+      0 0 0 4px rgba(31,74,137,.10);
   }
 
-  .vx-globe::before,
-  .vx-globe::after{
-    content:"";
-    position:absolute;
-    inset:13px 42px;
-    border:1px solid rgba(157,224,255,.42);
-    border-radius:50%;
+  .platform-card-green::before {
+    background: linear-gradient(90deg, #16a34a, #14b8a6);
   }
 
-  .vx-globe::after{
-    inset:42px 13px;
+  .platform-card-cyan::before {
+    background: linear-gradient(90deg, #0891b2, #38bdf8);
   }
 
-  .vx-globe-line{
-    position:absolute;
-    top:50%;
-    left:-45px;
-    right:-45px;
-    height:1px;
-    background:
-      linear-gradient(
-        90deg,
-        transparent,
-        #70d4ff 16%,
-        #fff 50%,
-        #70d4ff 84%,
-        transparent
-      );
-    box-shadow:0 0 12px rgba(107,211,255,.8);
+  .platform-card-orange::before {
+    background: linear-gradient(90deg, #f97316, #facc15);
   }
 
-  .vx-globe-node{
-    position:absolute;
-    top:calc(50% - 5px);
-    width:10px;
-    height:10px;
-    border:2px solid rgba(255,255,255,.8);
-    border-radius:50%;
-    background:#43e0aa;
-    box-shadow:
-      0 0 0 6px rgba(67,224,170,.13),
-      0 0 16px rgba(67,224,170,.8);
+  .platform-card-purple::before {
+    background: linear-gradient(90deg, #7c3aed, #3b82f6);
   }
 
-  .vx-globe-node-left{
-    left:-5px;
+  .platform-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
   }
 
-  .vx-globe-node-right{
-    right:-5px;
+  .platform-icon {
+    display: grid;
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 15px;
+    background: #eef6ff;
+    font-size: 24px;
+    line-height: 1;
+    box-shadow: inset 0 0 0 1px rgba(217,227,240,.8);
   }
 
-  .vx-globe-label{
-    margin-top:20px;
-    color:#9bdcff;
-    font:750 12px/1.4 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
-    letter-spacing:.08em;
-    text-align:center;
-    text-transform:uppercase;
+  .platform-card-green .platform-icon { background: #ecfdf5; }
+  .platform-card-cyan .platform-icon { background: #ecfeff; }
+  .platform-card-orange .platform-icon { background: #fff7ed; }
+  .platform-card-purple .platform-icon { background: #f5f3ff; }
+
+  .vxai-platform-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    min-height: 24px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background: var(--vx-blue-2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: .025em;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 
-  /* Network cards */
-
-  .vx-network-card{
-    height:100%;
-    padding:25px;
-    border:1px solid rgba(255,255,255,.18);
-    border-radius:20px;
-    background:rgba(3,27,54,.44);
+  .vxai-platform-badge--soft {
+    background: #eef4fb;
+    color: var(--vx-blue-2);
   }
 
-  .vx-card-label{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    margin-bottom:13px;
-    padding:7px 11px;
-    border:1px solid rgba(130,215,255,.25);
-    border-radius:999px;
-    color:#a6e2ff;
-    background:rgba(63,169,245,.10);
-    font:800 10px/1 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
-    letter-spacing:.12em;
-    text-transform:uppercase;
+  .bm-card-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0 12px;
   }
 
-  .vx-card-label::before{
-    content:"";
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:#46dfaa;
-    box-shadow:0 0 9px rgba(70,223,170,.8);
+  .bm-card-brand h3 {
+    margin: 0;
+    color: var(--vx-blue);
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.04em;
   }
 
-  .vx-network-card h3{
-    margin:0 0 10px;
-    color:#fff;
-    font:800 24px/1.2 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  .bm-card-ai-badge {
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
   }
 
-  .vx-network-card p{
-    margin:0;
-    color:rgba(255,255,255,.76);
-    font:400 14px/1.67 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  .bm-card-ai-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 
-  .vx-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-top:18px;
+  .vxai-platform-card > h3 {
+    margin: 18px 0 10px;
+    color: var(--vx-ink);
+    font-size: 21px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -.035em;
   }
 
-  .vx-tag{
-    display:inline-flex;
-    align-items:center;
-    padding:7px 10px;
-    border:1px solid rgba(255,255,255,.17);
-    border-radius:999px;
-    color:rgba(255,255,255,.86);
-    background:rgba(255,255,255,.07);
-    font:650 11px/1.1 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  .vxai-platform-card p {
+    margin: 0;
+    color: #5b6b82;
+    font-size: 13.5px;
+    font-weight: 560;
+    line-height: 1.62;
+    text-align: left;
   }
 
-  .vx-card-action{
-    margin-top:21px;
+  .vxai-platform-card__footer {
+    margin-top: auto;
+    padding-top: 18px;
+    color: var(--vx-blue-2);
+    font-size: 14px;
+    font-weight: 900;
   }
 
-  .vx-card-action .vx-btn{
-    min-height:42px;
-    padding:.75rem 1.1rem;
+  .vxai-card-note {
+    display: block;
+    margin-top: 8px;
+    color: #76859a;
+    font-size: 11.5px;
+    font-weight: 650;
+    line-height: 1.45;
   }
 
-  /* =====================================================
-     FOCUS AREAS
-     ===================================================== */
-
-  .vx-focus{
-    padding:72px 0;
-    background:#fff;
+  /* Final CTA */
+  .vxai-final {
+    padding: 0 18px 64px;
+    background: #f8fafc;
   }
 
-  .vx-section-heading{
-    max-width:760px;
-    margin:0 auto 34px;
-    text-align:center;
+  .vxai-final__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 26px 28px;
+    border: 1px solid rgba(217,227,240,.95);
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 22px 60px -42px rgba(15,23,42,.42);
   }
 
-  .vx-section-heading p{
-    margin:0;
-    color:var(--vx-muted);
-    font:400 15px/1.7 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
+  .vxai-final__box h2 {
+    margin: 0 0 7px;
+    color: var(--vx-blue);
+    font-size: 23px;
+    font-weight: 900;
+    line-height: 1.2;
   }
 
-  .vx-cards{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:18px;
+  .vxai-final__box p {
+    margin: 0;
+    color: var(--vx-muted);
+    font-size: 14px;
+    line-height: 1.55;
   }
 
-  .vx-focus-card{
-    position:relative;
-    overflow:hidden;
-    min-height:245px;
-    padding:25px 23px;
-    border:1px solid var(--vx-line);
-    border-radius:19px;
-    background:#fff;
-    box-shadow:0 14px 35px -30px rgba(0,42,83,.5);
-    transition:
-      transform .2s ease,
-      box-shadow .2s ease,
-      border-color .2s ease;
+  .vxai-button {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 18px;
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(180deg, #ff8a3d, var(--vx-orange));
+    font-size: 14px;
+    font-weight: 900;
+    box-shadow: 0 14px 30px rgba(249,115,22,.22);
+    transition: transform 160ms ease, box-shadow 160ms ease;
   }
 
-  .vx-focus-card:hover{
-    transform:translateY(-4px);
-    border-color:rgba(63,169,245,.45);
-    box-shadow:0 22px 46px -29px rgba(0,63,118,.52);
+  .vxai-button:hover,
+  .vxai-button:focus-visible {
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px rgba(249,115,22,.28);
+    outline: none;
   }
 
-  .vx-focus-card::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    height:4px;
-    background:linear-gradient(
-      90deg,
-      var(--vx-teal),
-      var(--vx-sky)
-    );
-  }
-
-  .vx-icon{
-    display:grid;
-    place-items:center;
-    width:48px;
-    height:48px;
-    margin-bottom:18px;
-    border-radius:14px;
-    color:var(--vx-blue);
-    background:
-      linear-gradient(
-        145deg,
-        rgba(63,169,245,.18),
-        rgba(0,124,145,.08)
-      );
-    font:800 18px/1 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
-  }
-
-  .vx-focus-card h3{
-    margin:0 0 9px;
-    color:var(--vx-ink);
-    font:750 18px/1.3 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
-  }
-
-  .vx-focus-card p{
-    margin:0;
-    color:var(--vx-muted);
-    font:400 14px/1.68 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
-  }
-
-  .vx-text-link{
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-    margin-top:17px;
-    color:var(--vx-teal);
-    text-decoration:none;
-    font:750 13px/1.2 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
-  }
-
-  .vx-text-link:hover{
-    color:var(--vx-blue);
-  }
-
-  /* =====================================================
-     FINAL CTA
-     ===================================================== */
-
-  .vx-cta{
-    padding:68px 0;
-    background:var(--vx-soft);
-  }
-
-  .vx-cta-panel{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) auto;
-    gap:30px;
-    align-items:center;
-    padding:36px 38px;
-    border:1px solid var(--vx-line);
-    border-radius:22px;
-    background:
-      radial-gradient(
-        circle at 0% 100%,
-        rgba(63,169,245,.15),
-        transparent 36%
-      ),
-      #fff;
-    box-shadow:var(--vx-shadow);
-  }
-
-  .vx-cta-panel h2{
-    margin:0 0 8px;
-    color:var(--vx-blue);
-    font:800 clamp(23px,2.8vw,32px)/1.2 system-ui,
-      -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  }
-
-  .vx-cta-panel p{
-    max-width:720px;
-    margin:0;
-    color:var(--vx-muted);
-    font:400 15px/1.65 system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",sans-serif;
-  }
-
-  /* =====================================================
-     RESPONSIVE DESIGN
-     ===================================================== */
-
-  @media (max-width:900px){
-    .vx-network-grid{
-      grid-template-columns:1fr;
+  @media (max-width: 1180px) {
+    .vxai-platform-grid--five {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 900px;
     }
 
-    .vx-globe-wrap{
-      order:-1;
-      margin-bottom:4px;
+    .vxai-platform-grid--five > .vxai-platform-card,
+    .vxai-platform-grid--five > .vxai-platform-card:nth-child(4),
+    .vxai-platform-grid--five > .vxai-platform-card:nth-child(5) {
+      grid-column: auto;
     }
 
-    .vx-globe{
-      width:150px;
-      height:150px;
+    .vxai-platform-grid--five > .vxai-platform-card:nth-child(5) {
+      grid-column: 1 / -1;
+      width: calc(50% - 9px);
+      justify-self: center;
     }
 
-    .vx-cards{
-      grid-template-columns:1fr;
+    .vxai-platform-badge {
+      font-size: 10.5px;
     }
   }
 
-  @media (max-width:720px){
-    .vx-hero{
-      min-height:auto;
-      padding:72px 16px 58px;
+  @media (max-width: 720px) {
+    .vxai-hero__inner { padding: 22px 16px 40px; }
+    .vxai-hero__welcome { text-align: center; }
+    .vxai-welcome-block { padding: 19px 17px; }
+    .vxai-section { padding: 44px 16px 52px; }
+
+    .vxai-platform-grid--five {
+      grid-template-columns: 1fr;
+      max-width: 560px;
     }
 
-    .vx-hero-line{
-      font-size:clamp(24px,7vw,31px);
-      line-height:1.24;
+    .vxai-platform-grid--five > .vxai-platform-card:nth-child(5) {
+      grid-column: auto;
+      width: 100%;
     }
 
-    .vx-hero-line + .vx-hero-line{
-      margin-top:26px;
-    }
+    .vxai-platform-card { min-height: 292px; }
 
-    .vx-hero-panel{
-      margin-top:36px;
-      padding:22px 20px;
-      border-radius:18px;
-    }
-
-    .vx-hero-panel-grid{
-      grid-template-columns:1fr;
-      gap:20px;
-      text-align:center;
-    }
-
-    .vx-status{
-      justify-content:center;
-    }
-
-    .vx-btn-orange{
-      width:100%;
-    }
-
-    .vx-intro,
-    .vx-focus,
-    .vx-network,
-    .vx-cta{
-      padding:56px 0;
-    }
-
-    .vx-network-panel{
-      padding:22px 18px;
-      border-radius:20px;
-    }
-
-    .vx-network-card{
-      padding:22px 19px;
-    }
-
-    .vx-globe-line{
-      left:-24px;
-      right:-24px;
-    }
-
-    .vx-cta-panel{
-      grid-template-columns:1fr;
-      padding:28px 23px;
-      text-align:center;
-    }
-
-    .vx-cta-panel .vx-btn{
-      width:100%;
+    .vxai-final__box {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 23px 20px;
     }
   }
 
-  @media (prefers-reduced-motion:reduce){
-    .vx-btn,
-    .vx-focus-card{
-      transition:none;
-    }
+  @media (max-width: 390px) {
+    .platform-topline { align-items: flex-start; }
+    .vxai-platform-badge { white-space: normal; }
+  }
 
-    .vx-btn:hover,
-    .vx-focus-card:hover{
-      transform:none;
-    }
+  @media (prefers-reduced-motion: reduce) {
+    .vxai-platform-card,
+    .vxai-button { transition: none; }
   }
 </style>
 
-<main id="main">
+<main id="main" class="vxai-page">
+  <section class="vxai-hero" aria-labelledby="vxai-title">
+    <div class="vxai-hero__glow vxai-hero__glow--left" aria-hidden="true"></div>
+    <div class="vxai-hero__glow vxai-hero__glow--right" aria-hidden="true"></div>
 
-  <!-- ===================================================
-       HERO
-       =================================================== -->
+    <div class="vxai-hero__inner">
+      <div class="vxai-hero__welcome">Vaxogene AI Platforms</div>
 
-  <section class="vx-hero">
-
-    <div class="vx-hero-inner">
-
-      <h1>Vaxogene</h1>
-
-      <p class="vx-hero-line">
-        Science for All — Affordable, Accessible, Advanced.
-      </p>
-
-      <p class="vx-hero-line">
-        Translational Solutions for Next-Generation Therapeutics.
-      </p>
-
-      <div class="vx-hero-panel">
-
-        <div class="vx-hero-panel-grid">
-
-          <div>
-
-            <div class="vx-status">
-              <span class="vx-status-dot"></span>
-              Advancing biotechnology from India
-            </div>
-
-            <h2>
-              Research built for meaningful translation
-            </h2>
-
-            <p>
-              Vaxogene combines genomics, bioinformatics, molecular
-              biology, and collaborative research to support the
-              development of future-ready biomedical solutions.
-            </p>
-
-          </div>
-
-          <div>
-
-            <a
-              class="vx-btn vx-btn-orange"
-              href="{{ '/innovation/' | relative_url }}"
-            >
-              Explore Our Innovation
-              <span aria-hidden="true">→</span>
-            </a>
-
-          </div>
-
-        </div>
-
+      <div class="vxai-hero__center">
+        <h1 id="vxai-title" class="vxai-hero__title">Vaxogene AI</h1>
+        <p class="vxai-hero__subtitle">AI-driven bioinformatics tools for next-generation discovery.</p>
+        <div class="vxai-hero__pill">No Coding, No Server Setup Needed</div>
       </div>
 
-    </div>
-
-  </section>
-
-  <!-- ===================================================
-       INTRODUCTION
-       =================================================== -->
-
-  <section class="vx-intro">
-
-    <div class="vx-container">
-
-      <div class="vx-eyebrow">
-        About Vaxogene
-      </div>
-
-      <h2 class="vx-title">
-        Welcome to Vaxogene
-      </h2>
-
-      <p class="vx-lead">
-        Vaxogene advances biotechnology research, scientific
-        collaboration, and translational innovation from India.
-        We apply genomics, bioinformatics, molecular biology,
-        and AI-guided approaches to support researchers,
-        biotechnology programs, and healthcare innovation.
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- ===================================================
-       VAXOGENE INNOVATION NETWORK
-       =================================================== -->
-
-  <section class="vx-network">
-
-    <div class="vx-container vx-network-inner">
-
-      <div class="vx-network-header">
-
-        <div class="vx-network-kicker">
-          Integrated scientific capabilities
-        </div>
-
-        <h2>
-          The Vaxogene Innovation Network
-        </h2>
-
+      <div class="vxai-welcome-block">
+        <div class="vxai-section-kicker">WELCOME</div>
+        <h2>Accessible Bioinformatics, Built for Discovery</h2>
         <p>
-          Connecting biological research, computational analysis,
-          and translational strategy through one collaborative
-          biotechnology ecosystem.
+          Explore intelligent platforms for genomic analysis, metagenomics,
+          translational immunology, vaccine research, and biological discovery.
+          Begin with BulkMind AI today and follow our expanding platform portfolio.
         </p>
-
       </div>
-
-      <div class="vx-network-panel">
-
-        <div class="vx-network-grid">
-
-          <article class="vx-network-card">
-
-            <div class="vx-card-label">
-              Discovery and analysis
-            </div>
-
-            <h3>
-              Genomics &amp; Bioinformatics
-            </h3>
-
-            <p>
-              Data-driven approaches for RNA sequencing,
-              metagenomics, HLA research, variant interpretation,
-              target discovery, and biological pathway analysis.
-            </p>
-
-            <div class="vx-tags">
-
-              <span class="vx-tag">RNA-Seq</span>
-              <span class="vx-tag">Metagenomics</span>
-              <span class="vx-tag">HLA Typing</span>
-              <span class="vx-tag">Variant Analysis</span>
-
-            </div>
-
-            <div class="vx-card-action">
-
-              <a
-                class="vx-btn vx-btn-primary"
-                href="{{ '/AI_Platforms/' | relative_url }}"
-              >
-                Explore AI Platforms
-                <span aria-hidden="true">→</span>
-              </a>
-
-            </div>
-
-          </article>
-
-          <div
-            class="vx-globe-wrap"
-            aria-hidden="true"
-          >
-
-            <div class="vx-globe">
-
-              <span class="vx-globe-line"></span>
-              <span class="vx-globe-node vx-globe-node-left"></span>
-              <span class="vx-globe-node vx-globe-node-right"></span>
-
-            </div>
-
-            <div class="vx-globe-label">
-              Research connected<br>
-              through science
-            </div>
-
-          </div>
-
-          <article class="vx-network-card">
-
-            <div class="vx-card-label">
-              Research and translation
-            </div>
-
-            <h3>
-              Translational Biotechnology
-            </h3>
-
-            <p>
-              Collaborative scientific programs spanning vaccine
-              research, molecular biology, preclinical strategy,
-              regenerative medicine, and therapeutic innovation.
-            </p>
-
-            <div class="vx-tags">
-
-              <span class="vx-tag">Vaccine Research</span>
-              <span class="vx-tag">MMolecular Biology</span>
-              <span class="vx-tag">Preclinical Strategy</span>
-              <span class="vx-tag">Precision Medicine</span>
-
-            </div>
-
-            <div class="vx-card-action">
-
-              <a
-                class="vx-btn vx-btn-primary"
-                href="{{ '/innovation/' | relative_url }}"
-              >
-                View Innovation
-                <span aria-hidden="true">→</span>
-              </a>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
     </div>
-
   </section>
 
-  <!-- ===================================================
-       FOCUS AREAS
-       =================================================== -->
+  <section class="vxai-section vxai-platforms" id="platforms" aria-labelledby="platforms-title">
+    <div class="vxai-wrap">
+      <div class="vxai-section-kicker">PLATFORMS</div>
+      <h2 id="platforms-title">Available and Upcoming Tools</h2>
+      <p class="vxai-section-copy">
+        Start with BulkMind today. Our AI platform portfolio is expanding across
+        genomics, metagenomics, immunology, and translational research.
+      </p>
 
-  <section class="vx-focus">
+      <div class="vxai-platform-grid vxai-platform-grid--five">
+        <a class="vxai-platform-card is-live"
+           href="https://ai.vaxonyx.com/bulkmind/#/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Open BulkMind AI in a new tab">
+          <div class="platform-topline">
+            <div class="vxai-platform-badge">AVAILABLE NOW</div>
+            <div class="platform-icon" aria-hidden="true">🧬</div>
+          </div>
 
-    <div class="vx-container">
+          <div class="bm-card-brand">
+            <h3>BulkMind AI</h3>
+            <div class="bm-card-ai-badge" aria-hidden="true">
+              <svg class="bm-card-ai-svg" viewBox="0 0 64 64" role="img">
+                <defs>
+                  <linearGradient id="bmAiGradient" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#3fa9f5"/>
+                    <stop offset="1" stop-color="#1b427a"/>
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#bmAiGradient)"/>
+                <path d="M20 44V20h10.3c6 0 9.7 3.1 9.7 8.1 0 3.1-1.5 5.5-4.2 6.8L42 44h-7.1l-5-7.8h-3.6V44H20Zm6.3-13h3.4c2.5 0 3.8-1 3.8-2.9s-1.3-2.8-3.8-2.8h-3.4V31Z" fill="#fff" opacity=".96"/>
+                <path d="M44.5 20h5.8v24h-5.8z" fill="#fff" opacity=".96"/>
+              </svg>
+            </div>
+          </div>
 
-      <div class="vx-section-heading">
+          <p>
+            AI-powered bulk RNA-seq analysis with upload, QC, differential expression,
+            pathway discovery, volcano plots, heatmaps, and result exploration.
+          </p>
 
-        <div class="vx-eyebrow">
-          Our focus
-        </div>
+          <div class="vxai-platform-card__footer">
+            Open BulkMind →
+            <small class="vxai-card-note">Developed, operated, and supported by Vaxonyx USA.</small>
+          </div>
+        </a>
 
-        <h2 class="vx-title">
-          From biological questions to translational insight
-        </h2>
+        <article class="vxai-platform-card platform-card-green">
+          <div class="platform-topline">
+            <div class="vxai-platform-badge vxai-platform-badge--soft">COMING SOON · EST. DEC. 2026</div>
+            <div class="platform-icon" aria-hidden="true">🦠</div>
+          </div>
+          <h3>Metagenomics AI</h3>
+          <p>
+            AI-powered metagenomic analysis for microbial profiling, community composition,
+            functional insights, comparative analysis, and microbiome research.
+          </p>
+          <div class="vxai-platform-card__footer">Est. Dec. 2026</div>
+        </article>
 
-        <p>
-          Our capabilities are organized to support research
-          programs across computational biology, laboratory
-          science, and therapeutic development.
-        </p>
+        <article class="vxai-platform-card platform-card-cyan">
+          <div class="platform-topline">
+            <div class="vxai-platform-badge vxai-platform-badge--soft">COMING SOON · EST. OCT. 2026</div>
+            <div class="platform-icon" aria-hidden="true">🧫</div>
+          </div>
+          <h3>HLA Typing AI</h3>
+          <p>
+            Future AI-assisted HLA typing workflows for immunogenomics,
+            transplant compatibility, neoantigen analysis, and vaccine research.
+          </p>
+          <div class="vxai-platform-card__footer">Est. Oct. 2026</div>
+        </article>
 
+        <article class="vxai-platform-card platform-card-orange">
+          <div class="platform-topline">
+            <div class="vxai-platform-badge vxai-platform-badge--soft">COMING SOON · EST. DEC. 2026</div>
+            <div class="platform-icon" aria-hidden="true">🔬</div>
+          </div>
+          <h3>Variant Calling AI</h3>
+          <p>
+            Future AI-assisted workflows for variant calling, prioritization,
+            interpretation, and reporting.
+          </p>
+          <div class="vxai-platform-card__footer">Est. Dec. 2026</div>
+        </article>
+
+        <article class="vxai-platform-card platform-card-purple">
+          <div class="platform-topline">
+            <div class="vxai-platform-badge vxai-platform-badge--soft">COMING SOON · EST. JUN. 2027</div>
+            <div class="platform-icon" aria-hidden="true">💉</div>
+          </div>
+          <h3>Neoantigen Discovery AI</h3>
+          <p>
+            Future tools for neoantigen prediction, immunogenicity prioritization,
+            and vaccine design workflows.
+          </p>
+          <div class="vxai-platform-card__footer">Est. Jun. 2027</div>
+        </article>
       </div>
-
-      <div class="vx-cards">
-
-        <article class="vx-focus-card">
-
-          <div class="vx-icon" aria-hidden="true">
-            01
-          </div>
-
-          <h3>
-            Genomics &amp; Data Science
-          </h3>
-
-          <p>
-            Bioinformatics workflows and analytical strategies
-            for transcriptomics, metagenomics, genomic variation,
-            immune genetics, and biomarker research.
-          </p>
-
-          <a
-            class="vx-text-link"
-            href="{{ '/AI_Platforms/' | relative_url }}"
-          >
-            Explore platforms
-            <span aria-hidden="true">→</span>
-          </a>
-
-        </article>
-
-        <article class="vx-focus-card">
-
-          <div class="vx-icon" aria-hidden="true">
-            02
-          </div>
-
-          <h3>
-            Research Services
-          </h3>
-
-          <p>
-            Scientific support for molecular biology, biochemical
-            assays, virology-based studies, research planning,
-            and biological interpretation.
-          </p>
-
-          <a
-            class="vx-text-link"
-            href="{{ '/services/' | relative_url }}"
-          >
-            Explore services
-            <span aria-hidden="true">→</span>
-          </a>
-
-        </article>
-
-        <article class="vx-focus-card">
-
-          <div class="vx-icon" aria-hidden="true">
-            03
-          </div>
-
-          <h3>
-            Translational Innovation
-          </h3>
-
-          <p>
-            Collaborative research focused on vaccines,
-            therapeutic targets, regenerative medicine,
-            preclinical development, and precision biotechnology.
-          </p>
-
-          <a
-            class="vx-text-link"
-            href="{{ '/innovation/' | relative_url }}"
-          >
-            Discover innovation
-            <span aria-hidden="true">→</span>
-          </a>
-
-        </article>
-
-      </div>
-
     </div>
-
   </section>
 
-  <!-- ===================================================
-       FINAL CTA
-       =================================================== -->
-
-  <section class="vx-cta">
-
-    <div class="vx-container">
-
-      <div class="vx-cta-panel">
-
-        <div>
-
-          <h2>
-            Build your next research program with Vaxogene
-          </h2>
-
-          <p>
-            Tell us about your scientific question, technology
-            requirements, research model, and translational goals.
-            We can help identify a practical path forward.
-          </p>
-
-        </div>
-
-        <div>
-
-          <a
-            class="vx-btn vx-btn-primary"
-            href="{{ '/contact/' | relative_url }}"
-          >
-            Discuss a Project
-            <span aria-hidden="true">→</span>
-          </a>
-
-        </div>
-
+  <section class="vxai-final" aria-labelledby="vxai-contact-title">
+    <div class="vxai-final__box">
+      <div>
+        <h2 id="vxai-contact-title">Interested in collaborating?</h2>
+        <p>Talk with us about research partnerships, platform access, or future applications.</p>
       </div>
-
+      <a class="vxai-button" href="{{ '/contact/' | relative_url }}">Contact Vaxogene →</a>
     </div>
-
   </section>
-
 </main>
