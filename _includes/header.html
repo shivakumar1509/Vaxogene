@@ -306,6 +306,25 @@
       text-decoration:none !important;
     }
 
+    /* Section labels used inside the Company dropdown */
+
+    .site-header .vx-header-shell .vx-menu-section-label{
+      display:block !important;
+      margin:4px 10px 2px !important;
+      padding:0 !important;
+      color:#8490a1 !important;
+      font:800 10px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif !important;
+      letter-spacing:.10em !important;
+      text-transform:uppercase !important;
+      white-space:nowrap !important;
+    }
+
+    .site-header .vx-header-shell .vx-menu-section-break{
+      margin-top:10px !important;
+      padding-top:8px !important;
+      border-top:1px solid #edf1f7 !important;
+    }
+
     .site-header .vx-header-shell .has-sub{
       position:relative !important;
     }
@@ -530,7 +549,7 @@
           </a>
         </li>
 
-        <!-- About -->
+        <!-- Company -->
 
         <li class="dropdown">
 
@@ -540,27 +559,53 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
-            <span class="vx-nav-label">About</span>
+            <span class="vx-nav-label">Company</span>
             <span class="vx-nav-caret" aria-hidden="true">▼</span>
           </a>
 
           <ul class="dropdown-menu" role="menu">
 
+            <li aria-hidden="true">
+              <span class="vx-menu-section-label">Company</span>
+            </li>
+
             <li>
-              <a href="{{ '/about/#mission' | relative_url }}">
-                Mission &amp; Vision
+              <a href="{{ '/about/' | relative_url }}">
+                About Vaxogene
               </a>
             </li>
 
             <li>
               <a href="{{ '/about/#team' | relative_url }}">
-                Team
+                Leadership &amp; Team
               </a>
             </li>
 
             <li>
               <a href="{{ '/careers/' | relative_url }}">
                 Careers
+              </a>
+            </li>
+
+            <li class="vx-menu-section-break" aria-hidden="true">
+              <span class="vx-menu-section-label">Connect</span>
+            </li>
+
+            <li>
+              <a href="{{ '/partners/' | relative_url }}">
+                Partners
+              </a>
+            </li>
+
+            <li>
+              <a href="{{ '/news/#press' | relative_url }}">
+                News &amp; Updates
+              </a>
+            </li>
+
+            <li>
+              <a href="{{ '/investors/' | relative_url }}">
+                Investor Materials
               </a>
             </li>
 
@@ -793,57 +838,6 @@
             <li>
               <a href="{{ '/innovation/products/' | relative_url }}">
                 Products
-              </a>
-            </li>
-
-          </ul>
-
-        </li>
-
-        <!-- Partners -->
-
-        <li>
-          <a
-            class="vx-top-link"
-            href="{{ '/partners/' | relative_url }}"
-          >
-            <span class="vx-nav-label">Partners</span>
-          </a>
-        </li>
-
-        <!-- News and Investors -->
-
-        <li class="dropdown">
-
-          <a
-            href="{{ '/news/' | relative_url }}"
-            class="dropdown-link vx-top-link"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <span class="vx-nav-label">
-              News &amp; Investors
-            </span>
-
-            <span
-              class="vx-nav-caret"
-              aria-hidden="true"
-            >
-              ▼
-            </span>
-          </a>
-
-          <ul class="dropdown-menu" role="menu">
-
-            <li>
-              <a href="{{ '/news/#press' | relative_url }}">
-                Press &amp; updates
-              </a>
-            </li>
-
-            <li>
-              <a href="{{ '/investors/' | relative_url }}">
-                Investor materials
               </a>
             </li>
 
