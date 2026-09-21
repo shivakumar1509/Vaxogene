@@ -12,28 +12,29 @@
       display: grid;
       grid-template-columns: 1.3fr 0.9fr 1.1fr;
       gap: 32px;
-      padding: 48px 0 28px;
       width: min(1180px, 92%);
       margin-inline: auto;
+      padding: 48px 0 28px;
     }
 
     .foot-brand p {
       margin: 14px 0 0;
-      line-height: 1.6;
       color: #0b1b3a;
+      line-height: 1.6;
     }
 
     .foot-title {
-      font-weight: 800;
-      font-size: 1.05rem;
       margin: 0 0 8px;
       color: #0b1b3a;
+      font-size: 1.05rem;
+      font-weight: 800;
     }
 
+    /* === Quick Access Links === */
     .links {
-      list-style: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
     .links li + li {
@@ -41,36 +42,63 @@
     }
 
     .links a {
-      color: #1B427A;
+      color: #1b427a;
       font-weight: 600;
       text-decoration: none;
     }
 
-    .links a:hover {
+    .links a:hover,
+    .links a:focus-visible {
       text-decoration: underline;
     }
 
+    /* === Contact Information === */
     .foot-contacts a {
-      color: #1B427A;
-      text-decoration: none;
+      color: #1b427a;
       font-weight: 600;
+      text-decoration: none;
     }
 
-    .foot-contacts a:hover {
+    .foot-contacts a:hover,
+    .foot-contacts a:focus-visible {
       text-decoration: underline;
     }
 
-    /* --- Clickable address -> Google Maps --- */
-    .foot-contacts a.map-link{
-      color:#1B427A;
-      font-weight:600;
-      text-decoration:none;
-    }
-    .foot-contacts a.map-link:hover{
-      text-decoration:underline;
+    /* === Clickable Google Maps Address === */
+    .foot-address {
+      margin: 0 0 8px;
+      font-style: normal;
+      line-height: 1.6;
     }
 
-    /* --- Follow us: LinkedIn pill --- */
+    .address-row,
+    .phone-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .phone-row {
+      margin-top: 6px;
+    }
+
+    .contact-icon {
+      flex: 0 0 auto;
+      line-height: 1.6;
+    }
+
+    .foot-contacts .map-link {
+      color: #1b427a;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .foot-contacts .map-link:hover,
+    .foot-contacts .map-link:focus-visible {
+      text-decoration: underline;
+    }
+
+    /* === Follow Us === */
     .foot-follow {
       display: flex;
       align-items: center;
@@ -79,9 +107,9 @@
     }
 
     .foot-follow .follow-label {
-      font-weight: 800;
-      font-size: 1rem;
       color: #0b1b3a;
+      font-size: 1rem;
+      font-weight: 800;
     }
 
     .btn-social {
@@ -89,48 +117,69 @@
       align-items: center;
       justify-content: center;
       padding: 0.45rem 1.1rem;
+      border: 1.5px solid #e6ebf4;
       border-radius: 9999px;
       background: #fff;
-      border: 1.5px solid #e6ebf4;
-      color: #1B427A;
+      color: #1b427a;
       font-weight: 700;
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      transition: all 0.2s ease;
+      transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
-    .btn-social:hover {
-      background: #1B427A;
+    .btn-social:hover,
+    .btn-social:focus-visible {
+      border-color: #1b427a;
+      background: #1b427a;
       color: #fff;
       text-decoration: none;
       transform: translateY(-2px);
       box-shadow: 0 6px 14px rgba(27, 66, 122, 0.25);
     }
 
-    /* --- Footer headings --- */
+    /* === Contact Subheadings === */
     .foot-contacts .foot-subtitle {
-      font-weight: 700;
-      color: #0b1b3a;
-      margin-top: 12px; /* tighter spacing to match your original */
+      margin-top: 12px;
       margin-bottom: 4px;
+      color: #0b1b3a;
+      font-weight: 700;
     }
 
+    /* === Footer Bottom === */
     .footer-bottom {
-      text-align: center;
+      width: 100%;
+      padding: 16px 0 22px;
+      border-top: 1px solid #e6ebf4;
       color: #6b7a90;
       font-size: 14px;
-      border-top: 1px solid #e6ebf4;
-      padding: 16px 0 22px;
-      width: 100%;
+      text-align: center;
     }
 
+    /* === Tablet and Mobile === */
     @media (max-width: 920px) {
       .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
       }
+
       .foot-follow {
         justify-content: center;
+      }
+
+      .address-row,
+      .phone-row {
+        justify-content: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn-social {
+        transition: none;
       }
     }
   </style>
@@ -138,12 +187,15 @@
   <div class="footer-grid">
     <!-- Left Column -->
     <div class="foot-brand">
-      <img class="brand-logo"
-           src="{{ '/assets/Vaxogene.svg' | relative_url }}"
-           alt="Vaxogene"
-           width="160"
-           height="42"
-           loading="lazy">
+      <img
+        class="brand-logo"
+        src="{{ '/assets/Vaxogene.svg' | relative_url }}"
+        alt="Vaxogene"
+        width="160"
+        height="42"
+        loading="lazy"
+      >
+
       <p>
         Vaxogene builds future-ready bioinformatics platforms for neoantigen discovery,
         vaccine design, and translational immunology.
@@ -151,57 +203,106 @@
 
       <div class="foot-follow">
         <span class="follow-label">Follow us:</span>
-        <a class="btn-social linkedin"
-           href="https://www.linkedin.com/company/vaxogene/"
-           target="_blank"
-           rel="noopener">LinkedIn</a>
+
+        <a
+          class="btn-social linkedin"
+          href="https://www.linkedin.com/company/vaxogene/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Follow Vaxogene on LinkedIn"
+        >
+          LinkedIn
+        </a>
       </div>
     </div>
 
     <!-- Middle Column -->
-    <div class="foot-links">
+    <nav class="foot-links" aria-label="Footer navigation">
       <div class="foot-title">Quick Access</div>
+
       <ul class="links">
-        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-        <li><a href="{{ '/innovation/' | relative_url }}">Innovation</a></li>
-        <li><a href="{{ '/innovation/platform/' | relative_url }}">Platforms</a></li>
-        <li><a href="{{ '/innovation/pipeline/' | relative_url }}">Pipeline</a></li>
-        <li><a href="{{ '/innovation/products/' | relative_url }}">Products</a></li>
-        <li><a href="{{ '/news/' | relative_url }}">News &amp; Investors</a></li>
-        <li><a href="{{ '/careers/' | relative_url }}">Careers</a></li>
-        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        <li>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+        </li>
+
+        <li>
+          <a href="{{ '/innovation/' | relative_url }}">Innovation</a>
+        </li>
+
+        <li>
+          <a href="{{ '/innovation/platforms/' | relative_url }}">Platforms</a>
+        </li>
+
+        <li>
+          <a href="{{ '/innovation/pipeline/' | relative_url }}">Pipeline</a>
+        </li>
+
+        <li>
+          <a href="{{ '/innovation/products/' | relative_url }}">Products</a>
+        </li>
+
+        <li>
+          <a href="{{ '/news/' | relative_url }}">News &amp; Investors</a>
+        </li>
+
+        <li>
+          <a href="{{ '/assets/careers/' | relative_url }}">Careers</a>
+        </li>
+
+        <li>
+          <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        </li>
       </ul>
-    </div>
+    </nav>
 
     <!-- Right Column -->
     <div class="foot-contacts">
       <div class="foot-title">General Information</div>
-      <address style="font-style: normal; line-height: 1.6;">
-        📍
-        <a
-          class="map-link"
-          href="https://www.google.com/maps/search/?api=1&query=601+Genome+Way,+3023E,+Room+3006,+Huntsville,+AL+35806,+USA"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <strong>003, Classique Mansion, 6th Cross, 19th Main Road, HAL II Stage, kodihalli </strong><br>
-          Bangalore, Karnataka, 560008, India
-        </a><br>
-        📞 <a href="tel:+917204258756">+1 (720) 425-8756</a>
+
+      <address class="foot-address">
+        <div class="address-row">
+          <span class="contact-icon" aria-hidden="true">📍</span>
+
+          <a
+            class="map-link"
+            href="https://www.google.com/maps/search/?api=1&amp;query=003%2C%20Classique%20Mansion%2C%206th%20Cross%2C%2019th%20Main%20Road%2C%20HAL%20II%20Stage%2C%20Kodihalli%2C%20Bengaluru%2C%20Karnataka%20560008%2C%20India"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the Vaxogene Bengaluru address in Google Maps"
+          >
+            <strong>
+              003, Classique Mansion, 6th Cross,<br>
+              19th Main Road, HAL II Stage, Kodihalli
+            </strong>
+            <br>
+            Bengaluru, Karnataka 560008, India
+          </a>
+        </div>
+
+        <div class="phone-row">
+          <span class="contact-icon" aria-hidden="true">📞</span>
+          <a href="tel:+917204258756">+91 72042 58756</a>
+        </div>
       </address>
 
       <a href="mailto:info@vaxogene.com">info@vaxogene.com</a>
 
       <div class="foot-subtitle">Investor Relations</div>
-      <a href="mailto:investorrelations@vaxogene.com">investorrelations@vaxogene.com</a>
+      <a href="mailto:investorrelations@vaxogene.com">
+        investorrelations@vaxogene.com
+      </a>
 
       <div class="foot-subtitle">Business Development</div>
       <a href="mailto:bd@vaxogene.com">bd@vaxogene.com</a>
 
       <div class="foot-subtitle">Personal Contact</div>
-      <a href="mailto:krayavara@vaxogene.com">krayavara@vaxogene.com</a>
+      <a href="mailto:krayavara@vaxogene.com">
+        krayavara@vaxogene.com
+      </a>
     </div>
   </div>
 
-  <div class="footer-bottom">© {{ site.time | date: '%Y' }} Vaxogene. All rights reserved.</div>
+  <div class="footer-bottom">
+    © {{ site.time | date: '%Y' }} Vaxogene. All rights reserved.
+  </div>
 </footer>
