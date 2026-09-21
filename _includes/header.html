@@ -1,32 +1,24 @@
 <style>
   /* =========================================================
      ISOLATED SHARED HEADER
-
-     This header does not use the generic .container class.
-     Page-level CSS cannot change its width or navigation layout.
      ========================================================= */
 
   .site-header .vx-header-shell{
     width:min(1180px, calc(100% - 32px)) !important;
     max-width:1180px !important;
     height:68px !important;
-
     margin-left:auto !important;
     margin-right:auto !important;
     padding:0 !important;
-
     display:flex !important;
     align-items:center !important;
     justify-content:flex-start !important;
     flex-wrap:nowrap !important;
-
     gap:20px !important;
     box-sizing:border-box !important;
   }
 
-  /* =========================================================
-     AI PLATFORM STATUS ITEMS
-     ========================================================= */
+  /* AI PLATFORM STATUS ITEMS */
 
   .site-header .vx-header-shell .vx-platform-live-link{
     display:flex !important;
@@ -129,9 +121,7 @@
     flex:0 0 auto !important;
   }
 
-  /* =========================================================
-     DESKTOP NAVIGATION
-     ========================================================= */
+  /* DESKTOP NAVIGATION */
 
   @media (min-width:921px){
 
@@ -149,50 +139,36 @@
       align-items:center !important;
       justify-content:center !important;
       flex-wrap:nowrap !important;
-
       gap:18px !important;
-
       margin:0 !important;
       padding:0 !important;
-
       list-style:none !important;
     }
 
     .site-header .vx-header-shell .vx-menu > li{
       position:relative !important;
       display:block !important;
-
       flex:0 0 auto !important;
       width:auto !important;
       min-width:0 !important;
-
       margin:0 !important;
       padding:0 !important;
-
       white-space:nowrap !important;
       list-style:none !important;
     }
 
-    /*
-     * All top-level navigation links use this unique class.
-     * Label and arrow remain on exactly one line.
-     */
     .site-header .vx-header-shell .vx-top-link{
       display:inline-flex !important;
       flex-direction:row !important;
       align-items:center !important;
       justify-content:center !important;
       flex-wrap:nowrap !important;
-
       gap:4px !important;
-
       width:auto !important;
       min-width:max-content !important;
       height:auto !important;
-
       margin:0 !important;
       padding:0 !important;
-
       color:#1B427A !important;
       font-family:
         Inter,
@@ -206,7 +182,6 @@
       font-weight:700 !important;
       line-height:1.25 !important;
       letter-spacing:.2px !important;
-
       text-decoration:none !important;
       white-space:nowrap !important;
     }
@@ -223,53 +198,43 @@
       white-space:nowrap !important;
     }
 
-    .site-header .vx-header-shell .vx-nav-caret{
-      display:inline-block !important;
-      flex:0 0 auto !important;
+    /* Two-line Organoids navigation label */
 
-      width:auto !important;
-      height:auto !important;
+    .site-header .vx-header-shell .vx-organoid-link{
+      text-align:center !important;
+    }
 
-      margin:0 !important;
-      padding:0 !important;
-
-      font-size:10px !important;
-      font-weight:800 !important;
-      line-height:1 !important;
-
-      transform:translateY(1px) !important;
+    .site-header .vx-header-shell .vx-organoid-label{
+      display:inline-flex !important;
+      flex-direction:column !important;
+      align-items:center !important;
+      justify-content:center !important;
+      gap:1px !important;
+      line-height:1.05 !important;
       white-space:nowrap !important;
     }
 
-    /*
-     * Ask Vaxogene AI button must remain on one line.
-     */
-    .site-header .vx-header-shell .vx-fab-desktop{
-      display:inline-flex !important;
-      align-items:center !important;
-      justify-content:center !important;
+    .site-header .vx-header-shell .vx-organoid-label > span{
+      display:block !important;
+      white-space:nowrap !important;
+    }
 
+    .site-header .vx-header-shell .vx-nav-caret{
+      display:inline-block !important;
       flex:0 0 auto !important;
       width:auto !important;
-      min-width:max-content !important;
-
+      height:auto !important;
       margin:0 !important;
-      padding:10px 16px !important;
-
-      font-size:13px !important;
+      padding:0 !important;
+      font-size:10px !important;
+      font-weight:800 !important;
       line-height:1 !important;
-
+      transform:translateY(1px) !important;
       white-space:nowrap !important;
     }
   }
 
-
-  /* =========================================================
-     DROPDOWNS
-
-     All dropdowns use the same font, spacing, width,
-     border, shadow and hover behavior.
-     ========================================================= */
+  /* DROPDOWNS */
 
   @media (min-width:921px){
 
@@ -277,18 +242,14 @@
       position:absolute !important;
       top:calc(100% + 12px) !important;
       left:0 !important;
-
       display:none;
       min-width:260px !important;
-
       margin:0 !important;
       padding:8px !important;
-
       border:1px solid #e6ebf4 !important;
       border-radius:12px !important;
       background:#ffffff !important;
       box-shadow:0 12px 28px rgba(0,0,0,.12) !important;
-
       list-style:none !important;
       z-index:3100 !important;
     }
@@ -301,12 +262,9 @@
     .site-header .vx-header-shell .dropdown-menu > li{
       position:relative !important;
       display:block !important;
-
       width:100% !important;
-
       margin:0 !important;
       padding:0 !important;
-
       list-style:none !important;
     }
 
@@ -316,13 +274,10 @@
 
     .site-header .vx-header-shell .dropdown-menu a{
       display:block !important;
-
       width:100% !important;
       margin:0 !important;
       padding:7px 10px !important;
-
       border-radius:8px !important;
-
       color:#1B427A !important;
       font-family:
         Inter,
@@ -336,7 +291,6 @@
       font-weight:700 !important;
       line-height:1.25 !important;
       letter-spacing:.2px !important;
-
       text-decoration:none !important;
       white-space:nowrap !important;
       box-sizing:border-box !important;
@@ -347,7 +301,6 @@
       text-decoration:none !important;
     }
 
-    /* Nested Services submenus */
     .site-header .vx-header-shell .has-sub{
       position:relative !important;
     }
@@ -356,18 +309,14 @@
       position:absolute !important;
       top:-1px !important;
       left:100% !important;
-
       display:none;
       min-width:240px !important;
-
       margin:0 !important;
       padding:8px !important;
-
       border:1px solid #e6ebf4 !important;
       border-radius:12px !important;
       background:#ffffff !important;
       box-shadow:0 12px 28px rgba(0,0,0,.12) !important;
-
       list-style:none !important;
       z-index:3200 !important;
     }
@@ -389,13 +338,10 @@
 
     .site-header .vx-header-shell .submenu a{
       display:block !important;
-
       width:100% !important;
       margin:0 !important;
       padding:7px 10px !important;
-
       border-radius:8px !important;
-
       color:#1B427A !important;
       font-family:
         Inter,
@@ -408,7 +354,6 @@
       font-size:15px !important;
       font-weight:700 !important;
       line-height:1.25 !important;
-
       text-decoration:none !important;
       white-space:nowrap !important;
     }
@@ -419,11 +364,7 @@
     }
   }
 
-
-  /* =========================================================
-     MOBILE
-     Existing site.js continues to control the mobile menu.
-     ========================================================= */
+  /* MOBILE */
 
   @media (max-width:920px){
 
@@ -447,10 +388,8 @@
       flex-direction:row !important;
       align-items:center !important;
       justify-content:space-between !important;
-
       width:100% !important;
       gap:8px !important;
-
       white-space:nowrap !important;
     }
 
@@ -459,12 +398,22 @@
       display:inline-block !important;
       white-space:nowrap !important;
     }
+
+    .site-header .vx-header-shell .vx-organoid-link{
+      justify-content:flex-start !important;
+      text-align:left !important;
+    }
+
+    .site-header .vx-header-shell .vx-organoid-label{
+      display:inline-flex !important;
+      flex-direction:column !important;
+      align-items:flex-start !important;
+      gap:2px !important;
+      line-height:1.15 !important;
+    }
   }
 
-  /* =========================================================
-     SINGLE ASK VAXOGENE AI BUTTON
-     One button is used on both desktop and mobile.
-     ========================================================= */
+  /* ASK VAXOGENE AI BUTTON */
 
   .site-header .vx-header-shell .vx-ai-nav-item{
     position:relative !important;
@@ -507,22 +456,13 @@
       margin-top:8px !important;
     }
   }
-
 </style>
-
 
 <header class="site-header" role="banner">
 
-  <!--
-    Important:
-    This intentionally does NOT use class="container".
-  -->
   <div class="vx-header-shell header-row">
 
-
-    <!-- =====================================================
-         LOGO
-         ===================================================== -->
+    <!-- LOGO -->
 
     <a
       class="brand"
@@ -538,10 +478,7 @@
       >
     </a>
 
-
-    <!-- =====================================================
-         MOBILE MENU BUTTON
-         ===================================================== -->
+    <!-- MOBILE MENU BUTTON -->
 
     <button
       class="menu-toggle"
@@ -567,10 +504,7 @@
       </svg>
     </button>
 
-
-    <!-- =====================================================
-         MAIN NAVIGATION
-         ===================================================== -->
+    <!-- MAIN NAVIGATION -->
 
     <nav
       id="primary-nav"
@@ -580,8 +514,8 @@
     >
       <ul class="menu vx-menu" role="list">
 
-
         <!-- Home -->
+
         <li>
           <a
             class="vx-top-link"
@@ -591,8 +525,8 @@
           </a>
         </li>
 
-
         <!-- About -->
+
         <li class="dropdown">
 
           <a
@@ -629,8 +563,22 @@
 
         </li>
 
+        <!-- Organoids & 3D Models -->
+
+        <li>
+          <a
+            class="vx-top-link vx-organoid-link"
+            href="{{ '/organoids/' | relative_url }}"
+          >
+            <span class="vx-organoid-label">
+              <span>Organoids &amp;</span>
+              <span>3D Models</span>
+            </span>
+          </a>
+        </li>
 
         <!-- Services -->
+
         <li class="dropdown">
 
           <a
@@ -651,8 +599,8 @@
               </a>
             </li>
 
-
             <!-- Protein production submenu -->
+
             <li class="has-sub">
 
               <a
@@ -682,8 +630,8 @@
 
             </li>
 
-
             <!-- Assays submenu -->
+
             <li class="has-sub">
 
               <a
@@ -713,7 +661,6 @@
 
             </li>
 
-
             <li>
               <a href="{{ '/services/molecular-biology/' | relative_url }}">
                 Molecular biology
@@ -724,8 +671,8 @@
 
         </li>
 
-
         <!-- AI Platforms -->
+
         <li class="dropdown">
 
           <a
@@ -748,40 +695,59 @@
                 rel="noopener noreferrer"
               >
                 <span>BulkMind AI ↗</span>
+
                 <span class="vx-live-group">
-                  <span class="vx-live-dot" aria-hidden="true"></span>
+                  <span
+                    class="vx-live-dot"
+                    aria-hidden="true"
+                  ></span>
+
                   <span class="vx-live-badge">Live</span>
                 </span>
               </a>
             </li>
 
             <li aria-hidden="true">
-              <span class="vx-development-label">In Development</span>
+              <span class="vx-development-label">
+                In Development
+              </span>
             </li>
 
             <li>
-              <span class="vx-disabled-platform" aria-disabled="true">
+              <span
+                class="vx-disabled-platform"
+                aria-disabled="true"
+              >
                 <span>Metagenomics AI</span>
                 <span class="vx-soon-badge">Soon</span>
               </span>
             </li>
 
             <li>
-              <span class="vx-disabled-platform" aria-disabled="true">
+              <span
+                class="vx-disabled-platform"
+                aria-disabled="true"
+              >
                 <span>HLA Typing AI</span>
                 <span class="vx-soon-badge">Soon</span>
               </span>
             </li>
 
             <li>
-              <span class="vx-disabled-platform" aria-disabled="true">
+              <span
+                class="vx-disabled-platform"
+                aria-disabled="true"
+              >
                 <span>Variant Calling AI</span>
                 <span class="vx-soon-badge">Soon</span>
               </span>
             </li>
 
             <li>
-              <span class="vx-disabled-platform" aria-disabled="true">
+              <span
+                class="vx-disabled-platform"
+                aria-disabled="true"
+              >
                 <span>Neoantigen Discovery AI</span>
                 <span class="vx-soon-badge">Soon</span>
               </span>
@@ -791,8 +757,8 @@
 
         </li>
 
-
         <!-- Innovation -->
+
         <li class="dropdown">
 
           <a
@@ -829,8 +795,8 @@
 
         </li>
 
-
         <!-- Partners -->
+
         <li>
           <a
             class="vx-top-link"
@@ -840,8 +806,8 @@
           </a>
         </li>
 
-
         <!-- News and Investors -->
+
         <li class="dropdown">
 
           <a
@@ -850,8 +816,16 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
-            <span class="vx-nav-label">News &amp; Investors</span>
-            <span class="vx-nav-caret" aria-hidden="true">▼</span>
+            <span class="vx-nav-label">
+              News &amp; Investors
+            </span>
+
+            <span
+              class="vx-nav-caret"
+              aria-hidden="true"
+            >
+              ▼
+            </span>
           </a>
 
           <ul class="dropdown-menu" role="menu">
@@ -872,8 +846,8 @@
 
         </li>
 
-
         <!-- Contact -->
+
         <li>
           <a
             class="vx-top-link"
@@ -883,8 +857,8 @@
           </a>
         </li>
 
+        <!-- Ask Vaxogene AI -->
 
-        <!-- Single Ask Vaxogene AI button: desktop and mobile -->
         <li class="vx-ai-nav-item">
 
           <button
@@ -898,76 +872,68 @@
         </li>
 
       </ul>
-
     </nav>
-
 
   </div>
 
-
-  <!-- =======================================================
-       ASK VAXOGENE AI BUTTON BINDER
-       ======================================================= -->
+  <!-- ASK VAXOGENE AI BUTTON BINDER -->
 
   <script>
-  (function(){
+    (function(){
 
-    function openAI(e){
+      function openAI(e){
 
-      if(e){
-        e.preventDefault();
-      }
-
-      if(
-        window.VX_WIDGET &&
-        typeof window.VX_WIDGET.open === 'function'
-      ){
-        window.VX_WIDGET.open();
-
-      }else{
-        console.warn('VX_WIDGET not ready');
-      }
-    }
-
-
-    function bind(){
-
-      ['vx-fab'].forEach(function(id){
-
-        var el = document.getElementById(id);
-
-        if(el && !el.dataset.vxBound){
-
-          el.dataset.vxBound = '1';
-
-          el.addEventListener(
-            'click',
-            openAI,
-            {passive:false}
-          );
-
-          el.style.cursor = 'pointer';
-          el.style.position = 'relative';
-          el.style.zIndex = '2147483001';
+        if(e){
+          e.preventDefault();
         }
 
-      });
-    }
+        if(
+          window.VX_WIDGET &&
+          typeof window.VX_WIDGET.open === 'function'
+        ){
+          window.VX_WIDGET.open();
 
+        }else{
+          console.warn('VX_WIDGET not ready');
+        }
+      }
 
-    if(document.readyState === 'loading'){
+      function bind(){
 
-      document.addEventListener(
-        'DOMContentLoaded',
-        bind,
-        {once:true}
-      );
+        ['vx-fab'].forEach(function(id){
 
-    }else{
-      bind();
-    }
+          var el = document.getElementById(id);
 
-  })();
+          if(el && !el.dataset.vxBound){
+
+            el.dataset.vxBound = '1';
+
+            el.addEventListener(
+              'click',
+              openAI,
+              {passive:false}
+            );
+
+            el.style.cursor = 'pointer';
+            el.style.position = 'relative';
+            el.style.zIndex = '2147483001';
+          }
+        });
+      }
+
+      if(document.readyState === 'loading'){
+
+        document.addEventListener(
+          'DOMContentLoaded',
+          bind,
+          {once:true}
+        );
+
+      }else{
+        bind();
+      }
+
+    })();
   </script>
 
 </header>
