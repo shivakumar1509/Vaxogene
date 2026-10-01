@@ -1,6 +1,5 @@
 <footer class="site-footer">
   <style>
-    /* === Vaxogene Footer — Final Polished === */
     .site-footer {
       border-top: 1px solid #e6ebf4;
       background: #f7f9fc;
@@ -10,40 +9,59 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.3fr 0.9fr 1.1fr;
-      gap: 32px;
-      width: min(1180px, 92%);
-      margin-inline: auto;
-      padding: 48px 0 28px;
+      grid-template-columns: 1.25fr 0.8fr 1.15fr;
+      gap: 56px;
+      width: min(1180px, 90%);
+      margin: 0 auto;
+      padding: 46px 0 34px;
+      align-items: start;
+    }
+
+    .foot-brand,
+    .foot-links,
+    .foot-contacts {
+      min-width: 0;
+    }
+
+    .brand-logo {
+      display: block;
+      width: 145px;
+      height: auto;
+      margin-bottom: 16px;
     }
 
     .foot-brand p {
-      margin: 14px 0 0;
+      margin: 0;
+      max-width: 390px;
       color: #0b1b3a;
-      line-height: 1.6;
+      font-size: 15px;
+      line-height: 1.55;
     }
 
     .foot-title {
       margin: 0 0 8px;
-      color: #0b1b3a;
-      font-size: 1.05rem;
+      color: #08172f;
+      font-size: 16px;
+      line-height: 1.3;
       font-weight: 800;
     }
 
-    /* === Quick Access Links === */
+    /* Quick Access */
     .links {
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
-    .links li + li {
-      margin-top: 6px;
+    .links li {
+      margin: 0 0 4px;
     }
 
     .links a {
-      color: #1b427a;
-      font-weight: 600;
+      color: #17447f;
+      font-size: 15px;
+      line-height: 1.35;
+      font-weight: 700;
       text-decoration: none;
     }
 
@@ -52,10 +70,16 @@
       text-decoration: underline;
     }
 
-    /* === Contact Information === */
+    /* Contact column */
+    .foot-contacts {
+      color: #0b1b3a;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
     .foot-contacts a {
-      color: #1b427a;
-      font-weight: 600;
+      color: #17447f;
+      font-weight: 700;
       text-decoration: none;
     }
 
@@ -64,51 +88,53 @@
       text-decoration: underline;
     }
 
-    /* === Clickable Google Maps Address === */
-    .foot-address {
-      margin: 0 0 8px;
-      font-style: normal;
-      line-height: 1.6;
-    }
-
-    .address-row,
-    .phone-row {
+    .contact-row {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
-    }
-
-    .phone-row {
-      margin-top: 6px;
+      gap: 7px;
+      margin-bottom: 5px;
     }
 
     .contact-icon {
-      flex: 0 0 auto;
-      line-height: 1.6;
+      flex: 0 0 14px;
+      width: 14px;
+      line-height: 1.4;
+      text-align: center;
     }
 
-    .foot-contacts .map-link {
-      color: #1b427a;
-      font-weight: 600;
-      text-decoration: none;
+    .map-link {
+      display: inline-block;
+      line-height: 1.4;
     }
 
-    .foot-contacts .map-link:hover,
-    .foot-contacts .map-link:focus-visible {
-      text-decoration: underline;
+    .main-email {
+      margin-top: 5px;
+      margin-bottom: 10px;
     }
 
-    /* === Follow Us === */
+    .foot-subtitle {
+      margin-top: 9px;
+      margin-bottom: 1px;
+      color: #08172f;
+      font-weight: 800;
+    }
+
+    .personal-contact {
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Follow Us */
     .foot-follow {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-top: 18px;
+      margin-top: 22px;
     }
 
-    .foot-follow .follow-label {
-      color: #0b1b3a;
-      font-size: 1rem;
+    .follow-label {
+      color: #08172f;
+      font-size: 15px;
       font-weight: 800;
     }
 
@@ -116,67 +142,60 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.45rem 1.1rem;
-      border: 1.5px solid #e6ebf4;
+      min-height: 34px;
+      padding: 0 16px;
+      border: 1px solid #dfe5ee;
       border-radius: 9999px;
       background: #fff;
-      color: #1b427a;
+      color: #17447f;
+      font-size: 14px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      transition: 0.2s ease;
     }
 
     .btn-social:hover,
     .btn-social:focus-visible {
-      border-color: #1b427a;
-      background: #1b427a;
+      border-color: #17447f;
+      background: #17447f;
       color: #fff;
-      text-decoration: none;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(27, 66, 122, 0.25);
+      transform: translateY(-1px);
     }
 
-    /* === Contact Subheadings === */
-    .foot-contacts .foot-subtitle {
-      margin-top: 12px;
-      margin-bottom: 4px;
-      color: #0b1b3a;
-      font-weight: 700;
-    }
-
-    .personal-contact {
-      margin-bottom: 2px;
-    }
-
-    /* === Footer Bottom === */
+    /* Footer Bottom */
     .footer-bottom {
-      width: 100%;
-      padding: 16px 0 22px;
       border-top: 1px solid #e6ebf4;
+      padding: 16px 20px 18px;
       color: #6b7a90;
-      font-size: 14px;
+      font-size: 13px;
       text-align: center;
     }
 
-    /* === Tablet and Mobile === */
+    /* Tablet */
     @media (max-width: 920px) {
       .footer-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+        width: min(680px, 88%);
         text-align: center;
+      }
+
+      .brand-logo {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .foot-brand p {
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .foot-follow {
         justify-content: center;
       }
 
-      .address-row,
-      .phone-row {
+      .contact-row {
         justify-content: center;
       }
     }
@@ -190,14 +209,14 @@
 
   <div class="footer-grid">
 
-    <!-- Left Column -->
+    <!-- LEFT COLUMN -->
     <div class="foot-brand">
+
       <img
         class="brand-logo"
         src="{{ '/assets/Vaxogene.svg' | relative_url }}"
         alt="Vaxogene"
-        width="160"
-        height="42"
+        width="145"
         loading="lazy"
       >
 
@@ -210,7 +229,7 @@
         <span class="follow-label">Follow us:</span>
 
         <a
-          class="btn-social linkedin"
+          class="btn-social"
           href="https://www.linkedin.com/company/vaxogene/"
           target="_blank"
           rel="noopener noreferrer"
@@ -221,9 +240,12 @@
       </div>
     </div>
 
-    <!-- Middle Column -->
+    <!-- MIDDLE COLUMN -->
     <nav class="foot-links" aria-label="Footer navigation">
-      <div class="foot-title">Quick Access</div>
+
+      <div class="foot-title">
+        Quick Access
+      </div>
 
       <ul class="links">
         <li>
@@ -260,49 +282,61 @@
       </ul>
     </nav>
 
-    <!-- Right Column -->
+    <!-- RIGHT COLUMN -->
     <div class="foot-contacts">
-      <div class="foot-title">General Information</div>
 
-      <address class="foot-address">
-        <div class="address-row">
-          <span class="contact-icon" aria-hidden="true">📍</span>
+      <div class="foot-title">
+        General Information
+      </div>
 
-          <a
-            class="map-link"
-            href="https://www.google.com/maps/search/?api=1&amp;query=003%2C%20Classique%20Mansion%2C%206th%20Cross%2C%2019th%20Main%20Road%2C%20HAL%20II%20Stage%2C%20Kodihalli%2C%20Bengaluru%2C%20Karnataka%20560008%2C%20India"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open the Vaxogene Bengaluru address in Google Maps"
-          >
-            <strong>
-              003, Classique Mansion, 6th Cross,<br>
-              19th Main Road, HAL II Stage, Kodihalli
-            </strong>
-            <br>
-            Bengaluru, Karnataka 560008, India
-          </a>
-        </div>
+      <div class="contact-row">
+        <span class="contact-icon" aria-hidden="true">📍</span>
 
-        <div class="phone-row">
-          <span class="contact-icon" aria-hidden="true">📞</span>
-          <a href="tel:+919180473297">+91 918 047 3297</a>
-        </div>
-      </address>
+        <a
+          class="map-link"
+          href="https://www.google.com/maps/search/?api=1&amp;query=003%2C%20Classique%20Mansion%2C%206th%20Cross%2C%2019th%20Main%20Road%2C%20HAL%20II%20Stage%2C%20Kodihalli%2C%20Bengaluru%2C%20Karnataka%20560008%2C%20India"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          003, Classique Mansion, 6th Cross,<br>
+          19th Main Road, HAL II Stage, Kodihalli<br>
+          Bengaluru, Karnataka 560008, India
+        </a>
+      </div>
 
-      <a href="mailto:info@vaxogene.com">info@vaxogene.com</a>
+      <div class="contact-row">
+        <span class="contact-icon" aria-hidden="true">📞</span>
 
-      <div class="foot-subtitle">Investor Relations</div>
+        <a href="tel:+919180473297">
+          +91 918 047 3297
+        </a>
+      </div>
+
+      <div class="main-email">
+        <a href="mailto:info@vaxogene.com">
+          info@vaxogene.com
+        </a>
+      </div>
+
+      <div class="foot-subtitle">
+        Investor Relations
+      </div>
+
       <a href="mailto:investorrelations@vaxogene.com">
         investorrelations@vaxogene.com
       </a>
 
-      <div class="foot-subtitle">Business Development</div>
+      <div class="foot-subtitle">
+        Business Development
+      </div>
+
       <a href="mailto:bd@vaxogene.com">
         bd@vaxogene.com
       </a>
 
-      <div class="foot-subtitle">Personal Contacts</div>
+      <div class="foot-subtitle">
+        Personal Contacts
+      </div>
 
       <div class="personal-contact">
         <a href="mailto:shivrayavara@vaxogene.com">
@@ -315,6 +349,7 @@
           krayavara@vaxogene.com
         </a>
       </div>
+
     </div>
 
   </div>
