@@ -1,129 +1,76 @@
 <footer class="site-footer">
   <style>
-    /* =========================================================
-       VAXOGENE FOOTER
-       Desktop layout intentionally matched to Vaxonyx footer
-       ========================================================= */
+    /* === Vaxogene Footer === */
 
     .site-footer {
-      width: 100%;
       border-top: 1px solid #e6ebf4;
       background: #f7f9fc;
-      color: #0b1b3a;
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: #0b1b3a;
     }
 
-    /* MAIN THREE-COLUMN AREA */
     .footer-grid {
-      width: min(1170px, calc(100% - 80px));
-      margin: 0 auto;
-
       display: grid;
-
-      /* Wide brand | narrow links | wide contact */
-      grid-template-columns:
-        minmax(300px, 370px)
-        minmax(150px, 190px)
-        minmax(360px, 430px);
-
-      justify-content: space-between;
+      grid-template-columns: 1.25fr 0.8fr 1.15fr;
+      gap: 56px;
+      width: min(1180px, 90%);
+      margin: 0 auto;
+      padding: 46px 0 34px;
       align-items: start;
-
-      column-gap: 45px;
-
-      padding: 46px 0 32px;
     }
 
-    /* =========================================================
-       COMMON TYPOGRAPHY
-       ========================================================= */
-
-    .foot-title {
-      margin: 0 0 9px;
-      padding: 0;
-
-      color: #08172f;
-      font-size: 16px;
-      font-weight: 800;
-      line-height: 1.25;
+    .foot-brand,
+    .foot-links,
+    .foot-contacts {
+      min-width: 0;
     }
 
-    .site-footer a {
-      color: #17447f;
-      text-decoration: none;
-    }
-
-    .site-footer a:hover,
-    .site-footer a:focus-visible {
-      text-decoration: underline;
-    }
-
-    /* =========================================================
+    /* ==============================
        LEFT COLUMN
-       ========================================================= */
-
-    .foot-brand {
-      margin: 0;
-      padding: 0;
-    }
+       ============================== */
 
     .brand-logo {
       display: block;
       width: 145px;
-      max-width: 100%;
       height: auto;
-
-      margin: 0 0 17px;
-      padding: 0;
+      margin-bottom: 16px;
     }
 
     .foot-brand p {
-      max-width: 365px;
-
       margin: 0;
-      padding: 0;
-
+      max-width: 390px;
       color: #0b1b3a;
       font-size: 15px;
-      font-weight: 400;
       line-height: 1.55;
     }
 
-    /* FOLLOW US */
     .foot-follow {
       display: flex;
       align-items: center;
       gap: 12px;
-
-      margin-top: 21px;
+      margin-top: 22px;
     }
 
     .follow-label {
       color: #08172f;
       font-size: 15px;
       font-weight: 800;
-      line-height: 1;
     }
 
     .btn-social {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
-      min-height: 32px;
+      min-height: 34px;
       padding: 0 16px;
-
-      border: 1px solid #dce3ed;
-      border-radius: 999px;
-
-      background: #ffffff;
-      color: #17447f !important;
-
+      border: 1px solid #dfe5ee;
+      border-radius: 9999px;
+      background: #fff;
+      color: #17447f;
       font-size: 14px;
       font-weight: 700;
-
-      box-shadow: 0 3px 10px rgba(20, 49, 91, 0.08);
-
+      text-decoration: none;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
       transition:
         background 0.2s ease,
         color 0.2s ease,
@@ -133,21 +80,28 @@
 
     .btn-social:hover,
     .btn-social:focus-visible {
-      background: #17447f;
-      color: #ffffff !important;
       border-color: #17447f;
+      background: #17447f;
+      color: #fff;
       text-decoration: none;
       transform: translateY(-1px);
     }
 
-    /* =========================================================
-       MIDDLE COLUMN
-       ========================================================= */
+    /* ==============================
+       TITLES
+       ============================== */
 
-    .foot-links {
-      margin: 0;
-      padding: 0;
+    .foot-title {
+      margin: 0 0 8px;
+      color: #08172f;
+      font-size: 16px;
+      line-height: 1.3;
+      font-weight: 800;
     }
+
+    /* ==============================
+       QUICK ACCESS
+       ============================== */
 
     .links {
       margin: 0;
@@ -156,165 +110,132 @@
     }
 
     .links li {
-      margin: 0;
-      padding: 0;
-    }
-
-    .links li + li {
-      margin-top: 5px;
+      margin: 0 0 4px;
     }
 
     .links a {
-      display: inline-block;
-
       color: #17447f;
       font-size: 15px;
+      line-height: 1.35;
       font-weight: 700;
-      line-height: 1.25;
+      text-decoration: none;
     }
 
-    /* =========================================================
-       RIGHT COLUMN — CONTACT
-       ========================================================= */
+    .links a:hover,
+    .links a:focus-visible {
+      text-decoration: underline;
+    }
+
+    /* ==============================
+       RIGHT CONTACT COLUMN
+       ============================== */
 
     .foot-contacts {
-      margin: 0;
-      padding: 0;
-
       color: #0b1b3a;
       font-size: 15px;
-      line-height: 1.35;
+      line-height: 1.4;
     }
 
-    .contact-row {
-      display: grid;
-      grid-template-columns: 15px minmax(0, 1fr);
-      column-gap: 7px;
+    .foot-contacts a {
+      color: #17447f;
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-      align-items: start;
+    .foot-contacts a:hover,
+    .foot-contacts a:focus-visible {
+      text-decoration: underline;
+    }
 
+    /* ADDRESS */
+
+    .address-block {
       margin: 0 0 5px;
-      padding: 0;
+    }
+
+    .address-first-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
     }
 
     .contact-icon {
+      flex: 0 0 auto;
       width: 15px;
-
-      color: #17447f;
-
-      line-height: 1.35;
-      text-align: center;
+      line-height: 1.4;
     }
 
-    .map-link {
+    .address-first-line a {
+      line-height: 1.4;
+    }
+
+    /*
+      Important:
+      Lines 2 and 3 start from the left edge,
+      instead of being indented beneath line 1.
+    */
+
+    .address-continuation {
       display: block;
-
-      color: #17447f !important;
-
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.35;
+      margin-left: 0;
+      line-height: 1.4;
     }
 
-    .phone-link {
-      color: #17447f !important;
+    /* PHONE */
 
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.35;
+    .phone-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      margin-top: 5px;
+      margin-bottom: 5px;
     }
+
+    /* MAIN EMAIL */
 
     .main-email {
-      margin: 6px 0 0 22px;
+      margin-top: 4px;
+      margin-bottom: 9px;
     }
 
-    .main-email a {
-      color: #17447f;
-      font-size: 15px;
-      font-weight: 700;
-    }
+    /* CONTACT HEADINGS */
 
-    /* CONTACT CATEGORY HEADINGS */
     .foot-subtitle {
-      margin: 11px 0 1px;
-
+      margin-top: 9px;
+      margin-bottom: 1px;
       color: #08172f;
-
       font-size: 15px;
       font-weight: 800;
-      line-height: 1.25;
+      line-height: 1.3;
     }
 
     .contact-email {
       margin: 0;
       padding: 0;
+      line-height: 1.35;
     }
 
-    .contact-email a {
-      color: #17447f;
-
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-
-    /* =========================================================
-       COPYRIGHT
-       ========================================================= */
+    /* ==============================
+       FOOTER BOTTOM
+       ============================== */
 
     .footer-bottom {
-      width: 100%;
-
       border-top: 1px solid #e6ebf4;
-
       padding: 16px 20px 18px;
-
       color: #6b7a90;
-
       font-size: 13px;
-      font-weight: 400;
       text-align: center;
     }
 
-    /* =========================================================
-       TABLET
-       ========================================================= */
+    /* ==============================
+       TABLET / MOBILE
+       ============================== */
 
-    @media (max-width: 1050px) {
+    @media (max-width: 920px) {
       .footer-grid {
-        width: min(920px, calc(100% - 60px));
-
-        grid-template-columns:
-          minmax(260px, 1.15fr)
-          minmax(150px, 0.65fr)
-          minmax(300px, 1.15fr);
-
-        column-gap: 32px;
-      }
-
-      .foot-contacts,
-      .map-link,
-      .phone-link,
-      .main-email a,
-      .contact-email a {
-        font-size: 14px;
-      }
-    }
-
-    /* =========================================================
-       MOBILE
-       ========================================================= */
-
-    @media (max-width: 760px) {
-      .footer-grid {
-        width: min(560px, calc(100% - 40px));
-
         grid-template-columns: 1fr;
-
-        gap: 32px;
-
-        padding: 38px 0 28px;
-
+        gap: 30px;
+        width: min(680px, 88%);
         text-align: center;
       }
 
@@ -332,13 +253,13 @@
         justify-content: center;
       }
 
-      .contact-row {
-        display: flex;
+      .address-first-line,
+      .phone-row {
         justify-content: center;
       }
 
-      .main-email {
-        margin-left: 0;
+      .address-continuation {
+        text-align: center;
       }
     }
 
@@ -352,9 +273,9 @@
 
   <div class="footer-grid">
 
-    <!-- =====================================================
+    <!-- ==========================
          LEFT COLUMN
-         ===================================================== -->
+         ========================== -->
 
     <div class="foot-brand">
 
@@ -392,14 +313,11 @@
     </div>
 
 
-    <!-- =====================================================
+    <!-- ==========================
          MIDDLE COLUMN
-         ===================================================== -->
+         ========================== -->
 
-    <nav
-      class="foot-links"
-      aria-label="Footer navigation"
-    >
+    <nav class="foot-links" aria-label="Footer navigation">
 
       <div class="foot-title">
         Quick Access
@@ -460,9 +378,9 @@
     </nav>
 
 
-    <!-- =====================================================
+    <!-- ==========================
          RIGHT COLUMN
-         ===================================================== -->
+         ========================== -->
 
     <div class="foot-contacts">
 
@@ -472,24 +390,45 @@
 
 
       <!-- ADDRESS -->
-      <div class="contact-row">
 
-        <span
-          class="contact-icon"
-          aria-hidden="true"
-        >
-          📍
-        </span>
+      <div class="address-block">
+
+        <div class="address-first-line">
+
+          <span
+            class="contact-icon"
+            aria-hidden="true"
+          >
+            📍
+          </span>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&amp;query=003%2C%20Classique%20Mansion%2C%206th%20Cross%2C%2019th%20Main%20Road%2C%20HAL%20II%20Stage%2C%20Kodihalli%2C%20Bengaluru%2C%20Karnataka%20560008%2C%20India"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            003, Classique Mansion, 6th Cross,
+          </a>
+
+        </div>
+
 
         <a
-          class="map-link"
+          class="address-continuation"
           href="https://www.google.com/maps/search/?api=1&amp;query=003%2C%20Classique%20Mansion%2C%206th%20Cross%2C%2019th%20Main%20Road%2C%20HAL%20II%20Stage%2C%20Kodihalli%2C%20Bengaluru%2C%20Karnataka%20560008%2C%20India"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open the Vaxogene Bengaluru address in Google Maps"
         >
-          003, Classique Mansion, 6th Cross,<br>
-          19th Main Road, HAL II Stage, Kodihalli<br>
+          19th Main Road, HAL II Stage, Kodihalli
+        </a>
+
+
+        <a
+          class="address-continuation"
+          href="https://www.google.com/maps/search/?api=1&amp;query=003%2C%20Classique%20Mansion%2C%206th%20Cross%2C%2019th%20Main%20Road%2C%20HAL%20II%20Stage%2C%20Kodihalli%2C%20Bengaluru%2C%20Karnataka%20560008%2C%20India"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Bengaluru, Karnataka 560008, India
         </a>
 
@@ -497,7 +436,8 @@
 
 
       <!-- PHONE -->
-      <div class="contact-row">
+
+      <div class="phone-row">
 
         <span
           class="contact-icon"
@@ -506,10 +446,7 @@
           📞
         </span>
 
-        <a
-          class="phone-link"
-          href="tel:+919180473297"
-        >
+        <a href="tel:+919180473297">
           +91 918 047 3297
         </a>
 
@@ -517,6 +454,7 @@
 
 
       <!-- GENERAL EMAIL -->
+
       <div class="main-email">
 
         <a href="mailto:info@vaxogene.com">
@@ -527,6 +465,7 @@
 
 
       <!-- INVESTOR RELATIONS -->
+
       <div class="foot-subtitle">
         Investor Relations
       </div>
@@ -541,6 +480,7 @@
 
 
       <!-- BUSINESS DEVELOPMENT -->
+
       <div class="foot-subtitle">
         Business Development
       </div>
@@ -555,6 +495,7 @@
 
 
       <!-- PERSONAL CONTACTS -->
+
       <div class="foot-subtitle">
         Personal Contacts
       </div>
@@ -579,10 +520,6 @@
 
   </div>
 
-
-  <!-- =======================================================
-       COPYRIGHT
-       ======================================================= -->
 
   <div class="footer-bottom">
     © {{ site.time | date: '%Y' }} Vaxogene. All rights reserved.
