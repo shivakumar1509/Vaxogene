@@ -1,52 +1,154 @@
 <footer class="site-footer">
   <style>
+    /* =========================================================
+       VAXOGENE FOOTER
+       Desktop layout intentionally matched to Vaxonyx footer
+       ========================================================= */
+
     .site-footer {
+      width: 100%;
       border-top: 1px solid #e6ebf4;
       background: #f7f9fc;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
       color: #0b1b3a;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     }
 
+    /* MAIN THREE-COLUMN AREA */
     .footer-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.8fr 1.15fr;
-      gap: 56px;
-      width: min(1180px, 90%);
+      width: min(1170px, calc(100% - 80px));
       margin: 0 auto;
-      padding: 46px 0 34px;
+
+      display: grid;
+
+      /* Wide brand | narrow links | wide contact */
+      grid-template-columns:
+        minmax(300px, 370px)
+        minmax(150px, 190px)
+        minmax(360px, 430px);
+
+      justify-content: space-between;
       align-items: start;
+
+      column-gap: 45px;
+
+      padding: 46px 0 32px;
     }
 
-    .foot-brand,
-    .foot-links,
-    .foot-contacts {
-      min-width: 0;
+    /* =========================================================
+       COMMON TYPOGRAPHY
+       ========================================================= */
+
+    .foot-title {
+      margin: 0 0 9px;
+      padding: 0;
+
+      color: #08172f;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .site-footer a {
+      color: #17447f;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover,
+    .site-footer a:focus-visible {
+      text-decoration: underline;
+    }
+
+    /* =========================================================
+       LEFT COLUMN
+       ========================================================= */
+
+    .foot-brand {
+      margin: 0;
+      padding: 0;
     }
 
     .brand-logo {
       display: block;
       width: 145px;
+      max-width: 100%;
       height: auto;
-      margin-bottom: 16px;
+
+      margin: 0 0 17px;
+      padding: 0;
     }
 
     .foot-brand p {
+      max-width: 365px;
+
       margin: 0;
-      max-width: 390px;
+      padding: 0;
+
       color: #0b1b3a;
       font-size: 15px;
+      font-weight: 400;
       line-height: 1.55;
     }
 
-    .foot-title {
-      margin: 0 0 8px;
-      color: #08172f;
-      font-size: 16px;
-      line-height: 1.3;
-      font-weight: 800;
+    /* FOLLOW US */
+    .foot-follow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      margin-top: 21px;
     }
 
-    /* Quick Access */
+    .follow-label {
+      color: #08172f;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .btn-social {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 32px;
+      padding: 0 16px;
+
+      border: 1px solid #dce3ed;
+      border-radius: 999px;
+
+      background: #ffffff;
+      color: #17447f !important;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      box-shadow: 0 3px 10px rgba(20, 49, 91, 0.08);
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .btn-social:hover,
+    .btn-social:focus-visible {
+      background: #17447f;
+      color: #ffffff !important;
+      border-color: #17447f;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    /* =========================================================
+       MIDDLE COLUMN
+       ========================================================= */
+
+    .foot-links {
+      margin: 0;
+      padding: 0;
+    }
+
     .links {
       margin: 0;
       padding: 0;
@@ -54,130 +156,165 @@
     }
 
     .links li {
-      margin: 0 0 4px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .links li + li {
+      margin-top: 5px;
     }
 
     .links a {
+      display: inline-block;
+
       color: #17447f;
       font-size: 15px;
-      line-height: 1.35;
       font-weight: 700;
-      text-decoration: none;
+      line-height: 1.25;
     }
 
-    .links a:hover,
-    .links a:focus-visible {
-      text-decoration: underline;
-    }
+    /* =========================================================
+       RIGHT COLUMN — CONTACT
+       ========================================================= */
 
-    /* Contact column */
     .foot-contacts {
+      margin: 0;
+      padding: 0;
+
       color: #0b1b3a;
       font-size: 15px;
-      line-height: 1.4;
-    }
-
-    .foot-contacts a {
-      color: #17447f;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .foot-contacts a:hover,
-    .foot-contacts a:focus-visible {
-      text-decoration: underline;
+      line-height: 1.35;
     }
 
     .contact-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 7px;
-      margin-bottom: 5px;
+      display: grid;
+      grid-template-columns: 15px minmax(0, 1fr);
+      column-gap: 7px;
+
+      align-items: start;
+
+      margin: 0 0 5px;
+      padding: 0;
     }
 
     .contact-icon {
-      flex: 0 0 14px;
-      width: 14px;
-      line-height: 1.4;
+      width: 15px;
+
+      color: #17447f;
+
+      line-height: 1.35;
       text-align: center;
     }
 
     .map-link {
-      display: inline-block;
-      line-height: 1.4;
+      display: block;
+
+      color: #17447f !important;
+
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .phone-link {
+      color: #17447f !important;
+
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.35;
     }
 
     .main-email {
-      margin-top: 5px;
-      margin-bottom: 10px;
+      margin: 6px 0 0 22px;
     }
 
+    .main-email a {
+      color: #17447f;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    /* CONTACT CATEGORY HEADINGS */
     .foot-subtitle {
-      margin-top: 9px;
-      margin-bottom: 1px;
+      margin: 11px 0 1px;
+
       color: #08172f;
-      font-weight: 800;
-    }
 
-    .personal-contact {
-      margin: 0;
-      line-height: 1.4;
-    }
-
-    /* Follow Us */
-    .foot-follow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .follow-label {
-      color: #08172f;
       font-size: 15px;
       font-weight: 800;
+      line-height: 1.25;
     }
 
-    .btn-social {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 34px;
-      padding: 0 16px;
-      border: 1px solid #dfe5ee;
-      border-radius: 9999px;
-      background: #fff;
+    .contact-email {
+      margin: 0;
+      padding: 0;
+    }
+
+    .contact-email a {
       color: #17447f;
-      font-size: 14px;
+
+      font-size: 15px;
       font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-      transition: 0.2s ease;
+      line-height: 1.3;
     }
 
-    .btn-social:hover,
-    .btn-social:focus-visible {
-      border-color: #17447f;
-      background: #17447f;
-      color: #fff;
-      transform: translateY(-1px);
-    }
+    /* =========================================================
+       COPYRIGHT
+       ========================================================= */
 
-    /* Footer Bottom */
     .footer-bottom {
+      width: 100%;
+
       border-top: 1px solid #e6ebf4;
+
       padding: 16px 20px 18px;
+
       color: #6b7a90;
+
       font-size: 13px;
+      font-weight: 400;
       text-align: center;
     }
 
-    /* Tablet */
-    @media (max-width: 920px) {
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
+    @media (max-width: 1050px) {
       .footer-grid {
+        width: min(920px, calc(100% - 60px));
+
+        grid-template-columns:
+          minmax(260px, 1.15fr)
+          minmax(150px, 0.65fr)
+          minmax(300px, 1.15fr);
+
+        column-gap: 32px;
+      }
+
+      .foot-contacts,
+      .map-link,
+      .phone-link,
+      .main-email a,
+      .contact-email a {
+        font-size: 14px;
+      }
+    }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 760px) {
+      .footer-grid {
+        width: min(560px, calc(100% - 40px));
+
         grid-template-columns: 1fr;
-        gap: 30px;
-        width: min(680px, 88%);
+
+        gap: 32px;
+
+        padding: 38px 0 28px;
+
         text-align: center;
       }
 
@@ -196,7 +333,12 @@
       }
 
       .contact-row {
+        display: flex;
         justify-content: center;
+      }
+
+      .main-email {
+        margin-left: 0;
       }
     }
 
@@ -207,9 +349,13 @@
     }
   </style>
 
+
   <div class="footer-grid">
 
-    <!-- LEFT COLUMN -->
+    <!-- =====================================================
+         LEFT COLUMN
+         ===================================================== -->
+
     <div class="foot-brand">
 
       <img
@@ -226,7 +372,10 @@
       </p>
 
       <div class="foot-follow">
-        <span class="follow-label">Follow us:</span>
+
+        <span class="follow-label">
+          Follow us:
+        </span>
 
         <a
           class="btn-social"
@@ -237,124 +386,206 @@
         >
           LinkedIn
         </a>
+
       </div>
+
     </div>
 
-    <!-- MIDDLE COLUMN -->
-    <nav class="foot-links" aria-label="Footer navigation">
+
+    <!-- =====================================================
+         MIDDLE COLUMN
+         ===================================================== -->
+
+    <nav
+      class="foot-links"
+      aria-label="Footer navigation"
+    >
 
       <div class="foot-title">
         Quick Access
       </div>
 
       <ul class="links">
+
         <li>
-          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="{{ '/about/' | relative_url }}">
+            About
+          </a>
         </li>
 
         <li>
-          <a href="{{ '/innovation/' | relative_url }}">Innovation</a>
+          <a href="{{ '/innovation/' | relative_url }}">
+            Innovation
+          </a>
         </li>
 
         <li>
-          <a href="{{ '/innovation/platforms/' | relative_url }}">Platforms</a>
+          <a href="{{ '/innovation/platforms/' | relative_url }}">
+            Platforms
+          </a>
         </li>
 
         <li>
-          <a href="{{ '/innovation/pipeline/' | relative_url }}">Pipeline</a>
+          <a href="{{ '/innovation/pipeline/' | relative_url }}">
+            Pipeline
+          </a>
         </li>
 
         <li>
-          <a href="{{ '/innovation/products/' | relative_url }}">Products</a>
+          <a href="{{ '/innovation/products/' | relative_url }}">
+            Products
+          </a>
         </li>
 
         <li>
-          <a href="{{ '/news/' | relative_url }}">News &amp; Investors</a>
+          <a href="{{ '/news/' | relative_url }}">
+            News &amp; Investors
+          </a>
         </li>
 
         <li>
-          <a href="{{ '/assets/careers/' | relative_url }}">Careers</a>
+          <a href="{{ '/assets/careers/' | relative_url }}">
+            Careers
+          </a>
         </li>
 
         <li>
-          <a href="{{ '/contact/' | relative_url }}">Contact</a>
+          <a href="{{ '/contact/' | relative_url }}">
+            Contact
+          </a>
         </li>
+
       </ul>
+
     </nav>
 
-    <!-- RIGHT COLUMN -->
+
+    <!-- =====================================================
+         RIGHT COLUMN
+         ===================================================== -->
+
     <div class="foot-contacts">
 
       <div class="foot-title">
         General Information
       </div>
 
+
+      <!-- ADDRESS -->
       <div class="contact-row">
-        <span class="contact-icon" aria-hidden="true">📍</span>
+
+        <span
+          class="contact-icon"
+          aria-hidden="true"
+        >
+          📍
+        </span>
 
         <a
           class="map-link"
           href="https://www.google.com/maps/search/?api=1&amp;query=003%2C%20Classique%20Mansion%2C%206th%20Cross%2C%2019th%20Main%20Road%2C%20HAL%20II%20Stage%2C%20Kodihalli%2C%20Bengaluru%2C%20Karnataka%20560008%2C%20India"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Open the Vaxogene Bengaluru address in Google Maps"
         >
           003, Classique Mansion, 6th Cross,<br>
           19th Main Road, HAL II Stage, Kodihalli<br>
           Bengaluru, Karnataka 560008, India
         </a>
+
       </div>
 
-      <div class="contact-row">
-        <span class="contact-icon" aria-hidden="true">📞</span>
 
-        <a href="tel:+919180473297">
+      <!-- PHONE -->
+      <div class="contact-row">
+
+        <span
+          class="contact-icon"
+          aria-hidden="true"
+        >
+          📞
+        </span>
+
+        <a
+          class="phone-link"
+          href="tel:+919180473297"
+        >
           +91 918 047 3297
         </a>
+
       </div>
 
+
+      <!-- GENERAL EMAIL -->
       <div class="main-email">
+
         <a href="mailto:info@vaxogene.com">
           info@vaxogene.com
         </a>
+
       </div>
 
+
+      <!-- INVESTOR RELATIONS -->
       <div class="foot-subtitle">
         Investor Relations
       </div>
 
-      <a href="mailto:investorrelations@vaxogene.com">
-        investorrelations@vaxogene.com
-      </a>
+      <div class="contact-email">
 
+        <a href="mailto:investorrelations@vaxogene.com">
+          investorrelations@vaxogene.com
+        </a>
+
+      </div>
+
+
+      <!-- BUSINESS DEVELOPMENT -->
       <div class="foot-subtitle">
         Business Development
       </div>
 
-      <a href="mailto:bd@vaxogene.com">
-        bd@vaxogene.com
-      </a>
+      <div class="contact-email">
 
+        <a href="mailto:bd@vaxogene.com">
+          bd@vaxogene.com
+        </a>
+
+      </div>
+
+
+      <!-- PERSONAL CONTACTS -->
       <div class="foot-subtitle">
         Personal Contacts
       </div>
 
-      <div class="personal-contact">
+      <div class="contact-email">
+
         <a href="mailto:shivrayavara@vaxogene.com">
           shivrayavara@vaxogene.com
         </a>
+
       </div>
 
-      <div class="personal-contact">
+      <div class="contact-email">
+
         <a href="mailto:krayavara@vaxogene.com">
           krayavara@vaxogene.com
         </a>
+
       </div>
 
     </div>
 
   </div>
 
+
+  <!-- =======================================================
+       COPYRIGHT
+       ======================================================= -->
+
   <div class="footer-bottom">
     © {{ site.time | date: '%Y' }} Vaxogene. All rights reserved.
   </div>
+
 </footer>
