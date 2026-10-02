@@ -18,7 +18,10 @@
     box-sizing:border-box !important;
   }
 
-  /* AI PLATFORM STATUS ITEMS */
+
+  /* =========================================================
+     AI PLATFORM STATUS ITEMS
+     ========================================================= */
 
   .site-header .vx-header-shell .vx-platform-live-link{
     display:flex !important;
@@ -95,14 +98,29 @@
   }
 
   @keyframes vx-live-pulse{
-    0%{box-shadow:0 0 0 0 rgba(33,184,121,.38)}
-    70%{box-shadow:0 0 0 7px rgba(33,184,121,0)}
-    100%{box-shadow:0 0 0 0 rgba(33,184,121,0)}
+    0%{
+      box-shadow:0 0 0 0 rgba(33,184,121,.38);
+    }
+
+    70%{
+      box-shadow:0 0 0 7px rgba(33,184,121,0);
+    }
+
+    100%{
+      box-shadow:0 0 0 0 rgba(33,184,121,0);
+    }
   }
 
   @media(prefers-reduced-motion:reduce){
-    .vx-live-dot{animation:none}
+    .vx-live-dot{
+      animation:none;
+    }
   }
+
+
+  /* =========================================================
+     BRAND
+     ========================================================= */
 
   .site-header .vx-header-shell .brand{
     display:inline-flex !important;
@@ -111,17 +129,22 @@
     min-width:0 !important;
     margin:0 !important;
     padding:0 !important;
+    text-decoration:none !important;
   }
 
   .site-header .vx-header-shell .brand-logo{
     display:block !important;
     width:160px !important;
-    height:42px !important;
-    max-width:none !important;
+    height:auto !important;
+    max-width:160px !important;
+    object-fit:contain !important;
     flex:0 0 auto !important;
   }
 
-  /* DESKTOP NAVIGATION */
+
+  /* =========================================================
+     DESKTOP NAVIGATION
+     ========================================================= */
 
   @media (min-width:921px){
 
@@ -234,11 +257,15 @@
     }
   }
 
-  /* DROPDOWNS */
+
+  /* =========================================================
+     DROPDOWNS
+     ========================================================= */
 
   @media (min-width:921px){
-    
-    /* Move the logo slightly to the left on desktop */
+
+    /* Move logo slightly to the left on desktop */
+
     .site-header .vx-header-shell .brand{
       transform:translateX(-18px) !important;
     }
@@ -306,7 +333,7 @@
       text-decoration:none !important;
     }
 
-    /* Section labels used inside the Company dropdown */
+    /* Section labels */
 
     .site-header .vx-header-shell .vx-menu-section-label{
       display:block !important;
@@ -388,7 +415,10 @@
     }
   }
 
-  /* MOBILE */
+
+  /* =========================================================
+     MOBILE
+     ========================================================= */
 
   @media (max-width:920px){
 
@@ -399,8 +429,8 @@
     }
 
     .site-header .vx-header-shell .brand-logo{
-      width:auto !important;
-      height:36px !important;
+      width:145px !important;
+      height:auto !important;
     }
 
     .site-header .vx-header-shell .menu-toggle{
@@ -437,7 +467,10 @@
     }
   }
 
-  /* ASK VAXOGENE AI BUTTON */
+
+  /* =========================================================
+     ASK VAXOGENE AI BUTTON
+     ========================================================= */
 
   .site-header .vx-header-shell .vx-ai-nav-item{
     position:relative !important;
@@ -460,6 +493,7 @@
   }
 
   @media (min-width:921px){
+
     .site-header .vx-header-shell .vx-ai-nav-item{
       display:block !important;
     }
@@ -471,6 +505,7 @@
   }
 
   @media (max-width:920px){
+
     .site-header .vx-header-shell .vx-ai-nav-item{
       display:list-item !important;
     }
@@ -482,27 +517,35 @@
   }
 </style>
 
+
 <header class="site-header" role="banner">
 
   <div class="vx-header-shell header-row">
 
-    <!-- LOGO -->
+
+    <!-- =====================================================
+         LOGO
+         ===================================================== -->
 
     <a
       class="brand"
       href="{{ '/' | relative_url }}"
       aria-label="Vaxogene home"
     >
+
       <img
         class="brand-logo"
         src="{{ '/assets/Vaxogene.svg' | relative_url }}"
         alt="Vaxogene"
         width="160"
-        height="42"
       >
+
     </a>
 
-    <!-- MOBILE MENU BUTTON -->
+
+    <!-- =====================================================
+         MOBILE MENU BUTTON
+         ===================================================== -->
 
     <button
       class="menu-toggle"
@@ -512,6 +555,7 @@
       title="Menu"
       type="button"
     >
+
       <svg
         width="20"
         height="20"
@@ -526,9 +570,13 @@
           stroke-linecap="round"
         />
       </svg>
+
     </button>
 
-    <!-- MAIN NAVIGATION -->
+
+    <!-- =====================================================
+         MAIN NAVIGATION
+         ===================================================== -->
 
     <nav
       id="primary-nav"
@@ -536,20 +584,31 @@
       aria-label="Main"
       role="navigation"
     >
+
       <ul class="menu vx-menu" role="list">
 
-        <!-- Home -->
+
+        <!-- =================================================
+             HOME
+             ================================================= -->
 
         <li>
+
           <a
             class="vx-top-link"
             href="{{ '/' | relative_url }}"
           >
-            <span class="vx-nav-label">Home</span>
+            <span class="vx-nav-label">
+              Home
+            </span>
           </a>
+
         </li>
 
-        <!-- Company -->
+
+        <!-- =================================================
+             COMPANY
+             ================================================= -->
 
         <li class="dropdown">
 
@@ -559,14 +618,27 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
-            <span class="vx-nav-label">Company</span>
-            <span class="vx-nav-caret" aria-hidden="true">▼</span>
+
+            <span class="vx-nav-label">
+              Company
+            </span>
+
+            <span
+              class="vx-nav-caret"
+              aria-hidden="true"
+            >
+              ▼
+            </span>
+
           </a>
+
 
           <ul class="dropdown-menu" role="menu">
 
             <li aria-hidden="true">
-              <span class="vx-menu-section-label">Company</span>
+              <span class="vx-menu-section-label">
+                Company
+              </span>
             </li>
 
             <li>
@@ -587,8 +659,13 @@
               </a>
             </li>
 
-            <li class="vx-menu-section-break" aria-hidden="true">
-              <span class="vx-menu-section-label">Connect</span>
+            <li
+              class="vx-menu-section-break"
+              aria-hidden="true"
+            >
+              <span class="vx-menu-section-label">
+                Connect
+              </span>
             </li>
 
             <li>
@@ -613,21 +690,38 @@
 
         </li>
 
-        <!-- Organoids & 3D Models -->
+
+        <!-- =================================================
+             ORGANOIDS & 3D MODELS
+             ================================================= -->
 
         <li>
+
           <a
             class="vx-top-link vx-organoid-link"
             href="{{ '/organoids/' | relative_url }}"
           >
+
             <span class="vx-organoid-label">
-              <span>Organoids &amp;</span>
-              <span>3D Models</span>
+
+              <span>
+                Organoids &amp;
+              </span>
+
+              <span>
+                3D Models
+              </span>
+
             </span>
+
           </a>
+
         </li>
 
-        <!-- Services -->
+
+        <!-- =================================================
+             SERVICES
+             ================================================= -->
 
         <li class="dropdown">
 
@@ -637,19 +731,33 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
-            <span class="vx-nav-label">Services</span>
-            <span class="vx-nav-caret" aria-hidden="true">▼</span>
+
+            <span class="vx-nav-label">
+              Services
+            </span>
+
+            <span
+              class="vx-nav-caret"
+              aria-hidden="true"
+            >
+              ▼
+            </span>
+
           </a>
+
 
           <ul class="dropdown-menu" role="menu">
 
             <li>
+
               <a href="{{ '/services/cell-lines/' | relative_url }}">
                 Cell line services
               </a>
+
             </li>
 
-            <!-- Protein production submenu -->
+
+            <!-- Protein production -->
 
             <li class="has-sub">
 
@@ -661,6 +769,7 @@
               >
                 Protein production ▸
               </a>
+
 
               <ul class="submenu" role="menu">
 
@@ -680,7 +789,8 @@
 
             </li>
 
-            <!-- Assays submenu -->
+
+            <!-- Assays -->
 
             <li class="has-sub">
 
@@ -692,6 +802,7 @@
               >
                 Assays ▸
               </a>
+
 
               <ul class="submenu" role="menu">
 
@@ -711,17 +822,23 @@
 
             </li>
 
+
             <li>
+
               <a href="{{ '/services/molecular-biology/' | relative_url }}">
                 Molecular biology
               </a>
+
             </li>
 
           </ul>
 
         </li>
 
-        <!-- AI Platforms -->
+
+        <!-- =================================================
+             AI PLATFORMS
+             ================================================= -->
 
         <li class="dropdown">
 
@@ -731,83 +848,153 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
-            <span class="vx-nav-label">AI Platforms</span>
-            <span class="vx-nav-caret" aria-hidden="true">▼</span>
+
+            <span class="vx-nav-label">
+              AI Platforms
+            </span>
+
+            <span
+              class="vx-nav-caret"
+              aria-hidden="true"
+            >
+              ▼
+            </span>
+
           </a>
+
 
           <ul class="dropdown-menu" role="menu">
 
+
+            <!-- BulkMind -->
+
             <li>
+
               <a
                 class="vx-platform-live-link"
                 href="https://ai.vaxonyx.com/bulkmind/#/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span>BulkMind AI ↗</span>
+
+                <span>
+                  BulkMind AI ↗
+                </span>
 
                 <span class="vx-live-group">
+
                   <span
                     class="vx-live-dot"
                     aria-hidden="true"
                   ></span>
 
-                  <span class="vx-live-badge">Live</span>
+                  <span class="vx-live-badge">
+                    Live
+                  </span>
+
                 </span>
+
               </a>
+
             </li>
 
+
             <li aria-hidden="true">
+
               <span class="vx-development-label">
                 In Development
               </span>
+
             </li>
 
+
             <li>
+
               <span
                 class="vx-disabled-platform"
                 aria-disabled="true"
               >
-                <span>Metagenomics AI</span>
-                <span class="vx-soon-badge">Soon</span>
+
+                <span>
+                  Metagenomics AI
+                </span>
+
+                <span class="vx-soon-badge">
+                  Soon
+                </span>
+
               </span>
+
             </li>
 
+
             <li>
+
               <span
                 class="vx-disabled-platform"
                 aria-disabled="true"
               >
-                <span>HLA Typing AI</span>
-                <span class="vx-soon-badge">Soon</span>
+
+                <span>
+                  HLA Typing AI
+                </span>
+
+                <span class="vx-soon-badge">
+                  Soon
+                </span>
+
               </span>
+
             </li>
 
+
             <li>
+
               <span
                 class="vx-disabled-platform"
                 aria-disabled="true"
               >
-                <span>Variant Calling AI</span>
-                <span class="vx-soon-badge">Soon</span>
+
+                <span>
+                  Variant Calling AI
+                </span>
+
+                <span class="vx-soon-badge">
+                  Soon
+                </span>
+
               </span>
+
             </li>
 
+
             <li>
+
               <span
                 class="vx-disabled-platform"
                 aria-disabled="true"
               >
-                <span>Neoantigen Discovery AI</span>
-                <span class="vx-soon-badge">Soon</span>
+
+                <span>
+                  Neoantigen Discovery AI
+                </span>
+
+                <span class="vx-soon-badge">
+                  Soon
+                </span>
+
               </span>
+
             </li>
 
           </ul>
 
         </li>
 
-        <!-- Innovation -->
+
+        <!-- =================================================
+             INNOVATION
+             ================================================= -->
 
         <li class="dropdown">
 
@@ -817,46 +1004,77 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
-            <span class="vx-nav-label">Innovation</span>
-            <span class="vx-nav-caret" aria-hidden="true">▼</span>
+
+            <span class="vx-nav-label">
+              Innovation
+            </span>
+
+            <span
+              class="vx-nav-caret"
+              aria-hidden="true"
+            >
+              ▼
+            </span>
+
           </a>
+
 
           <ul class="dropdown-menu" role="menu">
 
             <li>
-              <a href="{{ '/innovation/platforms/delivery/' | relative_url }}">
-                DNA Delivery Platform
+
+              <a href="{{ '/innovation/' | relative_url }}#genomics">
+                Genomics &amp; Bioinformatics
               </a>
+
             </li>
 
-            <li>
-              <a href="{{ '/innovation/pipeline/' | relative_url }}">
-                Pipeline
-              </a>
-            </li>
 
             <li>
-              <a href="{{ '/innovation/products/' | relative_url }}">
-                Products
+
+              <a href="{{ '/innovation/' | relative_url }}#translational">
+                Translational Research
               </a>
+
+            </li>
+
+
+            <li>
+
+              <a href="{{ '/innovation/' | relative_url }}">
+                Innovation in Development
+              </a>
+
             </li>
 
           </ul>
 
         </li>
 
-        <!-- Contact -->
+
+        <!-- =================================================
+             CONTACT
+             ================================================= -->
 
         <li>
+
           <a
             class="vx-top-link"
             href="{{ '/contact/' | relative_url }}"
           >
-            <span class="vx-nav-label">Contact</span>
+
+            <span class="vx-nav-label">
+              Contact
+            </span>
+
           </a>
+
         </li>
 
-        <!-- Ask Vaxogene AI -->
+
+        <!-- =================================================
+             ASK VAXOGENE AI
+             ================================================= -->
 
         <li class="vx-ai-nav-item">
 
@@ -870,12 +1088,17 @@
 
         </li>
 
+
       </ul>
+
     </nav>
 
   </div>
 
-  <!-- ASK VAXOGENE AI BUTTON BINDER -->
+
+  <!-- =======================================================
+       ASK VAXOGENE AI BUTTON BINDER
+       ======================================================= -->
 
   <script>
     (function(){
@@ -890,12 +1113,16 @@
           window.VX_WIDGET &&
           typeof window.VX_WIDGET.open === 'function'
         ){
+
           window.VX_WIDGET.open();
 
         }else{
+
           console.warn('VX_WIDGET not ready');
+
         }
       }
+
 
       function bind(){
 
@@ -920,6 +1147,7 @@
         });
       }
 
+
       if(document.readyState === 'loading'){
 
         document.addEventListener(
@@ -929,7 +1157,9 @@
         );
 
       }else{
+
         bind();
+
       }
 
     })();
