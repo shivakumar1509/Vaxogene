@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Partners • Vaxogene
-description: Collaborating to accelerate innovation in genetic medicine, vaccines, and immunotherapies.
+description: Vaxogene collaborates with academic, biotechnology, healthcare, and technology organizations across genomics, translational research, organoids, and precision medicine.
 ---
 
 <style>
@@ -12,37 +12,134 @@ description: Collaborating to accelerate innovation in genetic medicine, vaccine
     --vx-muted:#5b6375;
     --vx-line:rgba(12,18,32,.12);
     --vx-ring:rgba(63,169,245,.45);
-    --vx-bg:conic-gradient(from 210deg at 30% -10%,rgba(0,124,145,.10),rgba(63,169,245,.12),transparent 50%);
+    --vx-bg:conic-gradient(
+      from 210deg at 30% -10%,
+      rgba(0,124,145,.10),
+      rgba(63,169,245,.12),
+      transparent 50%
+    );
   }
-  .container{width:min(1120px,92%);margin-inline:auto}
 
-  /* Dropdown fix */
+  .container{
+    width:min(1120px,92%);
+    margin-inline:auto;
+  }
+
+  /* =========================================================
+     DROPDOWN FIX
+     ========================================================= */
+
   @media (min-width:921px){
-    .site-header{overflow:visible!important;z-index:3000!important}
-    .site-nav .menu>li{position:relative!important}
-    .site-nav .menu>li.dropdown>.dropdown-menu{
-      position:absolute!important;top:100%!important;left:0!important;transform:none!important;
-      z-index:3100!important;display:none;min-width:260px;
+
+    .site-header{
+      overflow:visible!important;
+      z-index:3000!important;
     }
+
+    .site-nav .menu>li{
+      position:relative!important;
+    }
+
+    .site-nav .menu>li.dropdown>.dropdown-menu{
+      position:absolute!important;
+      top:100%!important;
+      left:0!important;
+      transform:none!important;
+      z-index:3100!important;
+      display:none;
+      min-width:260px;
+    }
+
     .site-nav .menu>li.dropdown:hover>.dropdown-menu,
-    .site-nav .menu>li.dropdown:focus-within>.dropdown-menu{display:block!important}
+    .site-nav .menu>li.dropdown:focus-within>.dropdown-menu{
+      display:block!important;
+    }
   }
 
-  /* Hero */
-  .svc-hero{padding:88px 0 40px;background:var(--vx-bg)}
-  .svc-hero h1{font:800 clamp(30px,4.8vw,54px)/1.05 system-ui,Segoe UI,Roboto,Helvetica,Arial;color:var(--vx-ink);margin:0 0 10px}
-  .svc-hero p{font:400 16px/1.65 system-ui;color:#213;max-width:70ch;margin:0 auto;text-align:center}
-  .svc-badges{display:flex;justify-content:center;gap:.5rem;margin:16px 0 0;flex-wrap:wrap}
-  .svc-badge{display:inline-flex;align-items:center;gap:.5ch;padding:.4rem .7rem;border:1px solid var(--vx-line);
-    border-radius:999px;font:600 12px/1.1 system-ui;color:var(--vx-primary);background:#fff}
-  .svc-ctas{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;margin:20px 0 0}
-  .btn{--bg:transparent;--fg:var(--vx-primary);display:inline-flex;align-items:center;justify-content:center;
-    padding:.75rem 1.1rem;border-radius:14px;border:1px solid var(--vx-line);
-    text-decoration:none;font:600 14px/1 system-ui;background:var(--bg);color:var(--fg)}
-  .btn.primary{--bg:linear-gradient(180deg,var(--vx-accent),#167fd8);--fg:#fff;border:none;
-    box-shadow:0 8px 22px -10px var(--vx-ring)}
 
-  /* ===== Collaborations Section ===== */
+  /* =========================================================
+     HERO
+     ========================================================= */
+
+  .svc-hero{
+    padding:88px 0 40px;
+    background:var(--vx-bg);
+  }
+
+  .svc-hero h1{
+    font:800 clamp(30px,4.8vw,54px)/1.05
+      system-ui,Segoe UI,Roboto,Helvetica,Arial;
+    color:var(--vx-ink);
+    margin:0 0 10px;
+  }
+
+  .svc-hero p{
+    font:400 16px/1.65 system-ui;
+    color:#213;
+    max-width:70ch;
+    margin:0 auto;
+    text-align:center;
+  }
+
+  .svc-badges{
+    display:flex;
+    justify-content:center;
+    gap:.5rem;
+    margin:16px 0 0;
+    flex-wrap:wrap;
+  }
+
+  .svc-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:.5ch;
+    padding:.4rem .7rem;
+    border:1px solid var(--vx-line);
+    border-radius:999px;
+    font:600 12px/1.1 system-ui;
+    color:var(--vx-primary);
+    background:#fff;
+  }
+
+  .svc-ctas{
+    display:flex;
+    justify-content:center;
+    gap:.75rem;
+    flex-wrap:wrap;
+    margin:20px 0 0;
+  }
+
+  .btn{
+    --bg:transparent;
+    --fg:var(--vx-primary);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:.75rem 1.1rem;
+    border-radius:14px;
+    border:1px solid var(--vx-line);
+    text-decoration:none;
+    font:600 14px/1 system-ui;
+    background:var(--bg);
+    color:var(--fg);
+  }
+
+  .btn.primary{
+    --bg:linear-gradient(
+      180deg,
+      var(--vx-accent),
+      #167fd8
+    );
+    --fg:#fff;
+    border:none;
+    box-shadow:0 8px 22px -10px var(--vx-ring);
+  }
+
+
+  /* =========================================================
+     COLLABORATIONS
+     ========================================================= */
+
   .partners-inner{
     display:grid;
     gap:16px;
@@ -50,11 +147,13 @@ description: Collaborating to accelerate innovation in genetic medicine, vaccine
     max-width:820px;
     text-align:center;
   }
+
   .partners-inner h2{
     font:800 clamp(22px,2.6vw,32px)/1.2 system-ui;
     margin:0 0 8px;
     text-align:center;
   }
+
   .partners-inner p{
     margin:0 auto 8px;
     max-width:70ch;
@@ -62,12 +161,16 @@ description: Collaborating to accelerate innovation in genetic medicine, vaccine
     font:400 15px/1.7 system-ui;
   }
 
-  /* ===== Partner Card ===== */
+
+  /* =========================================================
+     PARTNERSHIP DEVELOPMENT CARD
+     ========================================================= */
+
   .partner-mini-card{
     background:#fff;
     border:1px solid var(--vx-line);
     border-radius:14px;
-    padding:20px 18px 24px;
+    padding:24px 22px;
     display:grid;
     gap:10px;
     align-content:start;
@@ -76,72 +179,133 @@ description: Collaborating to accelerate innovation in genetic medicine, vaccine
     text-align:center;
     box-shadow:0 6px 18px rgba(12,18,32,.06);
   }
+
   .partner-mini-card h3{
     font:700 18px/1.3 system-ui;
     color:#0f1a2a;
     margin:0;
   }
+
   .partner-mini-card p{
     font:400 15px/1.6 system-ui;
     color:#243045;
     margin:0 auto;
     max-width:62ch;
   }
-  .partner-mini-card a{
-    color:var(--vx-primary);
-    text-decoration:none;
-    font:600 14px/1.4 system-ui;
-  }
-  .partner-mini-card a:hover{text-decoration:underline}
-  .partner-mini-card img{
-    display:block;
-    max-width:360px;
-    width:100%;
-    height:auto;
-    margin:10px auto 0;
-    border-radius:12px;
-    border:1px solid var(--vx-line);
-  }
+
 </style>
 
-<main id="main" class="page-services">
-  <!-- ===== Hero ===== -->
-  <section class="svc-hero">
-    <div class="container" style="text-align:center">
-      <h1>Partners</h1>
-      <p>Collaborating to accelerate innovation in genetic medicine, vaccines, and immunotherapies.</p>
-      <div class="svc-badges">
-        <span class="svc-badge">Academia</span>
-        <span class="svc-badge">Biotech &amp; Pharma</span>
-        <span class="svc-badge">Healthcare</span>
-        <span class="svc-badge">Technology</span>
-      </div>
-      <div class="svc-ctas">
-        <a class="btn primary" href="{{ '/contact/' | relative_url }}">Explore a Partnership</a>
-        <a class="btn" href="mailto:bd@vaxogene.com">Email Business Development</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===== Collaborations ===== -->
-  <section id="partners" class="partners">
-    <div class="container partners-inner">
-      <h2>Our Collaborations</h2>
+<main id="main" class="page-services">
+
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
+
+  <section class="svc-hero">
+
+    <div class="container" style="text-align:center">
+
+      <h1>Partnerships &amp; Collaborations</h1>
+
       <p>
-        At <strong>Vaxogene</strong>, we believe that innovation accelerates through collaboration. We partner with academic institutions,
-        biotechnology companies, healthcare organizations, and technology innovators to advance the frontiers of genetic medicine,
-        vaccines, and translational immunology.
+        Building scientific collaborations that connect research,
+        technology, and translational development.
       </p>
 
-      <article class="partner-mini-card">
-        <h3>Key Partner: Atlas Medicals</h3>
-        <p>
-          <strong>Vaxogene</strong> is working with <strong>Atlas Medicals</strong> on the biochemical characterization
-          of their advanced biomaterial, <em>OcuGraft</em>.
-        </p>
-        <a href="https://atlasmedical.us/" target="_blank" rel="noopener">🌐 atlasmedical.us</a>
-        <img src="{{ '/assets/atlas_partner.png' | relative_url }}" alt="Atlas Medicals partnership logo">
-      </article>
+      <div class="svc-badges">
+
+        <span class="svc-badge">
+          Academia
+        </span>
+
+        <span class="svc-badge">
+          Biotech &amp; Pharma
+        </span>
+
+        <span class="svc-badge">
+          Healthcare
+        </span>
+
+        <span class="svc-badge">
+          Technology
+        </span>
+
+      </div>
+
+      <div class="svc-ctas">
+
+        <a
+          class="btn primary"
+          href="{{ '/contact/' | relative_url }}"
+        >
+          Explore a Partnership
+        </a>
+
+        <a
+          class="btn"
+          href="mailto:bd@vaxogene.com"
+        >
+          Email Business Development
+        </a>
+
+      </div>
+
     </div>
+
   </section>
+
+
+  <!-- =======================================================
+       COLLABORATIONS
+       ======================================================= -->
+
+  <section id="partners" class="partners">
+
+    <div class="container partners-inner">
+
+      <h2>
+        Working Together
+      </h2>
+
+      <p>
+        <strong>Vaxogene</strong> is actively developing research and
+        industry collaborations across genomics, bioinformatics,
+        molecular biology, organoid research, preclinical development,
+        and precision medicine.
+      </p>
+
+      <p>
+        We welcome opportunities to work with academic institutions,
+        biotechnology and pharmaceutical companies, healthcare
+        organizations, and technology partners on projects where our
+        scientific and technical capabilities can complement existing
+        research and development programs.
+      </p>
+
+
+      <!-- ===================================================
+           PARTNERSHIPS IN DEVELOPMENT
+           =================================================== -->
+
+      <article class="partner-mini-card">
+
+        <h3>
+          Partnerships in Development
+        </h3>
+
+        <p>
+          Vaxogene is currently exploring research and strategic
+          collaborations with organizations working across biotechnology,
+          healthcare, and translational research. Details of individual
+          collaborations will be shared as agreements and programs are
+          finalized.
+        </p>
+
+      </article>
+
+    </div>
+
+  </section>
+
 </main>
