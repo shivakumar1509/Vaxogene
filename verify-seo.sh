@@ -12,6 +12,8 @@ test -f "$SITE/index.html" || {
   exit 1
 }
 
+test -f "$SITE/robots.txt" || { echo "ERROR: robots.txt missing"; exit 1; }
+
 test -f "$SITE/sitemap.xml" || {
   echo "ERROR: Sitemap missing"
   exit 1
@@ -39,5 +41,17 @@ if [ "$ACTUAL_KEY" != "$KEY" ]; then
   exit 1
 fi
 
-echo "SUCCESS: All essential SEO files verified."
+# Check all real content pages for fundamental SEO tags and one main landmark.
+while IFS= read -r page; do
+  case "$page" in
+    "$SITE/assets/"*) continue ;;
+  esac
+  grep -q '<title>' "$page" || { echo "ERROR: Missing title: $page"; exit 1; }
+  grep -q 'name="description"' "$page" || { echo "ERROR: Missing description: $page"; exit 1; }
+  grep -q 'rel="canonical"' "$page" || { echo "ERROR: Missing canonical: $page"; exit 1; }
+  mains=$(grep -Eoc '<main([ >])' "$page" || true)
+  [ "$mains" -eq 1 ] || { echo "ERROR: Expected one main landmark in $page, found $mains"; exit 1; }
+done < <(find "$SITE" -name index.html -type f)
+
+echo "SUCCESS: Essential SEO files and page metadata verified."
 

@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Organoids & 3D Models – Vaxogene
-description: Customized organoid culture and 3D model services for disease modeling, therapeutic evaluation, and translational research.
+title: Organoids & 3D Models
+seo_title: "Organoid Culture & 3D Disease Models | Vaxogene India"
+description: "Explore Vaxogene's organoid culture and 3D disease-model research services in India, supporting disease modeling, drug-response studies and translational research."
 ---
 
 <style>
@@ -12,35 +13,45 @@ description: Customized organoid culture and 3D model services for disease model
     --vx-muted:#5b6375;
     --vx-line:rgba(12,18,32,.12);
     --vx-ring:rgba(63,169,245,.45);
-    --vx-bg:conic-gradient(from 210deg at 30% -10%, rgba(0,124,145,.10), rgba(63,169,245,.12), transparent 50%);
+    --vx-bg:conic-gradient(
+      from 210deg at 30% -10%,
+      rgba(0,124,145,.10),
+      rgba(63,169,245,.12),
+      transparent 50%
+    );
   }
 
-  .container{
+  .page-services .container{
     width:min(1120px,92%);
     margin-inline:auto;
   }
 
-  /* Hero */
-  .svc-hero{
+  /* HERO SECTION */
+
+  .page-services .svc-hero{
     position:relative;
     padding:88px 0 42px;
     background:var(--vx-bg);
   }
 
-  .svc-hero h1{
-    font:800 clamp(30px,4.8vw,54px)/1.05 system-ui,Segoe UI,Roboto,Helvetica,Arial;
+  .page-services .svc-hero h1{
+    font:800 clamp(30px,4.8vw,54px)/1.05
+      system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     color:var(--vx-ink);
     margin:0 0 10px;
   }
 
-  .svc-hero p{
-    font:400 16px/1.65 system-ui,Segoe UI,Roboto,Helvetica,Arial;
-    color:#213;
+  .page-services .svc-hero p{
+    font:400 16px/1.65
+      system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    color:#263247;
     max-width:72ch;
     margin:0;
   }
 
-  .svc-badges{
+  /* RESEARCH BADGES */
+
+  .page-services .svc-badges{
     display:flex;
     gap:.5rem;
     align-items:center;
@@ -48,20 +59,22 @@ description: Customized organoid culture and 3D model services for disease model
     flex-wrap:wrap;
   }
 
-  .svc-badge{
+  .page-services .svc-badge{
     display:inline-flex;
     align-items:center;
     gap:.5ch;
     padding:.4rem .7rem;
     border:1px solid var(--vx-line);
     border-radius:999px;
-    font:600 12px/1.1 system-ui,Segoe UI,Roboto,Helvetica,Arial;
+    font:600 12px/1.1
+      system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     color:var(--vx-primary);
     background:#fff;
   }
 
-  /* Buttons */
-  .btn{
+  /* BUTTONS */
+
+  .page-services .btn{
     --bg:transparent;
     --fg:var(--vx-primary);
     display:inline-flex;
@@ -71,36 +84,60 @@ description: Customized organoid culture and 3D model services for disease model
     border-radius:14px;
     border:1px solid var(--vx-line);
     text-decoration:none;
-    font:600 14px/1 system-ui,Segoe UI,Roboto,Helvetica,Arial;
+    font:600 14px/1.2
+      system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     background:var(--bg);
     color:var(--fg);
+    text-align:center;
+    transition:transform .2s ease,box-shadow .2s ease;
   }
 
-  .btn.primary{
+  .page-services .btn:hover{
+    transform:translateY(-2px);
+  }
+
+  .page-services .btn:focus-visible{
+    outline:3px solid var(--vx-ring);
+    outline-offset:3px;
+  }
+
+  .page-services .btn.primary{
     --bg:linear-gradient(180deg,var(--vx-accent),#167fd8);
     --fg:#fff;
     border:none;
     box-shadow:0 8px 22px -10px var(--vx-ring);
   }
 
-  /* Service cards */
-  .svc-h2{
-    font:700 clamp(20px,2.6vw,28px)/1.2 system-ui,Segoe UI,Roboto,Helvetica,Arial;
+  /* SECTION HEADINGS */
+
+  .page-services .svc-h2{
+    font:700 clamp(20px,2.6vw,28px)/1.2
+      system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     margin:34px 0 14px;
     color:var(--vx-ink);
   }
 
-  .cards{
+  .page-services .section-intro{
+    max-width:850px;
+    margin:0 0 18px;
+    font:400 15px/1.75
+      system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    color:#35435b;
+  }
+
+  /* SERVICE AND RESEARCH CARDS */
+
+  .page-services .cards{
     display:grid;
     gap:16px;
     margin:22px 0;
   }
 
-  .cards.two{
-    grid-template-columns:repeat(2,1fr);
+  .page-services .cards.two{
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
 
-  .card{
+  .page-services .card{
     background:#fff;
     border:1px solid var(--vx-line);
     border-radius:16px;
@@ -111,34 +148,43 @@ description: Customized organoid culture and 3D model services for disease model
     align-content:start;
   }
 
-  .card:hover{
+  .page-services .card:hover{
     transform:translateY(-2px);
     box-shadow:0 10px 24px -12px rgba(0,0,0,.25);
   }
 
-  .card h3{
-    font:700 16px/1.3 system-ui,Segoe UI,Roboto,Helvetica,Arial;
+  .page-services .card h3{
+    font:700 16px/1.3
+      system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     margin:.2rem 0 .35rem;
     color:#0f1a2a;
   }
 
-  .card p{
-    font:400 14px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial;
+  .page-services .card p{
+    font:400 14px/1.6
+      system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     color:#2a3040;
     margin:0;
   }
 
-  .card .actions{
+  .page-services .card .actions{
     margin-top:6px;
     display:flex;
     gap:10px;
     flex-wrap:wrap;
   }
 
-  /* Final CTA */
-  .final-cta{
+  /* FINAL CTA */
+
+  .page-services .final-cta{
     border:1px solid var(--vx-line);
-    background:radial-gradient(1200px 1200px at 0% 100%, rgba(63,169,245,.12), transparent),#fff;
+    background:
+      radial-gradient(
+        1200px 1200px at 0% 100%,
+        rgba(63,169,245,.12),
+        transparent
+      ),
+      #fff;
     padding:22px;
     border-radius:16px;
     display:grid;
@@ -146,30 +192,60 @@ description: Customized organoid culture and 3D model services for disease model
     justify-items:start;
   }
 
-  .final-cta h2{
+  .page-services .final-cta h2{
     margin:0;
     color:#0a1626;
-    font:700 22px/1.2 system-ui,Segoe UI,Roboto,Helvetica,Arial;
+    font:700 22px/1.2
+      system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   }
 
-  .final-cta p{
+  .page-services .final-cta p{
     margin:0 0 6px;
     color:#2a3040;
-    font:400 14px/1.55 system-ui,Segoe UI,Roboto,Helvetica,Arial;
+    font:400 14px/1.55
+      system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   }
 
-  .research-note{
+  /* RESEARCH DISCLAIMER */
+
+  .page-services .research-note{
     color:var(--vx-muted);
-    font:400 12px/1.5 system-ui,Segoe UI,Roboto,Helvetica,Arial;
+    font:400 12px/1.5
+      system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     margin:12px 0 0;
   }
 
+  /* RESPONSIVE */
+
   @media (max-width:720px){
-    .cards.two{grid-template-columns:1fr;}
-    .svc-hero{padding:68px 0 34px;}
+    .page-services .cards.two{
+      grid-template-columns:1fr;
+    }
+
+    .page-services .svc-hero{
+      padding:68px 0 34px;
+    }
+
+    .page-services .card .actions{
+      flex-direction:column;
+      align-items:stretch;
+    }
   }
 
-  /* Keep active item styled in dropdowns */
+  @media (prefers-reduced-motion:reduce){
+    .page-services .btn,
+    .page-services .card{
+      transition:none;
+    }
+
+    .page-services .btn:hover,
+    .page-services .card:hover{
+      transform:none;
+    }
+  }
+
+  /* KEEP ACTIVE NAVIGATION ITEM STYLED */
+
   .dropdown-menu a[aria-current="page"]{
     color:var(--vx-blue) !important;
     background:rgba(27,66,122,.08);
@@ -181,12 +257,25 @@ description: Customized organoid culture and 3D model services for disease model
   }
 </style>
 
-<main id="main" class="page-services">
-  <!-- Hero -->
+<div id="main" class="page-services">
+
+  <!-- =====================================================
+       HERO
+       ===================================================== -->
+
   <section class="svc-hero">
     <div class="container">
+
       <h1>Organoids &amp; 3D Models</h1>
-      <p>Advance translational research with physiologically relevant 3D models. We provide customized organoid culture and study support for disease modeling, therapeutic evaluation, and precision medicine research.</p>
+
+      <p>
+        Advance translational research with physiologically
+        relevant three-dimensional biological models.
+        Vaxogene supports customized organoid culture
+        and research studies for disease modeling,
+        therapeutic evaluation, and precision medicine
+        research.
+      </p>
 
       <div class="svc-badges">
         <span class="svc-badge">Organoid Culture</span>
@@ -194,43 +283,349 @@ description: Customized organoid culture and 3D model services for disease model
         <span class="svc-badge">Custom Study Design</span>
         <span class="svc-badge">Research Use Only</span>
       </div>
+
     </div>
   </section>
 
-  <!-- Service options -->
+  <!-- =====================================================
+       ORGANOID SERVICES
+       ===================================================== -->
+
   <section class="container" aria-labelledby="choose">
-    <h2 id="choose" class="svc-h2">Explore Our Services</h2>
+
+    <h2 id="choose" class="svc-h2">
+      Explore Our Organoid Research Services
+    </h2>
+
+    <p class="section-intro">
+      Organoid and 3D cell culture approaches offer
+      research models for investigating tissue biology,
+      disease-associated processes, and experimental
+      responses. Vaxogene works with researchers to
+      define model requirements, study objectives,
+      and suitable analytical approaches.
+    </p>
 
     <div class="cards two">
+
+      <!-- ORGANOID CULTURE -->
+
       <article class="card" id="organoid-culture">
+
         <h3>Organoid Culture Services</h3>
-        <p>Establishment, expansion, maintenance, and cryopreservation of organoid models using project-specific tissues or cell sources. Culture conditions and quality-control requirements are customized for each research program.</p>
+
+        <p>
+          Establishment, expansion, maintenance, and
+          cryopreservation of organoid models using
+          project-specific tissues or cell sources.
+          Culture conditions and quality-control
+          requirements are customized for each
+          research program.
+        </p>
 
         <div class="actions">
-          <a class="btn primary" href="{{ '/contact/' | relative_url }}">Discuss Your Project</a>
-          <a class="btn" href="{{ '/contact/' | relative_url }}">Get a Quote</a>
+
+          <a
+            class="btn primary"
+            href="{{ '/contact/' | relative_url }}">
+            Discuss Your Project
+          </a>
+
+          <a
+            class="btn"
+            href="{{ '/contact/' | relative_url }}">
+            Get a Quote
+          </a>
+
         </div>
+
       </article>
+
+      <!-- RESEARCH STUDIES -->
 
       <article class="card" id="research-studies">
+
         <h3>Organoid-Based Research Studies</h3>
-        <p>Customized organoid studies for disease modeling, drug-response evaluation, toxicity assessment, biomarker research, and translational discovery, supported by molecular and imaging-based readouts.</p>
+
+        <p>
+          Customized organoid studies for disease
+          modeling, drug-response evaluation,
+          toxicity assessment, biomarker research,
+          and translational discovery, supported
+          by molecular and imaging-based readouts.
+        </p>
 
         <div class="actions">
-          <a class="btn primary" href="{{ '/contact/' | relative_url }}">Plan a Study</a>
-          <a class="btn" href="{{ '/contact/' | relative_url }}">Request a Consultation</a>
+
+          <a
+            class="btn primary"
+            href="{{ '/contact/' | relative_url }}">
+            Plan a Study
+          </a>
+
+          <a
+            class="btn"
+            href="{{ '/contact/' | relative_url }}">
+            Request a Consultation
+          </a>
+
         </div>
+
       </article>
+
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="container" style="margin-top:26px;margin-bottom:40px;">
-    <div class="final-cta">
-      <h2>Planning an organoid research project?</h2>
-      <p>Tell us about your biological model, sample source, research objective, preferred readouts, and timeline. Our team will help develop an appropriate and scientifically robust study plan.</p>
-      <a class="btn primary" href="{{ '/contact/' | relative_url }}">Talk to Our Scientists</a>
-      <p class="research-note">Organoid and 3D-model services are intended for research use only and are not offered for clinical diagnosis or treatment.</p>
+  <!-- =====================================================
+       RESEARCH APPLICATIONS
+       ===================================================== -->
+
+  <section
+    class="container"
+    aria-labelledby="organoid-applications">
+
+    <h2
+      id="organoid-applications"
+      class="svc-h2">
+      Applications of Organoids and 3D Models
+      in Biotechnology Research
+    </h2>
+
+    <p class="section-intro">
+      Organoids and three-dimensional cell culture
+      systems provide experimental models that can
+      reproduce selected structural and functional
+      characteristics of biological tissues.
+      Depending on the model and research question,
+      these systems may offer advantages over
+      conventional two-dimensional cell cultures.
+    </p>
+
+    <div class="cards two">
+
+      <!-- DISEASE MODELING -->
+
+      <article class="card">
+
+        <h3>Disease Modeling</h3>
+
+        <p>
+          Organoid-based models can support studies
+          of tissue biology, disease-associated
+          mechanisms, cellular responses, and
+          molecular changes under defined
+          experimental conditions.
+        </p>
+
+      </article>
+
+      <!-- THERAPEUTIC EVALUATION -->
+
+      <article class="card">
+
+        <h3>Drug Response and Toxicity Research</h3>
+
+        <p>
+          Three-dimensional cellular models may
+          be used to investigate experimental
+          therapeutic responses, cellular viability,
+          and compound-associated biological effects
+          during preclinical research.
+        </p>
+
+      </article>
+
+      <!-- BIOMARKER RESEARCH -->
+
+      <article class="card">
+
+        <h3>Biomarker and Molecular Research</h3>
+
+        <p>
+          Organoid studies can be integrated with
+          molecular characterization and biomarker
+          analysis to investigate biological pathways,
+          changes in gene expression, and
+          experimental responses.
+        </p>
+
+      </article>
+
+      <!-- TRANSLATIONAL RESEARCH -->
+
+      <article class="card">
+
+        <h3>Translational Research</h3>
+
+        <p>
+          Organoid and 3D-model approaches can
+          contribute to translational research
+          by connecting experimental observations
+          with questions related to disease biology,
+          therapeutic discovery, and precision
+          medicine research.
+        </p>
+
+      </article>
+
     </div>
+
+    <p class="research-note">
+      Model selection, study feasibility, sample
+      requirements, and analytical endpoints depend
+      on the research question, available capabilities,
+      and project-specific scientific requirements.
+    </p>
+
   </section>
-</main>
+
+  <!-- =====================================================
+       CUSTOM RESEARCH APPROACH
+       ===================================================== -->
+
+  <section
+    class="container"
+    aria-labelledby="custom-research">
+
+    <h2 id="custom-research" class="svc-h2">
+      Customized Research and Study Planning
+    </h2>
+
+    <p class="section-intro">
+      Every organoid research program has different
+      biological objectives and technical requirements.
+      Research planning may involve identifying
+      appropriate cell or tissue sources, selecting
+      culture conditions, defining experimental
+      endpoints, and choosing molecular or imaging
+      readouts.
+    </p>
+
+    <p class="section-intro">
+      Vaxogene emphasizes research planning that
+      aligns the biological model with the scientific
+      question. Project scope, experimental design,
+      technical feasibility, and available analytical
+      resources are considered during consultation.
+    </p>
+
+  </section>
+
+  <!-- =====================================================
+       RELATED SCIENTIFIC SERVICES
+       ===================================================== -->
+
+  <section
+    class="container"
+    aria-labelledby="related-services">
+
+    <h2 id="related-services" class="svc-h2">
+      Related Scientific Services
+    </h2>
+
+    <p class="section-intro">
+      Organoid and 3D-model research may benefit
+      from complementary molecular biology,
+      biochemical characterization, and other
+      analytical research approaches.
+      Explore Vaxogene's related scientific
+      capabilities.
+    </p>
+
+    <div class="cards two">
+
+      <!-- MOLECULAR BIOLOGY -->
+
+      <article class="card">
+
+        <h3>Molecular Biology Services</h3>
+
+        <p>
+          Explore molecular biology research
+          capabilities that may support biological
+          characterization, experimental planning,
+          and molecular analysis.
+        </p>
+
+        <div class="actions">
+
+          <a
+            class="btn"
+            href="{{ '/services/molecular-biology/' | relative_url }}">
+            Explore Molecular Biology
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- SCIENTIFIC SERVICES -->
+
+      <article class="card">
+
+        <h3>Scientific and Laboratory Services</h3>
+
+        <p>
+          Learn more about Vaxogene's broader
+          biotechnology research services,
+          including biochemical assays,
+          experimental research support,
+          and analytical approaches.
+        </p>
+
+        <div class="actions">
+
+          <a
+            class="btn"
+            href="{{ '/services/' | relative_url }}">
+            Explore Scientific Services
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- =====================================================
+       FINAL CALL TO ACTION
+       ===================================================== -->
+
+  <section
+    class="container"
+    style="margin-top:26px;margin-bottom:40px;">
+
+    <div class="final-cta">
+
+      <h2>
+        Planning an Organoid Research Project?
+      </h2>
+
+      <p>
+        Tell us about your biological model,
+        sample source, research objective,
+        preferred experimental readouts,
+        and expected timeline.
+        Our team can discuss a suitable
+        research approach and project scope.
+      </p>
+
+      <a
+        class="btn primary"
+        href="{{ '/contact/' | relative_url }}">
+        Talk to Our Scientists
+      </a>
+
+      <p class="research-note">
+        Organoid and 3D-model services are intended
+        for research use only and are not offered
+        for clinical diagnosis or treatment.
+      </p>
+
+    </div>
+
+  </section>
+
+</div>
