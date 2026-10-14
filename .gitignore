@@ -1,6 +1,21 @@
+
+# Jekyll generated files
 _site/
+public/
+
+# Ruby / Bundler dependencies
 vendor/
 .bundle/
+
+# Deployment ZIP files
+site.zip
+
+# macOS files
 .DS_Store
+
+# Node dependencies
 node_modules/
+
+# Ruby lock file
 Gemfile.lock
+
