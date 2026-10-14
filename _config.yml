@@ -2,7 +2,8 @@
 title: Vaxogene
 markdown: kramdown
 theme: null
-plugins: []
+plugins:
+  - jekyll-sitemap
 permalink: pretty
 
 # GitHub Pages project URL

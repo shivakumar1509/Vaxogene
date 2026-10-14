@@ -9,7 +9,7 @@ frontend:
         - bundle install --jobs=4 --retry=3
     build:
       commands:
-        - JEKYLL_ENV=production bundle exec jekyll build --trace
+        - JEKYLL_ENV=production bundle exec jekyll build --config _config.yml,_config_aws.yml --trace
   artifacts:
     baseDirectory: _site
     files:
